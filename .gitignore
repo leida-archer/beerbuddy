@@ -46,8 +46,8 @@ test-results/
 # tool-stack local state
 .tool-stack/
 
-# Drizzle generated migrations are committed; meta is generated
-drizzle/meta/
+# Drizzle: commit BOTH migrations and meta snapshots — drizzle-kit
+# uses meta/ to compute diffs between subsequent generations.
 
 # Adapter run artifacts (LLM raw outputs, screenshots, PDFs cached during dev)
 ingest/.cache/
