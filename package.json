@@ -13,7 +13,8 @@
     "db:studio": "drizzle-kit studio",
     "test": "vitest",
     "discover:raleys": "bun run scripts/raleys-discover.ts",
-    "smoke:raleys": "bun run scripts/raleys-json-smoke.ts"
+    "smoke:raleys": "bun run scripts/raleys-json-smoke.ts",
+    "fixture:raleys": "bun run scripts/raleys-build-fixture.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
