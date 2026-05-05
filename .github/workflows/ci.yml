@@ -1,0 +1,46 @@
+# Continuous integration — typecheck + tests + build on every PR.
+# Locked in /plan-eng-review Issue 9A.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Unit tests
+        run: bun run test --run
+
+      - name: Build (Next.js)
+        # Build needs DATABASE_URL because src/lib/db/index.ts asserts
+        # at module load. Use a placeholder — build doesn't actually
+        # connect; only the runtime does.
+        env:
+          DATABASE_URL: postgres://placeholder:placeholder@localhost/placeholder
+        run: bun run build

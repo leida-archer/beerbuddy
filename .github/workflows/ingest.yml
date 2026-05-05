@@ -1,0 +1,77 @@
+# Daily ingestion orchestrator — runs all chain adapters sequentially,
+# then triggers the materialized-view refresh.
+#
+# Locked in /plan-eng-review Issue 4A: ONE workflow runs ALL adapters
+# (vs. seven separate workflows on staggered schedules) so matview
+# refresh has deterministic ordering and per-run failure summary is
+# coherent.
+#
+# Currently runs no adapters — they get added during Weeks 1–4 as
+# each adapter folder under src/lib/ingest/adapters/{chain}/index.ts
+# materializes. The workflow file shape stays stable.
+
+name: ingest
+
+on:
+  schedule:
+    # 8:00 AM Pacific = 16:00 UTC (PST) / 15:00 UTC (PDT).
+    # Cron precision on GH Actions is best-effort; some drift expected.
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    # Allows manual run from the Actions tab — useful during dev.
+
+# Prevent two ingestion runs from overlapping. The previous run is
+# canceled if a new one starts, but only after at least one daily
+# scheduled invocation. Since runs typically take 5–10 min and only
+# happen once daily, conflicts are rare.
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  run:
+    name: Run adapters + refresh matview
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        # Cached by setup-playwright; ~30s on a cold cache, ~1s warm.
+        run: bunx playwright install --with-deps chromium
+
+      - name: Apply pending migrations
+        # Idempotent. Drizzle-kit only applies what's not in the meta.
+        run: bun run db:migrate
+
+      - name: Run adapters
+        # When a chain adapter lands, it gets imported here.
+        # For now this is a no-op echo so the workflow exercises end-to-end.
+        run: |
+          echo "No adapters built yet. See src/lib/ingest/adapters/{chain}/api-notes.md"
+          echo "Future: bun run scripts/ingest.ts (calls runner.runAdapters([...]))"
+
+      - name: Refresh matview
+        # Will run REFRESH MATERIALIZED VIEW CONCURRENTLY product_deal_scores
+        # once the matview lands in Week 5+. No-op for now.
+        run: |
+          echo "Matview not created yet. Week 5 work."
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "::notice::Ingestion run complete. See runs table for per-adapter detail."
