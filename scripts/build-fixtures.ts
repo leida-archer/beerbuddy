@@ -12,7 +12,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { fetchBevmoBeerCatalog } from "@/lib/ingest/adapters/bevmo/catalog";
+import { extractBevmoBeerProducts } from "@/lib/ingest/adapters/bevmo/extract";
 import { fetchRaleysBuildId } from "@/lib/ingest/adapters/raleys/buildId";
 import { fetchProductJson } from "@/lib/ingest/adapters/raleys/productJson";
 import { fetchRaleysProductSitemap } from "@/lib/ingest/adapters/raleys/sitemap";
@@ -75,21 +75,40 @@ async function buildRaleys(observedAt: string, sampleCount = 60): Promise<DealRo
 }
 
 async function buildBevmo(observedAt: string, max = 80): Promise<DealRow[]> {
-  console.log(`[fixtures] bevmo: fetching beer catalog...`);
-  const result = await fetchBevmoBeerCatalog();
-  console.log(
-    `[fixtures] bevmo: ${result.totalProductsScanned} scanned, ${result.products.length} beer (${result.pagesFetched} pages)`,
-  );
-  if (result.parseFailures.length > 0) {
-    console.warn(`[fixtures] bevmo: ${result.parseFailures.length} parse failures`);
-  }
-  // Spread `max` evenly across the result so the fixture isn't all
-  // alphabetically first.
-  const step = Math.max(1, Math.floor(result.products.length / max));
-  const sampled = Array.from({ length: max }, (_, i) => result.products[i * step]).filter(
-    Boolean,
-  );
-  return sampled.map((p) => rowFromBevmo(p, observedAt));
+  console.log(`[fixtures] bevmo: launching Playwright + scraping /pages/beer...`);
+  const products = await extractBevmoBeerProducts();
+  console.log(`[fixtures] bevmo: extracted ${products.length} beer products`);
+
+  const sampled = products.slice(0, max);
+  return sampled.map((p) => rowFromBevmoScraped(p, observedAt));
+}
+
+function rowFromBevmoScraped(
+  p: { bevmoId: string; brand: string | null; title: string; packCount: number | null; packUnitMl: number | null; priceCents: number; regularPriceCents: number | null },
+  observedAt: string,
+): DealRow {
+  const reg = p.regularPriceCents;
+  const discountPct =
+    reg != null && reg > p.priceCents
+      ? Math.round(((reg - p.priceCents) / reg) * 100)
+      : null;
+  const store = STORES[1];
+  return {
+    id: `bevmo-${p.bevmoId}`,
+    storeId: store.id,
+    storeName: store.name,
+    storeCity: store.city,
+    brand: p.brand,
+    name: p.title,
+    upc: null,
+    packCount: p.packCount,
+    packUnitMl: p.packUnitMl,
+    priceCents: p.priceCents,
+    regularPriceCents: p.regularPriceCents,
+    discounted: reg != null && reg > p.priceCents,
+    discountPct,
+    observedAt,
+  };
 }
 
 function rowFromRaleys(p: { raleysId: string; brand: string | null; name: string; upc: string | null; packCount: number | null; packUnitMl: number | null; priceCents: number; regularPriceCents: number | null; discounted: boolean }, observedAt: string): DealRow {

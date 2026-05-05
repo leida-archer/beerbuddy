@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T23:18:44.594Z",
+  "generatedAt": "2026-05-05T23:38:56.532Z",
   "stores": [
     {
       "id": "raleys-grass-valley",
@@ -14,8 +14,8 @@
   ],
   "counts": {
     "raleys": 60,
-    "bevmo": 0,
-    "total": 60
+    "bevmo": 29,
+    "total": 89
   },
   "deals": [
     {
@@ -32,7 +32,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2410418",
@@ -48,7 +48,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30025891",
@@ -64,7 +64,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30188327",
@@ -80,7 +80,135 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": 18,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-13731",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Twisted",
+      "name": "Twisted Tea Party Pack 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-13321",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Black Cherry 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-41701",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Seltzer Flavor No. 3 Variety 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-7680",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Seltzer Variety #1 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-44362",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Surge #1 Variety 12pk 12oz Can 8% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-198224",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Zero Proof Variety 12pk 12oz Can",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-11057",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Modelo",
+      "name": "Modelo Especial 24pk 12oz Can 4.4% ABV",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2799,
+      "regularPriceCents": 3199,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-31891",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Pacifico",
+      "name": "Pacifico 24pk 12oz Btl 4.4% ABV",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2799,
+      "regularPriceCents": 3199,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30200322",
@@ -96,7 +224,55 @@
       "regularPriceCents": 899,
       "discounted": false,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-25659",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "White",
+      "name": "White Claw Hard Seltzer Variety 24pk 12oz Can",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 3199,
+      "regularPriceCents": 3599,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-2400",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Angry",
+      "name": "Angry Orchard Crisp Apple 12pk 12oz Btl 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2199,
+      "discounted": true,
+      "discountPct": 9,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-7023",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Coors",
+      "name": "Coors Light 30pk 12oz Can 4.2% ABV",
+      "upc": null,
+      "packCount": 30,
+      "packUnitMl": 355,
+      "priceCents": 2399,
+      "regularPriceCents": 2599,
+      "discounted": true,
+      "discountPct": 8,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2409589",
@@ -112,7 +288,23 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-10583",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Michelob",
+      "name": "Michelob Ultra 24pk 12oz Can 4.2% ABV",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2399,
+      "regularPriceCents": 2499,
+      "discounted": true,
+      "discountPct": 4,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30600919",
@@ -128,7 +320,7 @@
       "regularPriceCents": 350,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-31026409",
@@ -144,7 +336,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-31200192",
@@ -160,7 +352,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2409471",
@@ -176,7 +368,23 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-10603",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Modelo",
+      "name": "Modelo Especial Single 24oz Can 4.4% ABV",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 710,
+      "priceCents": 399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30580021",
@@ -192,7 +400,7 @@
       "regularPriceCents": 400,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30005679",
@@ -208,7 +416,7 @@
       "regularPriceCents": 429,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30309001",
@@ -224,7 +432,7 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30001458",
@@ -240,7 +448,71 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-302781",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "2",
+      "name": "2 Towns The Bad Apple Cider 19.2oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 499,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-26797",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Guinness",
+      "name": "Guinness Zero Draught Non-Alcoholic 4pk 14.9oz Can",
+      "upc": null,
+      "packCount": 4,
+      "packUnitMl": 441,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-26784",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Beck's",
+      "name": "Beck's Non-Alcoholic Beer 6pk 12oz Btl",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-108190",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Corona",
+      "name": "Corona Non-Alcoholic 6pk 12oz Btl 0.5% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30400853",
@@ -256,7 +528,23 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-13155",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Heineken",
+      "name": "Heineken 0.0 6pk 12oz Btl 0.0% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2399824",
@@ -272,7 +560,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2399826",
@@ -288,7 +576,39 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-4911",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Modelo",
+      "name": "Modelo Especial 6pk 12oz Btl 4.4% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-6291",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Angry",
+      "name": "Angry Orchard Crisp Apple 6pk 12oz Btl 5.0% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30170264",
@@ -304,7 +624,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30013798",
@@ -320,7 +640,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30095765",
@@ -336,7 +656,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30099919",
@@ -352,7 +672,39 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-196115",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Blue",
+      "name": "Blue Moon Non-Alcoholic Belgian Style 6pk 12oz Can",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-23333",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "ACE",
+      "name": "ACE Cider Pineapple 6 pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30211392",
@@ -368,7 +720,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30071105",
@@ -384,7 +736,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10300011",
@@ -400,7 +752,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10200360",
@@ -416,7 +768,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30743788",
@@ -432,7 +784,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30009658",
@@ -448,7 +800,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30000994",
@@ -464,7 +816,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-32500021",
@@ -480,7 +832,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30299059",
@@ -496,7 +848,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2400224",
@@ -512,7 +864,39 @@
       "regularPriceCents": 1349,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-24244",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Golden",
+      "name": "Golden State Cider Brut 4pk 16oz Can 6.9% ABV",
+      "upc": null,
+      "packCount": 4,
+      "packUnitMl": 473,
+      "priceCents": 1399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-24272",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Golden",
+      "name": "Golden State Cider Mighty Dry 4pk 16oz Can 6.3% ABV",
+      "upc": null,
+      "packCount": 4,
+      "packUnitMl": 473,
+      "priceCents": 1399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30276506",
@@ -528,7 +912,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30203005",
@@ -544,7 +928,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30023098",
@@ -560,7 +944,23 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-16449",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Schilling",
+      "name": "Schilling Cider Excelsior Imperial Apple 6pk 12oz Can 8.4% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10200522",
@@ -576,7 +976,23 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-113656",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "2",
+      "name": "2 Towns Ciderhouse Cosmic Crisp 6pk 12oz Can 8.0% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1499,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30023681",
@@ -592,7 +1008,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30010177",
@@ -608,7 +1024,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2407715",
@@ -624,7 +1040,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-31200013",
@@ -640,7 +1056,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-32200109",
@@ -656,7 +1072,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30977433",
@@ -672,7 +1088,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30532082",
@@ -688,7 +1104,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30016928",
@@ -704,7 +1120,23 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-243311",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Zero 12pk 12oz Can",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1599,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30098622",
@@ -720,7 +1152,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30005382",
@@ -736,7 +1168,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30600437",
@@ -752,7 +1184,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2400332",
@@ -768,7 +1200,7 @@
       "regularPriceCents": 1799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30103697",
@@ -784,7 +1216,39 @@
       "regularPriceCents": 1899,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-57261",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Athletic",
+      "name": "Athletic Brewing Co. Run Wild IPA Non-Alcoholic (12PKC 12 OZ)",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
+    },
+    {
+      "id": "bevmo-26373",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Topo",
+      "name": "Topo Chico Hard Seltzer Variety Pack 12pk 12oz Can 4.7% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10200059",
@@ -800,7 +1264,7 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30015739",
@@ -816,7 +1280,7 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30006547",
@@ -832,7 +1296,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-2403299",
@@ -848,7 +1312,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30703044",
@@ -864,7 +1328,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30001244",
@@ -880,7 +1344,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30009762",
@@ -896,7 +1360,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30174668",
@@ -912,7 +1376,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30000470",
@@ -928,7 +1392,7 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-30400017",
@@ -944,7 +1408,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10200374",
@@ -960,7 +1424,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     },
     {
       "id": "raleys-10200449",
@@ -976,7 +1440,7 @@
       "regularPriceCents": 2799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:18:44.594Z"
+      "observedAt": "2026-05-05T23:38:56.532Z"
     }
   ]
 }
