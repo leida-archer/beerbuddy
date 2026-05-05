@@ -1,26 +1,33 @@
 /**
  * Raley's adapter — implements `Adapter` from ../../contract.ts.
  *
- * Strategy (per /design-consultation web audit + /plan-eng-review
- * Issues 1A/3A/4A):
+ * Strategy (verified 2026-05-05 via discover:raleys):
  *
- *   1. Fetch the wine-beer-spirits sitemap (PMC18). Pure HTTP fetch,
- *      allowed by robots.txt. Returns the canonical product list.
- *   2. Open Playwright Chromium, navigate to the category page.
- *   3. Scroll to load all products, extract one record per card.
- *   4. Reconcile against the sitemap: every sitemap product not
- *      seen on the page is a parse failure (rendering bug or
- *      out-of-stock).
- *   5. Sanity-check each price against the most-recent stored value;
- *      route glitches to quarantine_events.
+ *   1. Fetch the homepage HTML once and extract the Next.js buildId
+ *      from the embedded `__NEXT_DATA__` script tag. ~80 ms.
+ *   2. Fetch the wine-beer-spirits sitemap (PMC18 by default) for the
+ *      canonical product list. ~800 ms for 5,679 products.
+ *   3. For each product, fetch /_next/data/{buildId}/en/product/{id}/
+ *      {slug}.json with limited concurrency. Each fetch is ~50-300 ms.
+ *      With concurrency of 10, total is ~3-5 minutes for the full
+ *      catalog. Beer-only (PMC147) is much smaller — likely <1 min.
+ *   4. Parse each response (Commercetools shape) → RaleysProduct.
+ *   5. Sanity-check vs. most recent stored price; route glitches to
+ *      quarantine_events.
  *   6. Persist via writePriceEvent (idempotent — no-op if unchanged).
  *
- * Tentative selector / DOM assumptions are documented inline. They
- * will be tightened once the discovery script (scripts/raleys-
- * discover.ts) captures a real fixture and we can verify against it.
+ * Why JSON over Playwright (per /design-consultation web audit):
+ *   - 30x faster per ingestion run
+ *   - Returns structured UPC for cross-chain product matching
+ *   - Returns structured pack-count and serving size (no slug parsing)
+ *   - Returns explicit discount field (no DOM heuristics)
+ *   - Allowed by robots.txt (only /api/, /account/, /customer/ blocked;
+ *     /_next/data/ is not disallowed)
+ *
+ * Playwright path remains in extract.ts for the discovery script and
+ * as a fallback if Raley's restructures the JSON. Not used by the
+ * adapter under normal operation.
  */
-
-import { chromium, type Browser } from "playwright";
 
 import type { Adapter, AdapterDeps, AdapterRun } from "../../contract";
 import { isPriceSane } from "../../sanity";
@@ -29,163 +36,194 @@ import {
   writePriceEvent,
   writeQuarantine,
 } from "../../persist";
-import { extractProducts, scrollUntilStable } from "./extract";
-import { fetchRaleysProductSitemap } from "./sitemap";
+import { fetchRaleysBuildId } from "./buildId";
+import { fetchProductJson, type RaleysProduct } from "./productJson";
+import { fetchRaleysProductSitemap, type SitemapProduct } from "./sitemap";
 
-/** Until product alias mapping lands (Week 5), Raley's writes events
- * keyed on a deterministic `canonical_product_id` derived from the
- * Raley's ID. Once the alias workflow is in, this lookup goes
- * through `product_aliases.chain_sku → canonical_product_id`. */
 const RALEYS_STORE_ID = "raleys-grass-valley";
-const RALEYS_CATEGORY_URL =
-  "https://www.raleys.com/category/PMC18/wine-beer-spirits";
+/** Beer-only category. Wine-beer-spirits (PMC18) is the broader catalog. */
+const DEFAULT_PMC_ID = 147;
+/** Concurrency for the per-product JSON fetches. Higher = faster but
+ * risks rate-limiting. 10 is a balance: ~3 min for ~6k products,
+ * ~30 sec for the ~600 beer-only catalog. */
+const FETCH_CONCURRENCY = 10;
+/** Pause between fetches per worker, ms. Politeness throttle. */
+const PER_FETCH_DELAY_MS = 50;
 
-export const raleysAdapter: Adapter = {
-  sourceId: "raleys",
+export interface RaleysAdapterOptions {
+  /** PMC category ID. 18 = wine+beer+spirits, 147 = beer only. */
+  pmcId?: number;
+  /** Cap concurrent product-JSON fetches. */
+  concurrency?: number;
+}
 
-  async run(deps: AdapterDeps): Promise<AdapterRun> {
-    const startedAt = new Date();
-    const t0 = Date.now();
+export function makeRaleysAdapter(options: RaleysAdapterOptions = {}): Adapter {
+  const pmcId = options.pmcId ?? DEFAULT_PMC_ID;
+  const concurrency = options.concurrency ?? FETCH_CONCURRENCY;
 
-    const run: AdapterRun = {
-      sourceId: "raleys",
-      runStartedAt: startedAt,
-      productsObserved: 0,
-      pricesWritten: 0,
-      parseFailures: [],
-      fetchErrors: [],
-      durationMs: 0,
-    };
+  return {
+    sourceId: "raleys",
 
-    deps.logger.info("raleys: fetching sitemap (PMC18 wine-beer-spirits)");
-    let sitemap;
-    try {
-      sitemap = await fetchRaleysProductSitemap({ fetch: deps.fetch });
-    } catch (err) {
-      run.fetchErrors.push({
-        url: "https://www.raleys.com/sitemap/products/PMC18/products-sitemap.xml",
-        status: err instanceof Error ? err.message : String(err),
-        message: "Sitemap fetch failed — adapter cannot enumerate products.",
-      });
-      run.durationMs = Date.now() - t0;
-      return run;
-    }
-    deps.logger.info(`raleys: sitemap returned ${sitemap.length} products`);
+    async run(deps: AdapterDeps): Promise<AdapterRun> {
+      const startedAt = new Date();
+      const t0 = Date.now();
+      const run: AdapterRun = {
+        sourceId: "raleys",
+        runStartedAt: startedAt,
+        productsObserved: 0,
+        pricesWritten: 0,
+        parseFailures: [],
+        fetchErrors: [],
+        durationMs: 0,
+      };
 
-    let browser: Browser | null = null;
-    try {
-      browser = await chromium.launch({ headless: true });
-      const context = await browser.newContext({
-        userAgent:
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        viewport: { width: 1280, height: 1600 },
-      });
-      const page = await context.newPage();
-
-      deps.logger.info(`raleys: navigating to ${RALEYS_CATEGORY_URL}`);
-      const response = await page.goto(RALEYS_CATEGORY_URL, {
-        waitUntil: "domcontentloaded",
-        timeout: 30_000,
-      });
-      if (!response || !response.ok()) {
+      // 1. Discover buildId.
+      let buildId: string;
+      try {
+        buildId = await fetchRaleysBuildId({ fetch: deps.fetch });
+        deps.logger.info("raleys: discovered buildId", { buildId });
+      } catch (err) {
         run.fetchErrors.push({
-          url: RALEYS_CATEGORY_URL,
-          status: response?.status() ?? "no-response",
-          message: "Category page navigation did not return 2xx.",
+          url: "https://www.raleys.com/",
+          status: err instanceof Error ? err.name : "unknown",
+          message: err instanceof Error ? err.message : String(err),
         });
         run.durationMs = Date.now() - t0;
         return run;
       }
 
-      // Wait briefly for client-side rendering. Raley's hydrates quickly
-      // for category pages but we give it room.
-      await page.waitForTimeout(2_000);
-
-      const visibleAfterScroll = await scrollUntilStable(page);
-      deps.logger.info(
-        `raleys: ${visibleAfterScroll} product anchors after scroll-to-stable`,
-      );
-
-      const scraped = await extractProducts(page);
-      run.productsObserved = scraped.length;
-      deps.logger.info(`raleys: extracted ${scraped.length} cards`);
-
-      const sitemapById = new Map(sitemap.map((s) => [s.raleysId, s]));
-
-      for (const product of scraped) {
-        if (product.priceCents == null) {
-          run.parseFailures.push({
-            rawSnippet: `id=${product.raleysId} name="${product.name}" raw="${product.rawPriceText}"`,
-            reason: "price not found in card text",
-            sourceLocation: `/product/${product.raleysId}/${product.slug}`,
-          });
-          continue;
-        }
-
-        // Until alias mapping lands, derive a synthetic canonical
-        // product ID from the Raley's ID. This will be replaced by
-        // a real lookup against product_aliases in Week 5.
-        const canonicalProductId = Number.parseInt(product.raleysId, 10);
-        if (!Number.isFinite(canonicalProductId)) {
-          run.parseFailures.push({
-            rawSnippet: `id=${product.raleysId}`,
-            reason: "Raley's ID is not numeric — cannot derive canonical_product_id",
-          });
-          continue;
-        }
-
-        const prior = await getMostRecentPrice(
-          RALEYS_STORE_ID,
-          canonicalProductId,
+      // 2. Fetch sitemap.
+      let sitemap: SitemapProduct[];
+      try {
+        sitemap = await fetchRaleysProductSitemap({ pmcId, fetch: deps.fetch });
+        deps.logger.info(
+          `raleys: sitemap returned ${sitemap.length} products in PMC${pmcId}`,
         );
-        const verdict = isPriceSane(prior, product.priceCents);
-        if (!verdict.ok) {
-          await writeQuarantine({
-            storeId: RALEYS_STORE_ID,
-            rawProductIdentifier: `raleys/${product.raleysId}`,
-            attemptedPriceCents: product.priceCents,
-            priorPriceCents: prior,
-            reason: verdict.reason,
-            rawSnippet: `name="${product.name}" raw="${product.rawPriceText}"`,
-          });
-          continue;
-        }
-
-        const wrote = await writePriceEvent({
-          storeId: RALEYS_STORE_ID,
-          canonicalProductId,
-          priceCents: product.priceCents,
-          wasPriceCents: product.wasPriceCents ?? undefined,
-          source: "raleys",
+      } catch (err) {
+        run.fetchErrors.push({
+          url: `https://www.raleys.com/sitemap/products/PMC${pmcId}/products-sitemap.xml`,
+          status: err instanceof Error ? err.name : "unknown",
+          message: err instanceof Error ? err.message : String(err),
         });
-        if (wrote) run.pricesWritten += 1;
+        run.durationMs = Date.now() - t0;
+        return run;
       }
 
-      // Reconcile sitemap ⊃ scraped: products present in the canonical
-      // list but missing from the rendered page get a parse failure.
-      const scrapedIds = new Set(scraped.map((s) => s.raleysId));
-      let missing = 0;
-      for (const s of sitemap) {
-        if (!scrapedIds.has(s.raleysId)) missing += 1;
-      }
-      if (missing > 0) {
-        deps.logger.warn(
-          `raleys: ${missing} sitemap products not seen in rendered DOM (lazy-load issue or out of stock)`,
+      // 3. Concurrent product-JSON fetches.
+      const queue: SitemapProduct[] = [...sitemap];
+      let totalAttempted = 0;
+      const workers: Promise<void>[] = [];
+      for (let i = 0; i < concurrency; i++) {
+        workers.push(
+          (async () => {
+            while (queue.length > 0) {
+              const item = queue.shift();
+              if (!item) return;
+              totalAttempted += 1;
+              await processProduct(item, buildId, deps, run);
+              if (PER_FETCH_DELAY_MS > 0) {
+                await new Promise((r) => setTimeout(r, PER_FETCH_DELAY_MS));
+              }
+            }
+          })(),
         );
       }
-    } catch (err) {
-      run.fetchErrors.push({
-        url: RALEYS_CATEGORY_URL,
-        status: err instanceof Error ? err.name : "unknown",
-        message: err instanceof Error ? err.message : String(err),
-      });
-    } finally {
-      if (browser) await browser.close();
-    }
+      await Promise.all(workers);
+      run.productsObserved = totalAttempted;
 
-    run.durationMs = Date.now() - t0;
-    return run;
-  },
-};
+      deps.logger.info(`raleys: run complete`, {
+        attempted: totalAttempted,
+        written: run.pricesWritten,
+        parseFailures: run.parseFailures.length,
+        fetchErrors: run.fetchErrors.length,
+      });
+
+      run.durationMs = Date.now() - t0;
+      return run;
+    },
+  };
+}
+
+/** Default-configured adapter — beer category, default concurrency. */
+export const raleysAdapter: Adapter = makeRaleysAdapter();
 
 export default raleysAdapter;
+
+/**
+ * Fetch one product, sanity-check it, and either persist or quarantine.
+ * All errors mutate `run` rather than throwing — adapter-level promise
+ * never rejects on a single product's failure.
+ */
+async function processProduct(
+  item: SitemapProduct,
+  buildId: string,
+  deps: AdapterDeps,
+  run: AdapterRun,
+): Promise<void> {
+  let product: RaleysProduct;
+  try {
+    product = await fetchProductJson(buildId, item.raleysId, item.slug, {
+      fetch: deps.fetch,
+    });
+  } catch (err) {
+    run.fetchErrors.push({
+      url: `/_next/data/${buildId}/en/product/${item.raleysId}/${item.slug}.json`,
+      status: err instanceof Error ? err.name : "unknown",
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return;
+  }
+
+  // Until product alias mapping lands (Week 5), use the numeric Raley's
+  // ID as the canonical product ID. The alias workflow will replace
+  // this with a UPC-based lookup so cross-chain prices roll up correctly.
+  const canonicalProductId = Number.parseInt(product.raleysId, 10);
+  if (!Number.isFinite(canonicalProductId)) {
+    run.parseFailures.push({
+      rawSnippet: `id=${product.raleysId}`,
+      reason: "raleysId is not numeric — cannot derive canonical_product_id",
+    });
+    return;
+  }
+
+  let prior: number | null = null;
+  try {
+    prior = await getMostRecentPrice(RALEYS_STORE_ID, canonicalProductId);
+  } catch (err) {
+    // DB unreachable. Funnel as fetchError so the run summary surfaces
+    // it; processing continues for other products that may not need DB.
+    run.fetchErrors.push({
+      url: `db:price_events lookup ${canonicalProductId}`,
+      status: err instanceof Error ? err.name : "unknown",
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return;
+  }
+
+  const verdict = isPriceSane(prior, product.priceCents);
+  if (!verdict.ok) {
+    await writeQuarantine({
+      storeId: RALEYS_STORE_ID,
+      rawProductIdentifier: `raleys/${product.raleysId}`,
+      attemptedPriceCents: product.priceCents,
+      priorPriceCents: prior,
+      reason: verdict.reason,
+      rawSnippet: `name="${product.name}" upc=${product.upc ?? "?"}`,
+    });
+    return;
+  }
+
+  const wasPriceCents =
+    product.regularPriceCents != null && product.regularPriceCents !== product.priceCents
+      ? product.regularPriceCents
+      : undefined;
+
+  const wrote = await writePriceEvent({
+    storeId: RALEYS_STORE_ID,
+    canonicalProductId,
+    priceCents: product.priceCents,
+    wasPriceCents,
+    source: "raleys",
+  });
+  if (wrote) run.pricesWritten += 1;
+}
