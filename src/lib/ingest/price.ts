@@ -8,21 +8,37 @@
  * raw row rather than persist a wrong value.
  */
 
-const PRICE_REGEX = /\$?\s*(\d{1,5})(?:[.,](\d{1,2}))?/;
+// A string parses as a price only if it has a `$` prefix OR a clear
+// decimal portion (`.XX`). This filters out incidental numbers in
+// product copy ("Buy 6 Save 10%", "750", "12 Pack") that would
+// otherwise be misread as dollar amounts.
+const WITH_DOLLAR = /\$\s*(\d{1,5})(?:[.,](\d{1,2}))?/;
+const WITH_DECIMAL = /(?:^|\s)(\d{1,5})[.,](\d{2})(?:\s|$|\/|[a-zA-Z])/;
 
 export function parsePrice(raw: string): number | null {
   if (typeof raw !== "string") return null;
   const trimmed = raw.trim();
   if (!trimmed) return null;
 
-  const match = PRICE_REGEX.exec(trimmed);
-  if (!match) return null;
+  const dollarMatch = WITH_DOLLAR.exec(trimmed);
+  if (dollarMatch) {
+    return centsFromMatch(dollarMatch[1], dollarMatch[2]);
+  }
 
-  const dollars = Number.parseInt(match[1], 10);
+  const decimalMatch = WITH_DECIMAL.exec(` ${trimmed} `);
+  if (decimalMatch) {
+    return centsFromMatch(decimalMatch[1], decimalMatch[2]);
+  }
+
+  return null;
+}
+
+function centsFromMatch(dollarsPart: string, centsPart: string | undefined): number | null {
+  const dollars = Number.parseInt(dollarsPart, 10);
   if (!Number.isFinite(dollars)) return null;
 
-  const centsPart = match[2] ?? "00";
-  const cents = Number.parseInt(centsPart.padEnd(2, "0").slice(0, 2), 10);
+  const padded = (centsPart ?? "00").padEnd(2, "0").slice(0, 2);
+  const cents = Number.parseInt(padded, 10);
   if (!Number.isFinite(cents)) return null;
 
   return dollars * 100 + cents;

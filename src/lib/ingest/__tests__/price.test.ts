@@ -9,9 +9,9 @@ describe("parsePrice", () => {
     expect(parsePrice("$22.99")).toBe(2299);
   });
 
-  it("parses without the dollar sign", () => {
+  it("parses a decimal-formatted price without dollar sign", () => {
     expect(parsePrice("13.99")).toBe(1399);
-    expect(parsePrice("17")).toBe(1700);
+    expect(parsePrice("22.99")).toBe(2299);
   });
 
   it("parses with surrounding whitespace", () => {
@@ -24,9 +24,17 @@ describe("parsePrice", () => {
     expect(parsePrice("$13.0")).toBe(1300);
   });
 
-  it("handles missing cents", () => {
+  it("handles missing cents when the dollar sign is present", () => {
     expect(parsePrice("$22")).toBe(2200);
-    expect(parsePrice("22")).toBe(2200);
+  });
+
+  it("rejects bare integers without a dollar sign or decimal", () => {
+    // This is the Raley's bug — "Buy 6" and "750ml" must NOT parse
+    // as $6 / $750 just because they contain a number.
+    expect(parsePrice("Buy 6")).toBeNull();
+    expect(parsePrice("750")).toBeNull();
+    expect(parsePrice("12 pack")).toBeNull();
+    expect(parsePrice("17")).toBeNull();
   });
 
   it("returns null on garbage", () => {
@@ -43,6 +51,12 @@ describe("parsePrice", () => {
   it("ignores trailing junk after a valid price", () => {
     expect(parsePrice("$13.99 each")).toBe(1399);
     expect(parsePrice("$13.99/12-pack")).toBe(1399);
+  });
+
+  it("ignores per-unit prices when the dollar version comes first", () => {
+    // Real Raley's pattern: "$22.99 ... $0.16 / oz" — the headline
+    // price is $22.99; the per-oz figure must not win.
+    expect(parsePrice("$22.99 ... $0.16 / oz")).toBe(2299);
   });
 
   it("rejects non-string input", () => {

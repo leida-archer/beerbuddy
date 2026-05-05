@@ -26,26 +26,58 @@
 import fs from "node:fs/promises";
 import { chromium } from "playwright";
 
-import { extractProducts, scrollUntilStable } from "@/lib/ingest/adapters/raleys/extract";
+import { extractProducts, loadAllPages } from "@/lib/ingest/adapters/raleys/extract";
 import { fetchRaleysProductSitemap } from "@/lib/ingest/adapters/raleys/sitemap";
 
 interface Flags {
   headed: boolean;
   pmcId: number;
   slow: boolean;
+  /** Cap on how many Load More clicks to do during discovery. Default 5
+   * — enough to verify pagination works without a full ~190-click run. */
+  loadMoreCap: number;
 }
 
+// XHRs we don't care about — filter out before reporting so the
+// signal-to-noise of the diagnostic JSON is high.
+const NOISE_HOSTS = [
+  "google.com",
+  "googletagmanager.com",
+  "gstatic.com",
+  "pinterest.com",
+  "doubleclick.net",
+  "facebook.com",
+  "facebook.net",
+  "applicationinsights.azure.com",
+  "monitor.azure.com",
+  "ads.nextdoor.com",
+];
+
+const NOISE_PATHS = ["/api/auth/csrf", "/recaptcha"];
+
 function parseFlags(argv: string[]): Flags {
-  const flags: Flags = { headed: false, pmcId: 18, slow: false };
+  const flags: Flags = { headed: false, pmcId: 18, slow: false, loadMoreCap: 5 };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--headed") flags.headed = true;
     else if (arg === "--slow") flags.slow = true;
     else if (arg === "--pmc" && argv[i + 1]) {
       flags.pmcId = Number.parseInt(argv[++i], 10);
+    } else if (arg === "--load-more" && argv[i + 1]) {
+      flags.loadMoreCap = Number.parseInt(argv[++i], 10);
     }
   }
   return flags;
+}
+
+function isNoise(url: string): boolean {
+  for (const host of NOISE_HOSTS) {
+    if (url.includes(host)) return true;
+  }
+  for (const path of NOISE_PATHS) {
+    if (url.includes(path)) return true;
+  }
+  return false;
 }
 
 async function main() {
@@ -81,14 +113,28 @@ async function main() {
   const url = `https://www.raleys.com/category/PMC${flags.pmcId}/wine-beer-spirits`;
 
   // Capture network signals so we can spot what API endpoints fire.
-  const xhrUrls: Array<{ method: string; url: string; status: number | null }> = [];
+  // Tag each XHR with whether it happened before vs. after Load More
+  // so we can isolate the actual product-fetch endpoint.
+  let phase: "initial" | "loadmore" = "initial";
+  const xhrUrls: Array<{
+    phase: "initial" | "loadmore";
+    method: string;
+    url: string;
+    status: number | null;
+    contentType: string;
+  }> = [];
   page.on("response", (resp) => {
+    const url = resp.url();
+    if (isNoise(url)) return;
     const ct = resp.headers()["content-type"] ?? "";
-    if (ct.includes("json") || resp.url().includes("/api")) {
+    const looksApiy = ct.includes("json") || url.includes("/api") || url.includes("resourceapi") || url.includes("graphql");
+    if (looksApiy) {
       xhrUrls.push({
+        phase,
         method: resp.request().method(),
-        url: resp.url(),
+        url,
         status: resp.status(),
+        contentType: ct,
       });
     }
   });
@@ -105,9 +151,34 @@ async function main() {
 
   await page.waitForTimeout(2_000);
 
-  // Step 3: scroll-to-stable and count anchors.
-  const visibleAfter = await scrollUntilStable(page);
-  console.log(`[discover] product anchors after scroll-to-stable: ${visibleAfter}`);
+  // Count anchors at initial render before triggering pagination.
+  const initialCount = await page.evaluate(() => {
+    const RE = /^\/product\/(\d+)/;
+    const seen = new Set<string>();
+    document.querySelectorAll('a[href^="/product/"]').forEach((a) => {
+      const m = RE.exec(a.getAttribute("href") ?? "");
+      if (m) seen.add(m[1]);
+    });
+    return seen.size;
+  });
+  console.log(`[discover] initial anchor count: ${initialCount}`);
+
+  // Step 3: trigger Load More to find the pagination XHR.
+  phase = "loadmore";
+  console.log(`[discover] clicking Load More up to ${flags.loadMoreCap} times…`);
+  const clicks = await loadAllPages(page, { maxClicks: flags.loadMoreCap });
+  await page.waitForTimeout(800);
+
+  const visibleAfter = await page.evaluate(() => {
+    const RE = /^\/product\/(\d+)/;
+    const seen = new Set<string>();
+    document.querySelectorAll('a[href^="/product/"]').forEach((a) => {
+      const m = RE.exec(a.getAttribute("href") ?? "");
+      if (m) seen.add(m[1]);
+    });
+    return seen.size;
+  });
+  console.log(`[discover] anchors after ${clicks} Load More clicks: ${visibleAfter}`);
 
   // Step 4: extract products and report.
   const scraped = await extractProducts(page);
@@ -128,6 +199,10 @@ async function main() {
   const html = await page.content();
   await fs.writeFile(`${outBase}.html`, html);
   await page.screenshot({ path: `${outBase}.png`, fullPage: true });
+  // Group XHRs by phase so we can see what the Load More click triggered.
+  const initialXhrs = xhrUrls.filter((x) => x.phase === "initial");
+  const loadmoreXhrs = xhrUrls.filter((x) => x.phase === "loadmore");
+
   await fs.writeFile(
     `${outBase}.json`,
     JSON.stringify(
@@ -135,16 +210,31 @@ async function main() {
         url,
         navStatus: response?.status() ?? null,
         sitemapCount: sitemap.length,
-        anchorsAfterScroll: visibleAfter,
+        initialAnchorCount: initialCount,
+        loadMoreClicks: clicks,
+        anchorsAfterLoadMore: visibleAfter,
         cardsExtracted: scraped.length,
         cardsWithPrice: withPrice,
         firstFiveCards: scraped.slice(0, 5),
-        xhrSeen: xhrUrls.slice(0, 30),
+        xhrCounts: {
+          initial: initialXhrs.length,
+          loadmore: loadmoreXhrs.length,
+        },
+        xhrInitial: initialXhrs,
+        xhrLoadMore: loadmoreXhrs,
       },
       null,
       2,
     ),
   );
+
+  console.log(`[discover] XHR counts — initial: ${initialXhrs.length}, after Load More: ${loadmoreXhrs.length}`);
+  if (loadmoreXhrs.length > 0) {
+    console.log(`[discover] XHRs triggered by Load More (most likely product endpoint):`);
+    for (const x of loadmoreXhrs.slice(0, 10)) {
+      console.log(`           ${x.status} ${x.method} ${x.url.slice(0, 130)}`);
+    }
+  }
 
   console.log(`\n[discover] DONE`);
   console.log(`[discover]   HTML        ${outBase}.html`);
