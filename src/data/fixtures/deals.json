@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T23:38:56.532Z",
+  "generatedAt": "2026-05-05T23:53:19.435Z",
   "stores": [
     {
       "id": "raleys-grass-valley",
@@ -10,14 +10,36 @@
       "id": "bevmo-auburn",
       "name": "BevMo",
       "city": "Auburn"
+    },
+    {
+      "id": "holiday-market-penn-valley",
+      "name": "Holiday Market",
+      "city": "Penn Valley"
     }
   ],
   "counts": {
     "raleys": 60,
     "bevmo": 29,
-    "total": 89
+    "holiday": 50,
+    "total": 139
   },
   "deals": [
+    {
+      "id": "holiday-b36d37d7",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Firestone",
+      "name": "Firestone Walker 805 Beer 12 Oz - 12 Bottles",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 355,
+      "priceCents": 1899,
+      "regularPriceCents": 2399,
+      "discounted": true,
+      "discountPct": 21,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
     {
       "id": "raleys-30300468",
       "storeId": "raleys-grass-valley",
@@ -32,7 +54,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2410418",
@@ -48,7 +70,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30025891",
@@ -64,7 +86,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30188327",
@@ -80,7 +102,71 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": 18,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-a7793a09",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Long",
+      "name": "Long Drink Strong 19.2Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 499,
+      "regularPriceCents": 599,
+      "discounted": true,
+      "discountPct": 17,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-61eb50d2",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Keystone",
+      "name": "Keystone Light Beer 15 - 12 Oz Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 355,
+      "priceCents": 1099,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 15,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-e858f6b4",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Farmer",
+      "name": "Farmer Brewing Farmers Lt 12Pk",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1699,
+      "regularPriceCents": 1999,
+      "discounted": true,
+      "discountPct": 15,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-324961a8",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Arnold",
+      "name": "Arnold Palmer Spiked Half & Half Original Beer 24 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 349,
+      "regularPriceCents": 399,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-13731",
@@ -96,7 +182,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-13321",
@@ -112,7 +198,39 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-45c16572",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw Hard Seltzer Variety Pack No.1 12Pk",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-459d34f0",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw Hard Seltzer Variety Pack No.3 12Pk",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-41701",
@@ -128,7 +246,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-7680",
@@ -144,7 +262,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-44362",
@@ -160,7 +278,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-198224",
@@ -176,7 +294,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-11057",
@@ -192,7 +310,7 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-31891",
@@ -208,7 +326,7 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30200322",
@@ -224,7 +342,87 @@
       "regularPriceCents": 899,
       "discounted": false,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-02e5bb00",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Superior Light Beer Can 12 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1599,
+      "regularPriceCents": 1799,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-673aa97f",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Bud",
+      "name": "Bud Light 30X12 Oz Can Twinstack Carrier",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 355,
+      "priceCents": 2499,
+      "regularPriceCents": 2799,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-3ec35a49",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Budweiser",
+      "name": "Budweiser",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2499,
+      "regularPriceCents": 2799,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-afd6e5ac",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Banquet American Lager Beer",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2499,
+      "regularPriceCents": 2799,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-f67c00d4",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light Beer, American Light Lager Beer, 4.2% Abv, 30-Pack, 12-Oz Beer Cans",
+      "upc": null,
+      "packCount": 30,
+      "packUnitMl": null,
+      "priceCents": 2499,
+      "regularPriceCents": 2799,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-25659",
@@ -240,7 +438,87 @@
       "regularPriceCents": 3599,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-ab393a1b",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light Beer 6 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": 999,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-f4d413e9",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light American-Style Light Lager Beer, 4.2% Abv, 18-Pack, 12-Oz. Cans",
+      "upc": null,
+      "packCount": 18,
+      "packUnitMl": null,
+      "priceCents": 1799,
+      "regularPriceCents": 1999,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-125c5ea4",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light Beer 18 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1799,
+      "regularPriceCents": 1999,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-50d1b49d",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Corona",
+      "name": "Corona Extra Mexican Lager Beer, 12 Pk 12 Fl Oz Bottles, 4.6% Abv",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1799,
+      "regularPriceCents": 1999,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-871892b6",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Superior Light Beer 6 - 12 Fl Oz Bottles",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 999,
+      "regularPriceCents": 1099,
+      "discounted": true,
+      "discountPct": 9,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-2400",
@@ -256,7 +534,71 @@
       "regularPriceCents": 2199,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-8b647c28",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Corona",
+      "name": "Corona Extra Mexican Lager Beer, 6 Pk 12 Fl Oz Bottles, 4.6% Abv",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": 1199,
+      "discounted": true,
+      "discountPct": 8,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-97fde8f0",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Fall",
+      "name": "Fall River Hexagenia Ipa",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 8,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-bfd9f984",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Fall",
+      "name": "Fall River Lazy Hazy Ipa",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 8,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-1dcece48",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Fall",
+      "name": "Fall River Numb Numb Juice",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 8,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-7023",
@@ -272,7 +614,167 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-46113c56",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Budweiser",
+      "name": "Budweiser Lager Beer 25 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 739,
+      "priceCents": 279,
+      "regularPriceCents": 299,
+      "discounted": true,
+      "discountPct": 7,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-2e436772",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Banquet 12 Pack Beer 12 Ea",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": 1399,
+      "discounted": true,
+      "discountPct": 7,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-bbdc4643",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Golden Banquet Beer 12 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": 1399,
+      "discounted": true,
+      "discountPct": 7,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-f3264e43",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light American-Style Light Lager Beer",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": 1399,
+      "discounted": true,
+      "discountPct": 7,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-24203a82",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw Surge Blueberry 19.2Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 379,
+      "regularPriceCents": 399,
+      "discounted": true,
+      "discountPct": 5,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-4828b88a",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Modelo",
+      "name": "Modelo Especial Mexican Lager Beer, 6 Pk 12 Fl Oz Bottles, 4.4% Abv",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 999,
+      "regularPriceCents": 1049,
+      "discounted": true,
+      "discountPct": 5,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-d2e68ef6",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Modelo",
+      "name": "Modelo Especial Beer 12 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1799,
+      "regularPriceCents": 1899,
+      "discounted": true,
+      "discountPct": 5,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-4278a1c9",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Pale Ale 12-Pack 12Oz Bottles",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2099,
+      "discounted": true,
+      "discountPct": 5,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-579b2981",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Pale Ale 12-Pack 12Oz Cans",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2099,
+      "discounted": true,
+      "discountPct": 5,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-444fe49f",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Keystone",
+      "name": "Keystone Light Beer 30 - 12 Fl Oz Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 4,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2409589",
@@ -288,7 +790,7 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-10583",
@@ -304,7 +806,183 @@
       "regularPriceCents": 2499,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-c7f2904e",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Superior Light Beer 24 - 12 Fl Oz Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2599,
+      "regularPriceCents": 2699,
+      "discounted": true,
+      "discountPct": 4,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-4751a7d6",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Banquet Beer 24 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-0ab2aea2",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Coors",
+      "name": "Coors Light American Light Lager Beer Single Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-03d784ee",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Bud",
+      "name": "Bud Chelada 25Oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 739,
+      "priceCents": 319,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-43e0474a",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Bud",
+      "name": "Bud Light Chelada Beer 25 Fl Oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 319,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-0a440eda",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Miller",
+      "name": "Miller High Life Beer 32 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 946,
+      "priceCents": 319,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-97771fe4",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Foster's",
+      "name": "Foster's Lager Beer 25.4 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 751,
+      "priceCents": 329,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-09a8124a",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Foster's",
+      "name": "Foster's Premium Ale Beer 25.4 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 751,
+      "priceCents": 329,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-198057b2",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Atomic Torpedo West Coast Juicy Ipa Craft Beer 19.2Oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 349,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-3ff45b1a",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Big Little Thing Hazy Imperial Ipa Craft Beer 19.2Oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 349,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-3690c555",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Ipa Hazy Little Thing Beer 19.2 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 349,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30600919",
@@ -320,7 +998,7 @@
       "regularPriceCents": 350,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-31026409",
@@ -336,7 +1014,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-31200192",
@@ -352,7 +1030,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2409471",
@@ -368,7 +1046,39 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-76b91558",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Mike's",
+      "name": "Mike's Premium Lemonade Malt Beverage 23.5 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-8c19459e",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Modelo",
+      "name": "Modelo Chelada Especial Mexican Import Flavored Beer",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-10603",
@@ -384,7 +1094,39 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-b584f84e",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Smirnoff",
+      "name": "Smirnoff Ice Smash Peach + Mango Beer 23.5 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 695,
+      "priceCents": 399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-eecf6b94",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw Hard Seltzer Black Cherry 19.2Oz Can",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 399,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30580021",
@@ -400,7 +1142,7 @@
       "regularPriceCents": 400,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30005679",
@@ -416,7 +1158,7 @@
       "regularPriceCents": 429,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30309001",
@@ -432,7 +1174,7 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30001458",
@@ -448,7 +1190,7 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-302781",
@@ -464,7 +1206,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-26797",
@@ -480,7 +1222,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-a2355e33",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Guinness",
+      "name": "Guinness Draught Stout Beer 4 - 14.9 Fl Oz Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 979,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-26784",
@@ -496,7 +1254,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-108190",
@@ -512,7 +1270,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30400853",
@@ -528,7 +1286,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-13155",
@@ -544,7 +1302,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2399824",
@@ -560,7 +1318,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2399826",
@@ -576,7 +1334,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-4911",
@@ -592,7 +1350,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-ba148ded",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "Pacifico",
+      "name": "Pacifico Clara Beer 6 - 12 Fl Oz Bottles",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-6291",
@@ -608,7 +1382,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30170264",
@@ -624,7 +1398,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30013798",
@@ -640,7 +1414,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30095765",
@@ -656,7 +1430,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30099919",
@@ -672,7 +1446,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-196115",
@@ -688,7 +1462,39 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-7701f9f4",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw 6 Pack Spiked Raspberry Hard Seltzer 6 Ea",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
+    },
+    {
+      "id": "holiday-c75a9fde",
+      "storeId": "holiday-market-penn-valley",
+      "storeName": "Holiday Market",
+      "storeCity": "Penn Valley",
+      "brand": "White",
+      "name": "White Claw Hard Seltzer Black Cherry Hard Seltzer 6 - 12 Fl Oz Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-23333",
@@ -704,7 +1510,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30211392",
@@ -720,7 +1526,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30071105",
@@ -736,7 +1542,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10300011",
@@ -752,7 +1558,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10200360",
@@ -768,7 +1574,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30743788",
@@ -784,7 +1590,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30009658",
@@ -800,7 +1606,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30000994",
@@ -816,7 +1622,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-32500021",
@@ -832,7 +1638,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30299059",
@@ -848,7 +1654,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2400224",
@@ -864,7 +1670,7 @@
       "regularPriceCents": 1349,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-24244",
@@ -880,7 +1686,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-24272",
@@ -896,7 +1702,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30276506",
@@ -912,7 +1718,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30203005",
@@ -928,7 +1734,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30023098",
@@ -944,7 +1750,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-16449",
@@ -960,7 +1766,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10200522",
@@ -976,7 +1782,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-113656",
@@ -992,7 +1798,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30023681",
@@ -1008,7 +1814,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30010177",
@@ -1024,7 +1830,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2407715",
@@ -1040,7 +1846,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-31200013",
@@ -1056,7 +1862,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-32200109",
@@ -1072,7 +1878,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30977433",
@@ -1088,7 +1894,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30532082",
@@ -1104,7 +1910,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30016928",
@@ -1120,7 +1926,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-243311",
@@ -1136,7 +1942,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30098622",
@@ -1152,7 +1958,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30005382",
@@ -1168,7 +1974,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30600437",
@@ -1184,7 +1990,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2400332",
@@ -1200,7 +2006,7 @@
       "regularPriceCents": 1799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30103697",
@@ -1216,7 +2022,7 @@
       "regularPriceCents": 1899,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-57261",
@@ -1232,7 +2038,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "bevmo-26373",
@@ -1248,7 +2054,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10200059",
@@ -1264,7 +2070,7 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30015739",
@@ -1280,7 +2086,7 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30006547",
@@ -1296,7 +2102,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-2403299",
@@ -1312,7 +2118,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30703044",
@@ -1328,7 +2134,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30001244",
@@ -1344,7 +2150,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30009762",
@@ -1360,7 +2166,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30174668",
@@ -1376,7 +2182,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30000470",
@@ -1392,7 +2198,7 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-30400017",
@@ -1408,7 +2214,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10200374",
@@ -1424,7 +2230,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     },
     {
       "id": "raleys-10200449",
@@ -1440,7 +2246,7 @@
       "regularPriceCents": 2799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:38:56.532Z"
+      "observedAt": "2026-05-05T23:53:19.435Z"
     }
   ]
 }

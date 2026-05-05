@@ -13,6 +13,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { extractBevmoBeerProducts } from "@/lib/ingest/adapters/bevmo/extract";
+import { extractHolidayBeerProducts } from "@/lib/ingest/adapters/holiday-market/extract";
 import { fetchRaleysBuildId } from "@/lib/ingest/adapters/raleys/buildId";
 import { fetchProductJson } from "@/lib/ingest/adapters/raleys/productJson";
 import { fetchRaleysProductSitemap } from "@/lib/ingest/adapters/raleys/sitemap";
@@ -37,6 +38,7 @@ interface DealRow {
 const STORES = [
   { id: "raleys-grass-valley", name: "Raley's", city: "Grass Valley" },
   { id: "bevmo-auburn", name: "BevMo", city: "Auburn" },
+  { id: "holiday-market-penn-valley", name: "Holiday Market", city: "Penn Valley" },
 ];
 
 async function buildRaleys(observedAt: string, sampleCount = 60): Promise<DealRow[]> {
@@ -161,12 +163,44 @@ function rowFromBevmo(p: { bevmoId: string; brand: string | null; title: string;
   };
 }
 
+async function buildHoliday(observedAt: string, max = 80): Promise<DealRow[]> {
+  console.log(`[fixtures] holiday: launching Playwright on Penn Valley beer category...`);
+  const products = await extractHolidayBeerProducts();
+  console.log(`[fixtures] holiday: extracted ${products.length} beer products`);
+
+  const sampled = products.slice(0, max);
+  return sampled.map((p) => {
+    const reg = p.regularPriceCents;
+    const discountPct =
+      reg != null && reg > p.priceCents
+        ? Math.round(((reg - p.priceCents) / reg) * 100)
+        : null;
+    const store = STORES[2];
+    return {
+      id: `holiday-${p.id}`,
+      storeId: store.id,
+      storeName: store.name,
+      storeCity: store.city,
+      brand: p.brand,
+      name: p.name,
+      upc: null,
+      packCount: p.packCount,
+      packUnitMl: p.packUnitMl,
+      priceCents: p.priceCents,
+      regularPriceCents: p.regularPriceCents,
+      discounted: reg != null && reg > p.priceCents,
+      discountPct,
+      observedAt,
+    };
+  });
+}
+
 async function main() {
   const t0 = Date.now();
   const observedAt = new Date().toISOString();
   console.log(`[fixtures] starting at ${observedAt}\n`);
 
-  const [raleys, bevmo] = await Promise.all([
+  const [raleys, bevmo, holiday] = await Promise.all([
     buildRaleys(observedAt).catch((err) => {
       console.error(`[fixtures] raleys FAILED: ${err}`);
       return [] as DealRow[];
@@ -175,9 +209,13 @@ async function main() {
       console.error(`[fixtures] bevmo FAILED: ${err}`);
       return [] as DealRow[];
     }),
+    buildHoliday(observedAt).catch((err) => {
+      console.error(`[fixtures] holiday FAILED: ${err}`);
+      return [] as DealRow[];
+    }),
   ]);
 
-  const all: DealRow[] = [...raleys, ...bevmo];
+  const all: DealRow[] = [...raleys, ...bevmo, ...holiday];
 
   // Sort: best discount first, then cheapest, then by name.
   all.sort((a, b) => {
@@ -196,7 +234,12 @@ async function main() {
       {
         generatedAt: observedAt,
         stores: STORES,
-        counts: { raleys: raleys.length, bevmo: bevmo.length, total: all.length },
+        counts: {
+          raleys: raleys.length,
+          bevmo: bevmo.length,
+          holiday: holiday.length,
+          total: all.length,
+        },
         deals: all,
       },
       null,
@@ -205,7 +248,7 @@ async function main() {
   );
 
   console.log(
-    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo) in ${Date.now() - t0} ms`,
+    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo + ${holiday.length} holiday) in ${Date.now() - t0} ms`,
   );
   console.log(`[fixtures] wrote to ${outPath}`);
 }
