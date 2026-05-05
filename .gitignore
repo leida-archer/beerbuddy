@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Local env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Tests
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# tool-stack local state
+.tool-stack/
+
+# Drizzle generated migrations are committed; meta is generated
+drizzle/meta/
+
+# Adapter run artifacts (LLM raw outputs, screenshots, PDFs cached during dev)
+ingest/.cache/
+ingest/.fixtures-tmp/
