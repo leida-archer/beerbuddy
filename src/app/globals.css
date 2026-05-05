@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Golden Hour palette — see DESIGN.md for the full system. */
+:root {
+  --bg: #F4E8CB;
+  --bg-soft: #ECDDB8;
+  --surface: #FFFFFF;
+  --ink: #1F1610;
+  --muted: #7A6855;
+  --rule: #D9C9A4;
+  --rule-soft: #E5D6B2;
+  --warm: #B8651E;
+  --warm-soft: #F0D7B0;
+  --cool: #2D4A3E;
+  --cool-soft: #C8D4CC;
+  --gold: #C8941F;
+  --success: #5C7A2E;
+  --error: #963A2D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1B130C;
+    --bg-soft: #221912;
+    --surface: #28201A;
+    --ink: #F2E5C7;
+    --muted: #A09076;
+    --rule: #3D3122;
+    --rule-soft: #322819;
+    --warm: #DA8943;
+    --warm-soft: #3D2515;
+    --cool: #6FA086;
+    --cool-soft: #1F2D26;
+    --gold: #D4AC4A;
+    --success: #A0BC58;
+    --error: #D26B5C;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--warm-soft);
+  color: var(--ink);
+}
