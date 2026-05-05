@@ -14,7 +14,8 @@
     "test": "vitest",
     "discover:raleys": "bun run scripts/raleys-discover.ts",
     "smoke:raleys": "bun run scripts/raleys-json-smoke.ts",
-    "fixture:raleys": "bun run scripts/raleys-build-fixture.ts"
+    "fixture:raleys": "bun run scripts/raleys-build-fixture.ts",
+    "fixtures": "bun run scripts/build-fixtures.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",

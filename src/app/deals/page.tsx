@@ -28,17 +28,20 @@ export const metadata: Metadata = {
 };
 
 export default async function DealsPage() {
-  const { generatedAt, store, deals } = await getDeals();
+  const { generatedAt, stores, deals } = await getDeals();
   const now = new Date();
+  const storeNames = stores.map((s) => s.name).join(" · ");
 
   return (
     <main className="mx-auto max-w-[480px] min-h-screen px-4 py-6">
-      <header className="flex items-baseline justify-between border-b border-rule pb-3 mb-4">
+      <header className="flex items-baseline justify-between border-b border-rule pb-3 mb-4 gap-3">
         <h1 className="font-display font-medium text-2xl tracking-tight">
           95945 · Grass Valley
         </h1>
-        <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
-          {store.name} · {deals.length} deals
+        <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted text-right">
+          {storeNames}
+          <br />
+          {deals.length} deals
         </div>
       </header>
 
@@ -61,7 +64,21 @@ export default async function DealsPage() {
         ))}
       </ol>
 
-      <footer className="mt-12 pt-4 border-t border-rule text-center font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+      <section className="mt-10 pt-4 border-t border-rule">
+        <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted text-center mb-3">
+          More chains coming
+        </p>
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[12px] text-muted">
+          <li>· Save Mart Nevada City</li>
+          <li>· Grocery Outlet GV</li>
+          <li>· Holiday Market Penn Valley</li>
+          <li>· SPD Grass Valley</li>
+          <li>· Walmart Grass Valley</li>
+          <li>· BevMo Auburn</li>
+        </ul>
+      </section>
+
+      <footer className="mt-10 pt-4 border-t border-rule text-center font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
         Generated {formatRelative(generatedAt, now)} ·{" "}
         prices may vary at point of purchase
       </footer>

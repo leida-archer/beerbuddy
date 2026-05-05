@@ -8,7 +8,7 @@
  * Caller surface (Deal[] shape) is stable across that swap.
  */
 
-import fixture from "@/data/fixtures/raleys-deals.json";
+import fixture from "@/data/fixtures/deals.json";
 
 export interface Deal {
   id: string;
@@ -25,38 +25,30 @@ export interface Deal {
   observedAt: string;
 }
 
+export interface Store {
+  id: string;
+  name: string;
+  city: string;
+}
+
 export interface DealsResult {
   generatedAt: string;
-  store: { id: string; name: string; city: string };
+  stores: Store[];
+  counts: Record<string, number> & { total: number };
   deals: Deal[];
 }
 
 /**
- * Get the deal list. Source: fixture file today, DB matview tomorrow.
- *
- * Sorting: best deal first (largest discount %), then cheapest, then
- * by name. Matches the order produced by the fixture builder.
+ * Get the deal list. Source: combined-fixture file today, DB matview
+ * tomorrow. Already sorted "best deals first" by the fixture builder
+ * (largest discount %, then cheapest, then by name).
  */
 export async function getDeals(): Promise<DealsResult> {
-  const deals: Deal[] = fixture.deals.map((d) => ({
-    id: `raleys-${d.raleysId}`,
-    brand: d.brand,
-    name: d.name,
-    packCount: d.packCount,
-    packUnitMl: d.packUnitMl,
-    priceCents: d.priceCents,
-    regularPriceCents: d.regularPriceCents,
-    discountPct: d.discountPct,
-    storeId: fixture.store.id,
-    storeName: fixture.store.name,
-    storeCity: fixture.store.city,
-    observedAt: d.observedAt,
-  }));
-
   return {
     generatedAt: fixture.generatedAt,
-    store: fixture.store,
-    deals,
+    stores: fixture.stores,
+    counts: fixture.counts,
+    deals: fixture.deals,
   };
 }
 
