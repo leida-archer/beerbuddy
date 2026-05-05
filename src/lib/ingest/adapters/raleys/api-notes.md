@@ -116,7 +116,28 @@ These cannot be answered without an actual browser session at the laptop:
 - **Why not pure API:** robots.txt disallow + ethical posture
 - **Why not pure HTML:** confirmed SPA, plain fetch returns empty bodies
 
-## Adapter status
+## Adapter status (2026-05-05)
 
-Adapter file: `index.ts` (Week 1 — build during the next session)
-Test fixtures: `__fixtures__/raleys-pmc18-2026-05-05.html` (capture once Playwright session works, freeze for unit tests)
+Files in this directory:
+
+- `sitemap.ts` — pure-fetch + parse of `sitemap/products/PMC{N}/products-sitemap.xml`. Returns `SitemapProduct[]` with `{ raleysId, slug, url, lastModified }`. Fully unit-tested in `__tests__/sitemap.test.ts` (11 tests).
+- `extract.ts` — Playwright-driven category-page extraction. Selector strategy is anchored on the stable `/product/{id}/{slug}` href pattern (not on hashed CSS class names). Includes `scrollUntilStable` for lazy-load and `extractProducts` for per-card extraction. **Selector heuristics are tentative** — verified once `bun run discover:raleys` produces a real DOM snapshot.
+- `index.ts` — `Adapter` implementation. Orchestrates: sitemap fetch → Playwright launch → navigate → scroll-to-stable → extract → sanity-check → persist (idempotent). Each step's failure mode is captured into the `AdapterRun` summary (parse failures, fetch errors).
+
+Discovery tool:
+
+- `scripts/raleys-discover.ts` — manual run that opens Playwright (default headless, `--headed` for visible), navigates to the category, scrolls, extracts, and writes a screenshot + DOM snapshot + JSON diagnostic to `/tmp/raleys-discover-{ts}.{png,html,json}`. Logs network XHRs whose responses are JSON or hit `/api`. Run with `bun run discover:raleys`.
+
+Tentative assumptions in the adapter that the discovery script will validate:
+
+- [ ] `/product/{id}/{slug}` anchors are present in the rendered DOM (vs. encoded into clickable buttons that handle navigation via JS without an `<a>` element).
+- [ ] Scroll-to-bottom triggers lazy-load of additional cards.
+- [ ] Each product card contains a recognizable `$X.XX` price string in a text node within 4 DOM levels of the product anchor.
+- [ ] The store context is implicit / chain-uniform when no store is selected (i.e., we don't need to set Grass Valley as the active store to see prices). If this is wrong, the discovery output will show empty/placeholder prices and we'll need to capture the store-cookie shape.
+
+If any of these is violated when the discovery script runs, adjust `extract.ts` and re-run before relying on adapter output.
+
+Test fixtures (deferred — captured by discovery script once it runs):
+
+- `__fixtures__/raleys-pmc18-{date}.html` — frozen DOM snapshot for selector regression tests
+- `__fixtures__/raleys-pmc18-{date}.json` — captured network observations
