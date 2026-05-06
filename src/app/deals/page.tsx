@@ -27,19 +27,12 @@ import {
   getDeals,
   type Deal,
 } from "@/lib/deals";
+import { buildHref, parsePageState, type PageState, type SortKey } from "./url";
 
 export const metadata: Metadata = {
   title: "Deals · BeerBuddy",
   description: "Best beer deals at chain stores in Nevada County, CA — this week.",
 };
-
-type SortKey = "best" | "cheap" | "oz";
-
-interface Filters {
-  sort: SortKey;
-  pack: string | null;
-  style: string | null;
-}
 
 const SORT_OPTIONS: Array<{ key: SortKey; label: string }> = [
   { key: "best", label: "Best deal" },
@@ -58,14 +51,10 @@ export default async function DealsPage(props: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await props.searchParams;
-  const filters: Filters = {
-    sort: (asString(sp.sort) as SortKey) ?? "best",
-    pack: asString(sp.pack),
-    style: asString(sp.style),
-  };
+  const state = parsePageState(sp);
 
   const { generatedAt, stores, deals: allDeals } = await getDeals();
-  const deals = applyFilters(allDeals, filters);
+  const deals = applyFilters(allDeals, state);
   const now = new Date();
   const storeNames = stores.map((s) => s.name).join(" · ");
 
@@ -84,8 +73,8 @@ export default async function DealsPage(props: {
 
       <Banner />
 
-      <SortRow filters={filters} />
-      <FilterChips filters={filters} />
+      <SortRow filters={state} />
+      <FilterChips filters={state} />
 
       <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted text-center my-4 flex items-center gap-2 justify-center">
         <span className="h-px bg-rule w-10 inline-block" />
@@ -94,7 +83,7 @@ export default async function DealsPage(props: {
       </p>
 
       {deals.length === 0 ? (
-        <EmptyResults filters={filters} />
+        <EmptyResults filters={state} />
       ) : (
         <ol className="m-0 p-0 list-none">
           {deals.map((deal, i) => (
@@ -104,7 +93,7 @@ export default async function DealsPage(props: {
                 now={now}
                 isBest={
                   i === 0 &&
-                  filters.sort === "best" &&
+                  state.sort === "best" &&
                   deal.discountPct != null &&
                   deal.discountPct >= 10
                 }
@@ -144,14 +133,14 @@ function Banner() {
   );
 }
 
-function SortRow({ filters }: { filters: Filters }) {
+function SortRow({ filters }: { filters: PageState }) {
   return (
     <div className="flex items-center justify-between mb-3 py-1 gap-2">
       <span className="text-[12px] text-muted shrink-0">Sort</span>
       <div className="flex gap-1.5 overflow-x-auto">
         {SORT_OPTIONS.map((opt) => {
           const active = filters.sort === opt.key;
-          const href = buildHref(filters, "sort", opt.key === "best" ? null : opt.key);
+          const href = buildHref(filters, { sort: opt.key });
           return (
             <Link
               key={opt.key}
@@ -173,21 +162,21 @@ function SortRow({ filters }: { filters: Filters }) {
   );
 }
 
-function FilterChips({ filters }: { filters: Filters }) {
+function FilterChips({ filters }: { filters: PageState }) {
   return (
     <div className="space-y-1.5 mb-3">
       <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-4 px-4">
         <ChipLink
           label="All packs"
           active={!filters.pack}
-          href={buildHref(filters, "pack", null)}
+          href={buildHref(filters, { pack: null })}
         />
         {PACK_CHIPS.map((pack) => (
           <ChipLink
             key={pack}
             label={`${pack}-pack`}
             active={filters.pack === pack}
-            href={buildHref(filters, "pack", filters.pack === pack ? null : pack)}
+            href={buildHref(filters, { pack: filters.pack === pack ? null : pack })}
           />
         ))}
       </div>
@@ -195,7 +184,7 @@ function FilterChips({ filters }: { filters: Filters }) {
         <ChipLink
           label="All styles"
           active={!filters.style}
-          href={buildHref(filters, "style", null)}
+          href={buildHref(filters, { style: null })}
         />
         {STYLE_CHIPS.map((style) => (
           <ChipLink
@@ -204,8 +193,7 @@ function FilterChips({ filters }: { filters: Filters }) {
             active={filters.style === style.key}
             href={buildHref(
               filters,
-              "style",
-              filters.style === style.key ? null : style.key,
+              { style: filters.style === style.key ? null : style.key },
             )}
           />
         ))}
@@ -239,7 +227,7 @@ function ChipLink({
   );
 }
 
-function EmptyResults({ filters }: { filters: Filters }) {
+function EmptyResults({ filters }: { filters: PageState }) {
   return (
     <div className="text-center py-12">
       <p className="text-muted text-[14px] mb-4">
@@ -330,28 +318,7 @@ function DealCard({
 
 // ─── helpers ────────────────────────────────────────────────────────
 
-function asString(v: string | string[] | undefined): string | null {
-  if (typeof v === "string" && v.length > 0) return v;
-  if (Array.isArray(v) && v[0]) return v[0];
-  return null;
-}
-
-/** Build a /deals href that updates one filter param. value=null clears it. */
-function buildHref(filters: Filters, key: keyof Filters, value: string | null): string {
-  const sp = new URLSearchParams();
-  const apply = (k: keyof Filters, v: string | null) => {
-    if (!v) return;
-    if (k === "sort" && v === "best") return; // default; omit from URL
-    sp.set(k, v);
-  };
-  apply("sort", key === "sort" ? value : filters.sort);
-  apply("pack", key === "pack" ? value : filters.pack);
-  apply("style", key === "style" ? value : filters.style);
-  const q = sp.toString();
-  return q ? `/deals?${q}` : "/deals";
-}
-
-function applyFilters(deals: Deal[], filters: Filters): Deal[] {
+function applyFilters(deals: Deal[], filters: PageState): Deal[] {
   let out = deals;
 
   if (filters.pack) {
