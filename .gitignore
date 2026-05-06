@@ -52,3 +52,6 @@ test-results/
 # Adapter run artifacts (LLM raw outputs, screenshots, PDFs cached during dev)
 ingest/.cache/
 ingest/.fixtures-tmp/
+
+# Visual companion mockups (brainstorm skill)
+.brainstorm/
