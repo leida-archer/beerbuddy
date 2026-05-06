@@ -13,6 +13,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { extractBevmoBeerProducts } from "@/lib/ingest/adapters/bevmo/extract";
+import { extractGroceryOutletBeerProducts } from "@/lib/ingest/adapters/grocery-outlet/extract";
 import { extractHolidayBeerProducts } from "@/lib/ingest/adapters/holiday-market/extract";
 import { fetchRaleysBuildId } from "@/lib/ingest/adapters/raleys/buildId";
 import { fetchProductJson } from "@/lib/ingest/adapters/raleys/productJson";
@@ -65,6 +66,7 @@ const STORES = [
   { id: "bevmo-auburn", name: "BevMo", city: "Auburn" },
   { id: "holiday-market-penn-valley", name: "Holiday Market", city: "Penn Valley" },
   { id: "savemart-nevada-city", name: "Save Mart", city: "Nevada City" },
+  { id: "grocery-outlet-grass-valley", name: "Grocery Outlet", city: "Grass Valley" },
 ];
 
 async function buildRaleys(observedAt: string, sampleCount = 60): Promise<DealRow[]> {
@@ -221,6 +223,38 @@ async function buildHoliday(observedAt: string, max = 80): Promise<DealRow[]> {
   });
 }
 
+async function buildGroceryOutlet(observedAt: string, max = 80): Promise<DealRow[]> {
+  console.log(`[fixtures] groceryOutlet: launching Playwright on Grass Valley beer category...`);
+  const products = await extractGroceryOutletBeerProducts();
+  console.log(`[fixtures] groceryOutlet: extracted ${products.length} beer products`);
+
+  const sampled = products.slice(0, max);
+  return sampled.map((p) => {
+    const reg = p.regularPriceCents;
+    const discountPct =
+      reg != null && reg > p.priceCents
+        ? Math.round(((reg - p.priceCents) / reg) * 100)
+        : null;
+    const store = STORES[4];
+    return {
+      id: `grocery-outlet-${p.groceryOutletId}`,
+      storeId: store.id,
+      storeName: store.name,
+      storeCity: store.city,
+      brand: p.brand,
+      name: p.name,
+      upc: null,
+      packCount: p.packCount,
+      packUnitMl: p.packUnitMl,
+      priceCents: p.priceCents,
+      regularPriceCents: p.regularPriceCents,
+      discounted: reg != null && reg > p.priceCents,
+      discountPct,
+      observedAt,
+    };
+  });
+}
+
 async function buildSavemart(observedAt: string, max = 80): Promise<DealRow[]> {
   console.log(`[fixtures] savemart: launching Playwright on Nevada City beer category...`);
   const products = await extractSavemartBeerProducts();
@@ -290,13 +324,18 @@ async function main() {
     console.error(`[fixtures] savemart FAILED: ${err}`);
     return [] as DealRow[];
   });
+  const groceryOutletRaw = await buildGroceryOutlet(observedAt).catch((err) => {
+    console.error(`[fixtures] groceryOutlet FAILED: ${err}`);
+    return [] as DealRow[];
+  });
 
   const raleys = fallback("raleys-grass-valley", raleysRaw);
   const bevmo = fallback("bevmo-auburn", bevmoRaw);
   const holiday = fallback("holiday-market-penn-valley", holidayRaw);
   const savemart = fallback("savemart-nevada-city", savemartRaw);
+  const groceryOutlet = fallback("grocery-outlet-grass-valley", groceryOutletRaw);
 
-  const all: DealRow[] = [...raleys, ...bevmo, ...holiday, ...savemart];
+  const all: DealRow[] = [...raleys, ...bevmo, ...holiday, ...savemart, ...groceryOutlet];
 
   // Sort: best discount first, then cheapest, then by name.
   all.sort((a, b) => {
@@ -320,6 +359,7 @@ async function main() {
           bevmo: bevmo.length,
           holiday: holiday.length,
           savemart: savemart.length,
+          groceryOutlet: groceryOutlet.length,
           total: all.length,
         },
         deals: all,
@@ -330,7 +370,7 @@ async function main() {
   );
 
   console.log(
-    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo + ${holiday.length} holiday + ${savemart.length} savemart) in ${Date.now() - t0} ms`,
+    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo + ${holiday.length} holiday + ${savemart.length} savemart + ${groceryOutlet.length} groceryOutlet) in ${Date.now() - t0} ms`,
   );
   console.log(`[fixtures] wrote to ${outPath}`);
 }
