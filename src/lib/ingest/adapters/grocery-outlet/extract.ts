@@ -9,6 +9,12 @@
  *
  * Same Instacart card text format ("Current price: $X.YY$XYY ...")
  * as Save Mart — see savemart/extract.ts for the parsing rationale.
+ *
+ * Timing notes (verified 2026-05-05): GO's category render is slower
+ * than Save Mart's despite the same architecture. We use a bounded
+ * scroll deadline + bounded browser.close() instead of Promise.race
+ * around the whole extraction, because Playwright's browser.close()
+ * can hang when the page has pending requests after a timeout.
  */
 
 import { chromium, type Browser } from "playwright";
@@ -18,14 +24,14 @@ import { parsePackInfo } from "../bevmo/parse";
 
 const CATEGORY_URL =
   "https://shop.groceryoutlet.com/store/grocery-outlet/collections/n-beer-cider-36676";
-const HYDRATION_MS = 5_000;
-const SCROLL_ROUNDS = 4;
-const SCROLL_SETTLE_MS = 500;
-/** Hard timeout for the whole extraction. If this fires, the extractor
- * returns whatever's been collected so far (caller falls back to cached
- * data if 0). Prevents the entire fixture build from stalling on a
- * single chain's slow category render. */
-const OVERALL_TIMEOUT_MS = 45_000;
+const NAV_TIMEOUT_MS = 60_000;
+const HYDRATION_MS = 6_000;
+/** Max time we'll spend in the scroll loop. */
+const SCROLL_DEADLINE_MS = 12_000;
+const SCROLL_SETTLE_MS = 700;
+/** Cap on browser.close() in the cleanup path so a hung close doesn't
+ * stall the entire fixture build. Forces SIGKILL via Promise.race. */
+const CLOSE_TIMEOUT_MS = 5_000;
 
 export interface ScrapedGroceryOutletProduct {
   groceryOutletId: string;
@@ -40,23 +46,23 @@ export interface ScrapedGroceryOutletProduct {
 }
 
 export async function extractGroceryOutletBeerProducts(): Promise<ScrapedGroceryOutletProduct[]> {
-  const browser: Browser = await chromium.launch({ headless: true });
+  const browser: Browser = await chromium.launch({
+    headless: true,
+    args: ["--disable-blink-features=AutomationControlled"],
+  });
+  let products: ScrapedGroceryOutletProduct[] = [];
   try {
-    return await Promise.race([
-      extract(browser),
-      new Promise<ScrapedGroceryOutletProduct[]>((_, rej) =>
-        setTimeout(() => rej(new Error("extraction timeout")), OVERALL_TIMEOUT_MS),
-      ),
-    ]);
+    products = await extract(browser);
   } catch (err) {
-    if (err instanceof Error && err.message === "extraction timeout") {
-      console.warn(`[grocery-outlet] extractor hit ${OVERALL_TIMEOUT_MS}ms timeout — returning empty`);
-      return [];
-    }
-    throw err;
+    console.warn(`[grocery-outlet] extraction failed: ${err instanceof Error ? err.message : err}`);
   } finally {
-    await browser.close();
+    // Bound browser.close() — sometimes hangs on pages with pending requests.
+    await Promise.race([
+      browser.close(),
+      new Promise<void>((r) => setTimeout(r, CLOSE_TIMEOUT_MS)),
+    ]).catch(() => undefined);
   }
+  return products;
 }
 
 async function extract(
@@ -67,21 +73,24 @@ async function extract(
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     viewport: { width: 1280, height: 1600 },
   });
-  const page = await ctx.newPage();
+  // Cap every Playwright operation so we never wait indefinitely.
+  ctx.setDefaultTimeout(15_000);
+  ctx.setDefaultNavigationTimeout(NAV_TIMEOUT_MS);
 
-  await page.goto(CATEGORY_URL, { waitUntil: "domcontentloaded", timeout: 45_000 });
+  const page = await ctx.newPage();
+  await page.goto(CATEGORY_URL, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(HYDRATION_MS);
 
+  // Bounded scroll loop — exits early when stable OR when deadline hits.
+  const deadline = Date.now() + SCROLL_DEADLINE_MS;
   let lastCount = -1;
   let stableRounds = 0;
-  for (let i = 0; i < SCROLL_ROUNDS; i++) {
+  while (Date.now() < deadline) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(SCROLL_SETTLE_MS);
     const count = await page.evaluate(
       () =>
-        document.querySelectorAll(
-          'a[href*="/store/grocery-outlet/products/"]',
-        ).length,
+        document.querySelectorAll('a[href*="/store/grocery-outlet/products/"]').length,
     );
     if (count === lastCount) {
       stableRounds += 1;
@@ -120,7 +129,7 @@ async function extract(
     }
     return cards;
   });
-  await ctx.close();
+  await ctx.close().catch(() => undefined);
 
   // Same Instacart parsing as Save Mart.
   const NAME_AFTER_PRICES = /(?:%\s*off|\bOriginal Price[^a-zA-Z]*\$[\d.]+|\$\d+\.\d{2}\$\d+)([A-Za-z].*)$/;
