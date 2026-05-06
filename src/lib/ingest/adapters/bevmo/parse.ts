@@ -91,18 +91,31 @@ export function parsePackInfo(title: string): {
   packCount: number | null;
   packUnitMl: number | null;
 } {
-  const packMatch = /(\d+)\s*(?:pk|pack|-pack|p\b)/i.exec(title);
-  const packCount = packMatch ? Number.parseInt(packMatch[1], 10) : 1;
-
-  const ozMatch = /(\d+(?:\.\d+)?)\s*oz\b/i.exec(title);
-  const mlMatch = /(\d+(?:\.\d+)?)\s*m[lL]\b/.exec(title);
+  // Try multiple pack patterns in order of specificity. Instacart's
+  // "N x XX fl oz" pattern is the most explicit and wins when present;
+  // otherwise fall back to the bare "Npk" / "N pack" patterns common
+  // on Shopify and similar stores.
+  let packCount: number | null = null;
   let packUnitMl: number | null = null;
-  if (ozMatch) {
-    packUnitMl = Math.round(Number.parseFloat(ozMatch[1]) * 29.5735);
-  } else if (mlMatch) {
-    packUnitMl = Math.round(Number.parseFloat(mlMatch[1]));
+
+  const explicit = /(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*(?:fl\s*)?oz\b/i.exec(title);
+  if (explicit) {
+    packCount = Number.parseInt(explicit[1], 10);
+    packUnitMl = Math.round(Number.parseFloat(explicit[2]) * 29.5735);
+  } else {
+    const packMatch = /(\d+)\s*(?:pk|pack|-pack|p\b)/i.exec(title);
+    if (packMatch) packCount = Number.parseInt(packMatch[1], 10);
+
+    const ozMatch = /(\d+(?:\.\d+)?)\s*oz\b/i.exec(title);
+    const mlMatch = /(\d+(?:\.\d+)?)\s*m[lL]\b/.exec(title);
+    if (ozMatch) {
+      packUnitMl = Math.round(Number.parseFloat(ozMatch[1]) * 29.5735);
+    } else if (mlMatch) {
+      packUnitMl = Math.round(Number.parseFloat(mlMatch[1]));
+    }
   }
 
+  if (packCount == null) packCount = 1;
   return { packCount: Number.isFinite(packCount) ? packCount : null, packUnitMl };
 }
 

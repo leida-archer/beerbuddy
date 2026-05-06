@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T23:53:19.435Z",
+  "generatedAt": "2026-05-06T01:01:35.854Z",
   "stores": [
     {
       "id": "raleys-grass-valley",
@@ -15,15 +15,133 @@
       "id": "holiday-market-penn-valley",
       "name": "Holiday Market",
       "city": "Penn Valley"
+    },
+    {
+      "id": "savemart-nevada-city",
+      "name": "Save Mart",
+      "city": "Nevada City"
     }
   ],
   "counts": {
     "raleys": 60,
     "bevmo": 29,
     "holiday": 50,
-    "total": 139
+    "savemart": 80,
+    "total": 219
   },
   "deals": [
+    {
+      "id": "savemart-19724833",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone Beer24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 999,
+      "regularPriceCents": 1349,
+      "discounted": true,
+      "discountPct": 26,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-193352",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Bud",
+      "name": "Bud Light American Lager Beer 3 Pack, 25 Fl Oz Cans3 x 25 fl oz • 6 sizes",
+      "upc": null,
+      "packCount": 3,
+      "packUnitMl": 739,
+      "priceCents": 749,
+      "regularPriceCents": 999,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3282773",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Budweiser",
+      "name": "Budweiser American Lager Beer 3 Pack, 25 Fl Oz Cans3 x 25 fl oz",
+      "upc": null,
+      "packCount": 3,
+      "packUnitMl": 739,
+      "priceCents": 749,
+      "regularPriceCents": 999,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-45120",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Light American Light Lager Beer, 4.2% ABV 24-oz. beer can3 x 24 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 3,
+      "packUnitMl": 710,
+      "priceCents": 749,
+      "regularPriceCents": 999,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-36436101",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co. Hoppy Variety Pack12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1799,
+      "regularPriceCents": 2399,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23221450",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co. Peace, Love & Haze12 x 12 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1799,
+      "regularPriceCents": 2399,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19503662",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Pacifico",
+      "name": "Pacifico Clara Mexican Lager Import Beer Cans3 x 24 fl oz • 4 sizes",
+      "upc": null,
+      "packCount": 3,
+      "packUnitMl": 710,
+      "priceCents": 999,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 23,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
     {
       "id": "holiday-b36d37d7",
       "storeId": "holiday-market-penn-valley",
@@ -38,7 +156,7 @@
       "regularPriceCents": 2399,
       "discounted": true,
       "discountPct": 21,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30300468",
@@ -54,7 +172,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2410418",
@@ -70,7 +188,7 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30025891",
@@ -86,7 +204,87 @@
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-17090322",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Blue",
+      "name": "Blue Moon Wheat Ale, 5.4% ABV, 12-pack 12-oz. beer bottles12 x 12 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2499,
+      "discounted": true,
+      "discountPct": 20,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23802405",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone 805 Cerveza Lager, With Lime12 x 12 oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 2099,
+      "regularPriceCents": 2599,
+      "discounted": true,
+      "discountPct": 19,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3351697",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone IPA Mixed Cans12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 2099,
+      "regularPriceCents": 2599,
+      "discounted": true,
+      "discountPct": 19,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-25556723",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone Mind Haze Variety IPA Beer12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 2099,
+      "regularPriceCents": 2599,
+      "discounted": true,
+      "discountPct": 19,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-20224491",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone Walker Mind Haze, Hazy IPA12 x 12 oz • 3 sizes",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 2099,
+      "regularPriceCents": 2599,
+      "discounted": true,
+      "discountPct": 19,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30188327",
@@ -102,7 +300,23 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": 18,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-44994",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Light Beer, American Light Lager Beer, 36-pack, 12-oz beer cans, 4.2% ABV36 x 12 fl oz • 3 sizesLikely out of stoc",
+      "upc": null,
+      "packCount": 36,
+      "packUnitMl": 355,
+      "priceCents": 2699,
+      "regularPriceCents": 3299,
+      "discounted": true,
+      "discountPct": 18,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-a7793a09",
@@ -118,7 +332,23 @@
       "regularPriceCents": 599,
       "discounted": true,
       "discountPct": 17,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-150753",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Budweiser",
+      "name": "Budweiser American Lager Beer 36 Pack, 12 Fl Oz Cans36 x 12 fl oz",
+      "upc": null,
+      "packCount": 36,
+      "packUnitMl": 355,
+      "priceCents": 2699,
+      "regularPriceCents": 3199,
+      "discounted": true,
+      "discountPct": 16,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-61eb50d2",
@@ -134,7 +364,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 15,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-e858f6b4",
@@ -150,7 +380,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 15,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-324961a8",
@@ -166,7 +396,55 @@
       "regularPriceCents": 399,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-21570203",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Heineken",
+      "name": "Heineken 0.0 Non-Alcoholic Beer, 12 Pack, 11.2 fl oz Cans12 x 11.2 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 331,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-44981",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Heineken",
+      "name": "Heineken Original Lager Beer, 12 Pack, 12 fl oz Bottles12 x 12 oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3102688",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Heineken",
+      "name": "Heineken Original Lager Beer, 12 Pack, 12 fl oz Cans12 x 12 oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": 2299,
+      "discounted": true,
+      "discountPct": 13,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-13731",
@@ -182,7 +460,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-13321",
@@ -198,7 +476,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-45c16572",
@@ -214,7 +492,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-459d34f0",
@@ -230,7 +508,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-41701",
@@ -246,7 +524,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-7680",
@@ -262,7 +540,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-44362",
@@ -278,7 +556,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-198224",
@@ -294,7 +572,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-11057",
@@ -310,7 +588,7 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-31891",
@@ -326,7 +604,55 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-78260",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Foster's",
+      "name": "Foster's Lager Beer, 25.4 oz. Single Can, 5% ABV25.4 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 751,
+      "priceCents": 350,
+      "regularPriceCents": 399,
+      "discounted": true,
+      "discountPct": 12,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19497852",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Familiar Mexican Lager Import Beer Bottles24 x 12 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2999,
+      "regularPriceCents": 3399,
+      "discounted": true,
+      "discountPct": 12,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-39816320",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Oro Mexican Lager Import Lower Calorie* Light Beer Cans24 x 12 oz • 2 sizes",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2999,
+      "regularPriceCents": 3399,
+      "discounted": true,
+      "discountPct": 12,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30200322",
@@ -342,7 +668,7 @@
       "regularPriceCents": 899,
       "discounted": false,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-02e5bb00",
@@ -358,7 +684,23 @@
       "regularPriceCents": 1799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3185883",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Michelob",
+      "name": "Michelob Amber Bock Dark Lager, 12 Pack 12 Fl. Oz. Bottles, 5.2% Abv12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1699,
+      "regularPriceCents": 1899,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-673aa97f",
@@ -368,13 +710,13 @@
       "brand": "Bud",
       "name": "Bud Light 30X12 Oz Can Twinstack Carrier",
       "upc": null,
-      "packCount": 1,
+      "packCount": 30,
       "packUnitMl": 355,
       "priceCents": 2499,
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-3ec35a49",
@@ -390,7 +732,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-afd6e5ac",
@@ -406,7 +748,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-f67c00d4",
@@ -422,7 +764,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-25659",
@@ -438,7 +780,199 @@
       "regularPriceCents": 3599,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-18311850",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Premier Mexican Lager Import Lower Calorie* Light Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-18203372",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone 805 Blonde Ale24 fl oz • 3 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23904310",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Firestone",
+      "name": "Firestone Walker 805 Cerveza Lager, With Lime24 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-39522968",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Chelada Fresa Picante Mexican Import Flavored Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-20989050",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Chelada Mango y Chile Mexican Import Flavored Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-29233313",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Chelada Sandía Picante Mexican Import Flavored Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-280913",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Especial Mexican Lager Import Beer Bottle24 fl oz • 7 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-18384858",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Negra Amber Lager Mexican Import Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-26850944",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Oro Mexican Lager Import Lower Calorie* Light Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23768563",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Big Little Thing Hazy Imperial IPA Craft Beer 19.2 oz Can19.2 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23768660",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Pale Ale Craft Beer 19.2 oz Can19.2 oz • 3 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 568,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19618626",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sol",
+      "name": "Sol Mexican Import Beer12 x 24 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 710,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-ab393a1b",
@@ -454,7 +988,23 @@
       "regularPriceCents": 999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-20587465",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Budweiser",
+      "name": "Budweiser Zero Zero Alcohol Free American Lager Beer 12 Pack, 12 Fl Oz Cans12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1399,
+      "regularPriceCents": 1549,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-f4d413e9",
@@ -470,7 +1020,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-125c5ea4",
@@ -486,7 +1036,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-50d1b49d",
@@ -502,7 +1052,55 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-95168",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Budweiser",
+      "name": "Budweiser American Lager Beer 18 Pack, 12 Fl Oz Bottles18 x 12 fl oz",
+      "upc": null,
+      "packCount": 18,
+      "packUnitMl": 355,
+      "priceCents": 1899,
+      "regularPriceCents": 2099,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3247141",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Light Beer, American Light Lager Beer, 30-pack, 12-oz beer cans, 4.2% ABV30 x 12 fl oz",
+      "upc": null,
+      "packCount": 30,
+      "packUnitMl": 355,
+      "priceCents": 2599,
+      "regularPriceCents": 2899,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-297540",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Busch",
+      "name": "Busch American Lager Beer 25 Fl Oz Single Can25 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 300,
+      "regularPriceCents": 329,
+      "discounted": true,
+      "discountPct": 9,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-871892b6",
@@ -518,7 +1116,7 @@
       "regularPriceCents": 1099,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-2400",
@@ -534,7 +1132,7 @@
       "regularPriceCents": 2199,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-8b647c28",
@@ -550,7 +1148,7 @@
       "regularPriceCents": 1199,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-97fde8f0",
@@ -566,7 +1164,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-bfd9f984",
@@ -582,7 +1180,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-1dcece48",
@@ -598,7 +1196,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-7023",
@@ -614,7 +1212,7 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-46113c56",
@@ -630,7 +1228,7 @@
       "regularPriceCents": 299,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-2e436772",
@@ -646,7 +1244,7 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-bbdc4643",
@@ -662,7 +1260,7 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-f3264e43",
@@ -678,7 +1276,7 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-24203a82",
@@ -694,7 +1292,7 @@
       "regularPriceCents": 399,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-4828b88a",
@@ -710,7 +1308,7 @@
       "regularPriceCents": 1049,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-d2e68ef6",
@@ -726,7 +1324,7 @@
       "regularPriceCents": 1899,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-4278a1c9",
@@ -742,7 +1340,7 @@
       "regularPriceCents": 2099,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-579b2981",
@@ -758,7 +1356,7 @@
       "regularPriceCents": 2099,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-444fe49f",
@@ -774,7 +1372,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2409589",
@@ -790,7 +1388,7 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-10583",
@@ -806,7 +1404,7 @@
       "regularPriceCents": 2499,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-c7f2904e",
@@ -822,7 +1420,23 @@
       "regularPriceCents": 2699,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-273565",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Natural",
+      "name": "Natural Light Beer 25 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 275,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-4751a7d6",
@@ -838,7 +1452,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-0ab2aea2",
@@ -854,7 +1468,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-03d784ee",
@@ -870,7 +1484,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-43e0474a",
@@ -886,7 +1500,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-0a440eda",
@@ -902,7 +1516,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-97771fe4",
@@ -918,7 +1532,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-09a8124a",
@@ -934,7 +1548,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-198057b2",
@@ -950,7 +1564,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-3ff45b1a",
@@ -966,7 +1580,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-3690c555",
@@ -982,7 +1596,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30600919",
@@ -998,7 +1612,23 @@
       "regularPriceCents": 350,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3053503",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Light Beer Can 25 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 375,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-31026409",
@@ -1014,7 +1644,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-31200192",
@@ -1030,7 +1660,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2409471",
@@ -1046,7 +1676,7 @@
       "regularPriceCents": 399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-76b91558",
@@ -1062,7 +1692,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-8c19459e",
@@ -1078,7 +1708,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-10603",
@@ -1094,7 +1724,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-b584f84e",
@@ -1110,7 +1740,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-eecf6b94",
@@ -1126,7 +1756,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30580021",
@@ -1142,7 +1772,23 @@
       "regularPriceCents": 400,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23525473",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Maximus 1 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 425,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30005679",
@@ -1158,7 +1804,7 @@
       "regularPriceCents": 429,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30309001",
@@ -1174,7 +1820,23 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-95304",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Familiar Mexican Lager Beer Bottle 32 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 449,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30001458",
@@ -1190,7 +1852,7 @@
       "regularPriceCents": 449,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-302781",
@@ -1206,7 +1868,55 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-24817118",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co Therapist Imperial Ipa 19 2 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 699,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-1371828",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Edge Non Alcoholic Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-2579716",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Draught Cans 14 9 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-26797",
@@ -1222,7 +1932,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-24573958",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Zero Non Alcoholic Draught Cans 14 9 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-a2355e33",
@@ -1238,7 +1964,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-26784",
@@ -1254,7 +1980,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-108190",
@@ -1270,7 +1996,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30400853",
@@ -1286,7 +2012,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-13155",
@@ -1302,7 +2028,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2399824",
@@ -1318,7 +2044,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2399826",
@@ -1334,7 +2060,7 @@
       "regularPriceCents": 999,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-4911",
@@ -1350,7 +2076,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-ba148ded",
@@ -1366,7 +2092,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-6291",
@@ -1382,7 +2108,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30170264",
@@ -1398,7 +2124,55 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-45093",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Beer Stout Extra 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-16204631",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Draught Bottles 11 2 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-278255",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Heineken",
+      "name": "Heineken Lager Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30013798",
@@ -1414,7 +2188,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30095765",
@@ -1430,7 +2204,23 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-251065",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Rainier",
+      "name": "Rainier Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30099919",
@@ -1446,7 +2236,7 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-196115",
@@ -1462,7 +2252,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19758918",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co Hops Of Wrath Ipa 12 0 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 0,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-7701f9f4",
@@ -1478,7 +2284,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "holiday-c75a9fde",
@@ -1494,7 +2300,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-23333",
@@ -1510,7 +2316,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30211392",
@@ -1526,7 +2332,39 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19052357",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Athletic",
+      "name": "Athletic Brewing Beer Run Wild 6 Pack 12 Fl Oz",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-33223315",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Blue",
+      "name": "Blue Moon Beer Non Alcoholic Belgium White 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30071105",
@@ -1542,7 +2380,23 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-20700889",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas A Little Sumpin Sumpin 6 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10300011",
@@ -1558,7 +2412,23 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-24040164",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Ipna Non Alcoholic Ipa 6 Bottles",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10200360",
@@ -1574,7 +2444,23 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-1161073",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Samuel",
+      "name": "Samuel Adams Winter Lager Seasonal Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30743788",
@@ -1590,7 +2476,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30009658",
@@ -1606,7 +2492,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30000994",
@@ -1622,7 +2508,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-32500021",
@@ -1638,7 +2524,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30299059",
@@ -1654,7 +2540,7 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2400224",
@@ -1670,7 +2556,7 @@
       "regularPriceCents": 1349,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-24244",
@@ -1686,7 +2572,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-24272",
@@ -1702,7 +2588,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30276506",
@@ -1718,7 +2604,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30203005",
@@ -1734,7 +2620,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30023098",
@@ -1750,7 +2636,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-16449",
@@ -1766,7 +2652,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10200522",
@@ -1782,7 +2668,7 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-113656",
@@ -1798,7 +2684,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30023681",
@@ -1814,7 +2700,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30010177",
@@ -1830,7 +2716,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2407715",
@@ -1846,7 +2732,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-31200013",
@@ -1862,7 +2748,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-32200109",
@@ -1878,7 +2764,7 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30977433",
@@ -1894,7 +2780,23 @@
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19285717",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coronados",
+      "name": "Coronados Beer Ipa Weekend Vibes 6 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1599,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30532082",
@@ -1910,7 +2812,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30016928",
@@ -1926,7 +2828,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-243311",
@@ -1942,7 +2844,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30098622",
@@ -1958,7 +2860,7 @@
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30005382",
@@ -1974,7 +2876,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30600437",
@@ -1990,7 +2892,7 @@
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2400332",
@@ -2006,7 +2908,71 @@
       "regularPriceCents": 1799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-244285",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dos",
+      "name": "Dos Equis Mexican Lager Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-95127",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Draught Beer Cans 14 9 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-45049",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Draught Bottles 11 2 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-26326328",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Oro Mexican Lager Import Beer Cans 12 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 355,
+      "priceCents": 1899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30103697",
@@ -2022,7 +2988,23 @@
       "regularPriceCents": 1899,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-280914",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Victoria",
+      "name": "Victoria Mexican Lager Beer Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-57261",
@@ -2038,7 +3020,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19686703",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Premier Mexican Lager Light Beer Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "bevmo-26373",
@@ -2054,7 +3052,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19326017",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Trumer",
+      "name": "Trumer Pils Pilsner 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10200059",
@@ -2070,7 +3084,7 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30015739",
@@ -2086,7 +3100,55 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-100421",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Busch",
+      "name": "Busch Beer Cans 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23883929",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Deschutes",
+      "name": "Deschutes Brewery Fresh Pack Ipa Variety Pack Cans 12 0 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-17508211",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Elysian",
+      "name": "Elysian Space Dust Ipa Craft Beer India Pale Ale Beer Bottles 144 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 4259,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30006547",
@@ -2102,7 +3164,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-2403299",
@@ -2118,7 +3180,103 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-16306390",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Keystone",
+      "name": "Keystone Light Beer Lager Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-23213499",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas A Little Sumpin Sumpin 12 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-21177478",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Daytime 12 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-20220250",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas India Pale Ale 12 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-26163396",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas India Pale Ale Variety Pack 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-45984",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Ipa Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30703044",
@@ -2134,7 +3292,39 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3103273",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Samuel",
+      "name": "Samuel Adams Boston Lager Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3100964",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Samuel",
+      "name": "Samuel Adams Winter Lager Seasonal Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30001244",
@@ -2150,7 +3340,55 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3101063",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sierra",
+      "name": "Sierra Nevada 4 Way Ipa Mixed Pack 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-19655980",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Beer Hazy Little Thing Ipa 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-25413641",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Sierra",
+      "name": "Sierra Nevada Beer Imperial Ipa Big Little Thing 12 Ea",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30009762",
@@ -2166,7 +3404,7 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30174668",
@@ -2182,7 +3420,39 @@
       "regularPriceCents": 2199,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-26064735",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Stone",
+      "name": "Stone Brewing Ipa Cans 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-21124308",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Voodoo",
+      "name": "Voodoo Ranger Beer Ipa Hoppy Pack 12 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 355,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30000470",
@@ -2198,7 +3468,7 @@
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-30400017",
@@ -2214,7 +3484,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10200374",
@@ -2230,7 +3500,7 @@
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
     },
     {
       "id": "raleys-10200449",
@@ -2246,7 +3516,23 @@
       "regularPriceCents": 2799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-05T23:53:19.435Z"
+      "observedAt": "2026-05-06T01:01:35.854Z"
+    },
+    {
+      "id": "savemart-3342189",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Heineken",
+      "name": "Heineken Original Lager Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-06T01:01:35.854Z"
     }
   ]
 }

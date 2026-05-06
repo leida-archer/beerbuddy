@@ -17,6 +17,31 @@ import { extractHolidayBeerProducts } from "@/lib/ingest/adapters/holiday-market
 import { fetchRaleysBuildId } from "@/lib/ingest/adapters/raleys/buildId";
 import { fetchProductJson } from "@/lib/ingest/adapters/raleys/productJson";
 import { fetchRaleysProductSitemap } from "@/lib/ingest/adapters/raleys/sitemap";
+import { extractSavemartBeerProducts } from "@/lib/ingest/adapters/savemart/extract";
+
+const FIXTURE_PATH = "src/data/fixtures/deals.json";
+
+/** Load the previously-saved fixture file so chains that fail extraction
+ * (anti-bot regression, transient outage, etc.) can fall back to cached
+ * data instead of dropping out of the live deal list entirely. The
+ * cached row's `observedAt` stays as it was — UI surfaces this via the
+ * "updated X ago" relative timestamp so users see freshness honestly. */
+async function loadPreviousFixture(): Promise<Record<string, DealRow[]>> {
+  try {
+    const path_ = path.resolve(process.cwd(), FIXTURE_PATH);
+    const raw = await fs.readFile(path_, "utf8");
+    const parsed = JSON.parse(raw);
+    const byStore: Record<string, DealRow[]> = {};
+    for (const d of parsed.deals ?? []) {
+      const k = d.storeId;
+      if (!byStore[k]) byStore[k] = [];
+      byStore[k].push(d);
+    }
+    return byStore;
+  } catch {
+    return {};
+  }
+}
 
 interface DealRow {
   id: string;
@@ -39,6 +64,7 @@ const STORES = [
   { id: "raleys-grass-valley", name: "Raley's", city: "Grass Valley" },
   { id: "bevmo-auburn", name: "BevMo", city: "Auburn" },
   { id: "holiday-market-penn-valley", name: "Holiday Market", city: "Penn Valley" },
+  { id: "savemart-nevada-city", name: "Save Mart", city: "Nevada City" },
 ];
 
 async function buildRaleys(observedAt: string, sampleCount = 60): Promise<DealRow[]> {
@@ -195,27 +221,82 @@ async function buildHoliday(observedAt: string, max = 80): Promise<DealRow[]> {
   });
 }
 
+async function buildSavemart(observedAt: string, max = 80): Promise<DealRow[]> {
+  console.log(`[fixtures] savemart: launching Playwright on Nevada City beer category...`);
+  const products = await extractSavemartBeerProducts();
+  console.log(`[fixtures] savemart: extracted ${products.length} beer products`);
+
+  const sampled = products.slice(0, max);
+  return sampled.map((p) => {
+    const reg = p.regularPriceCents;
+    const discountPct =
+      reg != null && reg > p.priceCents
+        ? Math.round(((reg - p.priceCents) / reg) * 100)
+        : null;
+    const store = STORES[3];
+    return {
+      id: `savemart-${p.savemartId}`,
+      storeId: store.id,
+      storeName: store.name,
+      storeCity: store.city,
+      brand: p.brand,
+      name: p.name,
+      upc: null,
+      packCount: p.packCount,
+      packUnitMl: p.packUnitMl,
+      priceCents: p.priceCents,
+      regularPriceCents: p.regularPriceCents,
+      discounted: reg != null && reg > p.priceCents,
+      discountPct,
+      observedAt,
+    };
+  });
+}
+
 async function main() {
   const t0 = Date.now();
   const observedAt = new Date().toISOString();
   console.log(`[fixtures] starting at ${observedAt}\n`);
 
-  const [raleys, bevmo, holiday] = await Promise.all([
-    buildRaleys(observedAt).catch((err) => {
-      console.error(`[fixtures] raleys FAILED: ${err}`);
-      return [] as DealRow[];
-    }),
-    buildBevmo(observedAt).catch((err) => {
-      console.error(`[fixtures] bevmo FAILED: ${err}`);
-      return [] as DealRow[];
-    }),
-    buildHoliday(observedAt).catch((err) => {
-      console.error(`[fixtures] holiday FAILED: ${err}`);
-      return [] as DealRow[];
-    }),
-  ]);
+  const previous = await loadPreviousFixture();
+  const fallback = (storeId: string, fresh: DealRow[]): DealRow[] => {
+    if (fresh.length > 0) return fresh;
+    const cached = previous[storeId] ?? [];
+    if (cached.length > 0) {
+      console.warn(
+        `[fixtures] ${storeId}: extraction returned 0; falling back to ${cached.length} cached rows from previous fixture`,
+      );
+    }
+    return cached;
+  };
 
-  const all: DealRow[] = [...raleys, ...bevmo, ...holiday];
+  // Run sequentially (not parallel) — running 4 Playwright contexts in
+  // parallel was causing BevMo to silently extract 0 products. Cost in
+  // total time is small (~10 sec serial vs ~3 sec parallel) for the
+  // reliability win.
+  const raleysRaw = await buildRaleys(observedAt).catch((err) => {
+    console.error(`[fixtures] raleys FAILED: ${err}`);
+    return [] as DealRow[];
+  });
+  const bevmoRaw = await buildBevmo(observedAt).catch((err) => {
+    console.error(`[fixtures] bevmo FAILED: ${err}`);
+    return [] as DealRow[];
+  });
+  const holidayRaw = await buildHoliday(observedAt).catch((err) => {
+    console.error(`[fixtures] holiday FAILED: ${err}`);
+    return [] as DealRow[];
+  });
+  const savemartRaw = await buildSavemart(observedAt).catch((err) => {
+    console.error(`[fixtures] savemart FAILED: ${err}`);
+    return [] as DealRow[];
+  });
+
+  const raleys = fallback("raleys-grass-valley", raleysRaw);
+  const bevmo = fallback("bevmo-auburn", bevmoRaw);
+  const holiday = fallback("holiday-market-penn-valley", holidayRaw);
+  const savemart = fallback("savemart-nevada-city", savemartRaw);
+
+  const all: DealRow[] = [...raleys, ...bevmo, ...holiday, ...savemart];
 
   // Sort: best discount first, then cheapest, then by name.
   all.sort((a, b) => {
@@ -238,6 +319,7 @@ async function main() {
           raleys: raleys.length,
           bevmo: bevmo.length,
           holiday: holiday.length,
+          savemart: savemart.length,
           total: all.length,
         },
         deals: all,
@@ -248,7 +330,7 @@ async function main() {
   );
 
   console.log(
-    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo + ${holiday.length} holiday) in ${Date.now() - t0} ms`,
+    `\n[fixtures] DONE — ${all.length} deals (${raleys.length} raleys + ${bevmo.length} bevmo + ${holiday.length} holiday + ${savemart.length} savemart) in ${Date.now() - t0} ms`,
   );
   console.log(`[fixtures] wrote to ${outPath}`);
 }
