@@ -83,9 +83,9 @@ Sort=best is the default and is omitted from the URL (existing behavior; keep).
 | Tap "+ Filter" (closed) | add `fp=open` | Picker expands below active row; "+ Filter" → "Done" |
 | Tap "Done" (open) | remove `fp` | Picker collapses |
 | Tap sort chip in active row | add `fp=open` | Picker opens (so user can change sort) |
-| Tap × on a filter chip | remove that param | Chip disappears; deal list updates; picker state preserved |
-| Tap a chip in the picker | toggle that param | Active chip in active row updates; picker stays open |
-| Tap "All" inside picker | clear that dimension's param | Same as ×; picker stays open |
+| Tap × on a filter chip | remove that param; `fp` untouched | Chip disappears; deal list updates; picker stays open if it was open, closed if it was closed |
+| Tap a chip in the picker | set that dimension to the chip's value | Active chip in active row updates; picker stays open. Tapping the **already-active** chip is a no-op (sort) or clears the filter (pack/style — same as tapping All) |
+| Tap "All" inside picker | clear that dimension's param | Same as tapping the already-active chip on pack/style; picker stays open |
 
 ### Empty results
 
@@ -131,10 +131,12 @@ No new dependencies. No client-side JS. No state library.
 
 Uses existing Golden Hour tokens — no new colors or spacing values.
 
-- Active chips: same `border-rule` 1 px outline as today, `bg-ink text-bg` for the sort chip body and currently-active filter chips, `× ` icon at 14 px in the chip's muted color (slightly dimmed).
-- "+ Filter" / "Done" button: ghost style with `border-ink`.
-- Picker container: hairline `border-rule` top + bottom, `border-rule` section dividers between SORT / PACK / STYLE.
-- Section headings: `font-mono text-[10px] uppercase tracking-[0.14em] text-muted`.
+- **Chip shape:** rectangular with `rounded-sm` (4 px). DESIGN.md explicitly forbids pill-shaped chips — do not reach for `rounded-full`.
+- **Active chips** (sort + currently-active filters): `bg-ink text-bg` fill, 1 px ink border. The `×` is a separate `<Link>` rendered inside, sized 14 px, color `text-bg/70` (the bg color at 70% opacity — readable on ink, visibly less prominent than the chip label).
+- **Inactive chips** (in picker): transparent background, `border-rule` 1 px outline, `text-ink` label.
+- **"+ Filter" / "Done" button:** ghost style with 1 px `border-ink` outline, transparent background, `text-ink`.
+- **Picker container:** hairline `border-rule` top + bottom, `border-rule` section dividers between SORT / PACK / STYLE.
+- **Section headings (SORT / PACK / STYLE):** `font-mono text-[10px] uppercase tracking-[0.14em] text-muted`.
 
 ## Out of scope
 
