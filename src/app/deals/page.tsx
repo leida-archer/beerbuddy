@@ -12,6 +12,7 @@
  *   /deals?pack=12                         only 12-packs
  *   /deals?style=ipa                       only items whose name matches "IPA"
  *   /deals?sort=cheap&pack=24&style=lager  combined
+ *   /deals?fp=open                          open the inline filter picker
  *
  * Each chip / sort button is a <Link> that toggles its param. Server
  * filters + sorts on each request. URLs are shareable.
@@ -83,7 +84,7 @@ export default async function DealsPage(props: {
       </p>
 
       {deals.length === 0 ? (
-        <EmptyResults filters={state} />
+        <EmptyResults state={state} />
       ) : (
         <ol className="m-0 p-0 list-none">
           {deals.map((deal, i) => (
@@ -309,115 +310,21 @@ function PickerChip({
   );
 }
 
-function SortRow({ filters }: { filters: PageState }) {
-  return (
-    <div className="flex items-center justify-between mb-3 py-1 gap-2">
-      <span className="text-[12px] text-muted shrink-0">Sort</span>
-      <div className="flex gap-1.5 overflow-x-auto">
-        {SORT_OPTIONS.map((opt) => {
-          const active = filters.sort === opt.key;
-          const href = buildHref(filters, { sort: opt.key });
-          return (
-            <Link
-              key={opt.key}
-              href={href}
-              prefetch={false}
-              className={`font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border transition-colors duration-micro ease-settle ${
-                active
-                  ? "bg-ink text-bg border-ink"
-                  : "bg-transparent text-ink border-rule hover:bg-bg-soft hover:border-ink"
-              }`}
-              aria-current={active ? "true" : undefined}
-            >
-              {opt.label}
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function FilterChips({ filters }: { filters: PageState }) {
-  return (
-    <div className="space-y-1.5 mb-3">
-      <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-4 px-4">
-        <ChipLink
-          label="All packs"
-          active={!filters.pack}
-          href={buildHref(filters, { pack: null })}
-        />
-        {PACK_CHIPS.map((pack) => (
-          <ChipLink
-            key={pack}
-            label={`${pack}-pack`}
-            active={filters.pack === pack}
-            href={buildHref(filters, { pack: filters.pack === pack ? null : pack })}
-          />
-        ))}
-      </div>
-      <div className="flex gap-1.5 overflow-x-auto pb-1 -mx-4 px-4">
-        <ChipLink
-          label="All styles"
-          active={!filters.style}
-          href={buildHref(filters, { style: null })}
-        />
-        {STYLE_CHIPS.map((style) => (
-          <ChipLink
-            key={style.key}
-            label={style.label}
-            active={filters.style === style.key}
-            href={buildHref(
-              filters,
-              { style: filters.style === style.key ? null : style.key },
-            )}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ChipLink({
-  label,
-  active,
-  href,
-}: {
-  label: string;
-  active: boolean;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      aria-current={active ? "true" : undefined}
-      className={`font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border transition-colors duration-micro ease-settle ${
-        active
-          ? "bg-ink text-bg border-ink"
-          : "bg-transparent text-ink border-rule hover:bg-bg-soft hover:border-ink"
-      }`}
-    >
-      {label}
-    </Link>
-  );
-}
-
-function EmptyResults({ filters }: { filters: PageState }) {
+function EmptyResults({ state }: { state: PageState }) {
   return (
     <div className="text-center py-12">
       <p className="text-muted text-[14px] mb-4">
         No deals match{" "}
         {[
-          filters.pack ? `${filters.pack}-pack` : null,
-          filters.style ? STYLE_CHIPS.find((s) => s.key === filters.style)?.label : null,
+          state.pack ? `${state.pack}-pack` : null,
+          state.style ? STYLE_CHIPS.find((s) => s.key === state.style)?.label : null,
         ]
           .filter(Boolean)
           .join(" + ")}
         .
       </p>
       <Link
-        href="/deals"
+        href={buildHref(state, { pack: null, style: null, sort: "best", pickerOpen: true })}
         className="inline-block font-body text-[14px] font-medium text-ink border border-ink rounded-sm px-4 py-2 hover:bg-bg-soft transition-colors"
       >
         Clear filters
