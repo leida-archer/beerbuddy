@@ -73,8 +73,7 @@ export default async function DealsPage(props: {
 
       <Banner />
 
-      <SortRow filters={state} />
-      <FilterChips filters={state} />
+      <ActiveChipRow state={state} />
 
       <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted text-center my-4 flex items-center gap-2 justify-center">
         <span className="h-px bg-rule w-10 inline-block" />
@@ -130,6 +129,86 @@ function Banner() {
         Building the price database. Most deal calls limited until July.
       </span>
     </div>
+  );
+}
+
+function ActiveChipRow({ state }: { state: PageState }) {
+  const sortLabel = SORT_OPTIONS.find((o) => o.key === state.sort)?.label ?? "Best deal";
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 mb-3 py-1">
+      {/* Sort chip — always visible. Clicking the chip body opens the picker. */}
+      <Link
+        href={buildHref(state, { pickerOpen: true })}
+        prefetch={false}
+        className="font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border bg-ink text-bg border-ink"
+        aria-label={`Sort: ${sortLabel}. Tap to change.`}
+      >
+        Sort: {sortLabel}
+      </Link>
+
+      {/* Pack filter chip (with ×) when set */}
+      {state.pack && (
+        <ActiveFilterChip
+          label={`${state.pack}-pack`}
+          state={state}
+          clearChange={{ pack: null }}
+        />
+      )}
+
+      {/* Style filter chip (with ×) when set */}
+      {state.style && (
+        <ActiveFilterChip
+          label={STYLE_CHIPS.find((s) => s.key === state.style)?.label ?? state.style}
+          state={state}
+          clearChange={{ style: null }}
+        />
+      )}
+
+      {/* Spacer pushes the +Filter/Done button to the right */}
+      <div className="ml-auto" />
+
+      {/* + Filter / Done toggle */}
+      <Link
+        href={buildHref(state, { pickerOpen: !state.pickerOpen })}
+        prefetch={false}
+        className="font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border bg-transparent text-ink border-ink hover:bg-bg-soft transition-colors duration-micro ease-settle"
+      >
+        {state.pickerOpen ? "Done" : "+ Filter"}
+      </Link>
+    </div>
+  );
+}
+
+function ActiveFilterChip({
+  label,
+  state,
+  clearChange,
+}: {
+  label: string;
+  state: PageState;
+  clearChange: Partial<PageState>;
+}) {
+  const removeHref = buildHref(state, clearChange);
+  const openPickerHref = buildHref(state, { pickerOpen: true });
+  return (
+    <span className="inline-flex items-center rounded-sm bg-ink text-bg border border-ink overflow-hidden">
+      <Link
+        href={openPickerHref}
+        prefetch={false}
+        className="px-3 py-1.5 min-h-8 font-body text-[13px] font-medium leading-none flex items-center"
+      >
+        {label}
+      </Link>
+      <Link
+        href={removeHref}
+        prefetch={false}
+        aria-label={`Remove ${label} filter`}
+        className="px-2 py-1.5 min-h-8 leading-none text-[14px] flex items-center"
+        style={{ color: "rgb(252 245 226 / 0.7)" /* text-bg/70 */ }}
+      >
+        ×
+      </Link>
+    </span>
   );
 }
 
