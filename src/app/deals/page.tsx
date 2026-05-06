@@ -74,6 +74,7 @@ export default async function DealsPage(props: {
       <Banner />
 
       <ActiveChipRow state={state} />
+      <FilterPicker state={state} />
 
       <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted text-center my-4 flex items-center gap-2 justify-center">
         <span className="h-px bg-rule w-10 inline-block" />
@@ -209,6 +210,102 @@ function ActiveFilterChip({
         ×
       </Link>
     </span>
+  );
+}
+
+function FilterPicker({ state }: { state: PageState }) {
+  if (!state.pickerOpen) return null;
+  return (
+    <section className="border-y border-rule py-4 mb-4 space-y-4">
+      <PickerSection heading="Sort">
+        {SORT_OPTIONS.map((opt) => (
+          <PickerChip
+            key={opt.key}
+            label={opt.label}
+            active={state.sort === opt.key}
+            href={buildHref(state, { sort: opt.key })}
+          />
+        ))}
+      </PickerSection>
+
+      <PickerSection heading="Pack">
+        <PickerChip
+          label="All"
+          active={!state.pack}
+          href={buildHref(state, { pack: null })}
+        />
+        {PACK_CHIPS.map((pack) => (
+          <PickerChip
+            key={pack}
+            label={`${pack}-pack`}
+            active={state.pack === pack}
+            href={buildHref(state, {
+              pack: state.pack === pack ? null : pack,
+            })}
+          />
+        ))}
+      </PickerSection>
+
+      <PickerSection heading="Style">
+        <PickerChip
+          label="All"
+          active={!state.style}
+          href={buildHref(state, { style: null })}
+        />
+        {STYLE_CHIPS.map((style) => (
+          <PickerChip
+            key={style.key}
+            label={style.label}
+            active={state.style === style.key}
+            href={buildHref(state, {
+              style: state.style === style.key ? null : style.key,
+            })}
+          />
+        ))}
+      </PickerSection>
+    </section>
+  );
+}
+
+function PickerSection({
+  heading,
+  children,
+}: {
+  heading: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted mb-2">
+        {heading}
+      </h3>
+      <div className="flex flex-wrap gap-1.5">{children}</div>
+    </div>
+  );
+}
+
+function PickerChip({
+  label,
+  active,
+  href,
+}: {
+  label: string;
+  active: boolean;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      prefetch={false}
+      aria-current={active ? "true" : undefined}
+      className={`font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border transition-colors duration-micro ease-settle ${
+        active
+          ? "bg-ink text-bg border-ink"
+          : "bg-transparent text-ink border-rule hover:bg-bg-soft hover:border-ink"
+      }`}
+    >
+      {label}
+    </Link>
   );
 }
 
