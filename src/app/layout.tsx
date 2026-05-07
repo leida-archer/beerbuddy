@@ -20,10 +20,33 @@ const geistMono = Geist_Mono({
 // The variable is declared in <head> via a <link> below.
 // Same approach as design-consultation preview HTML.
 
+// Used by Next.js to resolve relative URLs in openGraph + twitter metadata
+// (especially the auto-wired og:image / twitter:image from opengraph-image.tsx).
+// VERCEL_URL is the per-deployment URL; the alias is the stable production URL.
+const SITE_URL = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://beerbuddy-woad.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "BeerBuddy — best beer deals in Nevada County",
   description:
     "Mobile-first PWA showing this week's best beer deals at chain and indie stores in Nevada County, CA. Ranked by deal-vs-baseline, not just sticker price.",
+  openGraph: {
+    title: "BeerBuddy — best beer deals in Nevada County",
+    description:
+      "Best beer deals in Nevada County, CA — ranked by what's actually on sale.",
+    url: "/",
+    siteName: "BeerBuddy",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BeerBuddy — best beer deals in Nevada County",
+    description:
+      "Best beer deals in Nevada County, CA — ranked by what's actually on sale.",
+  },
 };
 
 export const viewport: Viewport = {
