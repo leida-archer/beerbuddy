@@ -3,6 +3,7 @@
 export type SortKey = "best" | "cheap" | "oz";
 
 export interface PageState {
+  zip: string;
   sort: SortKey;
   pack: string | null;
   style: string | null;
@@ -11,12 +12,17 @@ export interface PageState {
 
 export const DEFAULT_SORT: SortKey = "best";
 
-/** Parse Next.js searchParams into a typed PageState. */
+/**
+ * Parse Next.js searchParams into a typed PageState. `zip` defaults to
+ * "" when absent; the production redirect at /deals catches the
+ * empty-zip case before this helper's output is rendered.
+ */
 export function parsePageState(
   sp: Record<string, string | string[] | undefined>,
 ): PageState {
   const sort = asString(sp.sort);
   return {
+    zip: asString(sp.zip) ?? "",
     sort: sort === "cheap" || sort === "oz" ? sort : DEFAULT_SORT,
     pack: asString(sp.pack),
     style: asString(sp.style),
@@ -26,21 +32,22 @@ export function parsePageState(
 
 /**
  * Build a /deals href that applies the given changes on top of the
- * current state. Pass `null` to clear a param. Default values (sort=best,
- * pickerOpen=false) are omitted from the URL.
+ * current state. Pass `null` to clear pack or style. `zip` is always
+ * emitted — there is no default to omit. Default sort and closed
+ * picker are omitted from the URL.
  */
 export function buildHref(state: PageState, changes: Partial<PageState>): string {
   const next: PageState = { ...state, ...changes };
   const sp = new URLSearchParams();
+  sp.set("zip", next.zip);
   if (next.sort !== DEFAULT_SORT) sp.set("sort", next.sort);
   if (next.pack) sp.set("pack", next.pack);
   if (next.style) sp.set("style", next.style);
   if (next.pickerOpen) sp.set("fp", "open");
-  const q = sp.toString();
-  return q ? `/deals?${q}` : "/deals";
+  return `/deals?${sp.toString()}`;
 }
 
-function asString(v: string | string[] | undefined): string | null {
+export function asString(v: string | string[] | undefined): string | null {
   if (typeof v === "string" && v.length > 0) return v;
   if (Array.isArray(v) && v[0]) return v[0];
   return null;
