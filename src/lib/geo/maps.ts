@@ -1,5 +1,7 @@
 // src/lib/geo/maps.ts
 
+import type { Store } from "@/lib/deals";
+
 export type MapsTarget = "apple" | "google";
 
 /**
@@ -27,17 +29,10 @@ export function targetForUserAgent(
  * native app fills in their current location as the origin and
  * the store as the destination.
  *
- * Parameter is widened to a structural { lat, lon } subset for
- * this commit; Task 3 lands `lat`/`lon` on the canonical Store
- * interface, at which point this signature is tightened to Store.
- *
  * Apple Maps:  https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
  * Google Maps: https://developers.google.com/maps/documentation/urls/get-started
  */
-export function mapsHref(
-  store: { lat: number; lon: number },
-  target: MapsTarget,
-): string {
+export function mapsHref(store: Store, target: MapsTarget): string {
   const ll = `${store.lat},${store.lon}`;
   if (target === "apple") {
     return `https://maps.apple.com/?daddr=${ll}`;

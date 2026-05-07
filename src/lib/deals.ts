@@ -29,6 +29,9 @@ export interface Store {
   id: string;
   name: string;
   city: string;
+  address: string;
+  lat: number;
+  lon: number;
 }
 
 export interface DealsResult {

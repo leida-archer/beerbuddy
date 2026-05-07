@@ -62,11 +62,46 @@ interface DealRow {
 }
 
 const STORES = [
-  { id: "raleys-grass-valley", name: "Raley's", city: "Grass Valley" },
-  { id: "bevmo-auburn", name: "BevMo", city: "Auburn" },
-  { id: "holiday-market-penn-valley", name: "Holiday Market", city: "Penn Valley" },
-  { id: "savemart-nevada-city", name: "Save Mart", city: "Nevada City" },
-  { id: "grocery-outlet-grass-valley", name: "Grocery Outlet", city: "Grass Valley" },
+  {
+    id: "raleys-grass-valley",
+    name: "Raley's",
+    city: "Grass Valley",
+    address: "765 East Main St, Grass Valley, CA 95945",
+    lat: 39.2148,
+    lon: -121.0489,
+  },
+  {
+    id: "bevmo-auburn",
+    name: "BevMo",
+    city: "Auburn",
+    address: "1500 Grass Valley Hwy, Auburn, CA 95603",
+    lat: 38.9050,
+    lon: -121.0700,
+  },
+  {
+    id: "holiday-market-penn-valley",
+    name: "Holiday Market",
+    city: "Penn Valley",
+    address: "11879 Pleasant Valley Rd, Penn Valley, CA 95946",
+    lat: 39.1815,
+    lon: -121.1830,
+  },
+  {
+    id: "savemart-nevada-city",
+    name: "Save Mart",
+    city: "Nevada City",
+    address: "705 Zion St, Nevada City, CA 95959",
+    lat: 39.2627,
+    lon: -121.0163,
+  },
+  {
+    id: "grocery-outlet-grass-valley",
+    name: "Grocery Outlet",
+    city: "Grass Valley",
+    address: "110 Springhill Dr, Grass Valley, CA 95945",
+    lat: 39.2178,
+    lon: -121.0570,
+  },
 ];
 
 async function buildRaleys(observedAt: string, sampleCount = 60): Promise<DealRow[]> {

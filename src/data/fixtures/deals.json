@@ -1,73 +1,56 @@
 {
-  "generatedAt": "2026-05-06T04:51:46.295Z",
+  "generatedAt": "2026-05-07T05:01:40.082Z",
   "stores": [
     {
       "id": "raleys-grass-valley",
       "name": "Raley's",
-      "city": "Grass Valley"
+      "city": "Grass Valley",
+      "address": "765 East Main St, Grass Valley, CA 95945",
+      "lat": 39.2148,
+      "lon": -121.0489
     },
     {
       "id": "bevmo-auburn",
       "name": "BevMo",
-      "city": "Auburn"
+      "city": "Auburn",
+      "address": "1500 Grass Valley Hwy, Auburn, CA 95603",
+      "lat": 38.905,
+      "lon": -121.07
     },
     {
       "id": "holiday-market-penn-valley",
       "name": "Holiday Market",
-      "city": "Penn Valley"
+      "city": "Penn Valley",
+      "address": "11879 Pleasant Valley Rd, Penn Valley, CA 95946",
+      "lat": 39.1815,
+      "lon": -121.183
     },
     {
       "id": "savemart-nevada-city",
       "name": "Save Mart",
-      "city": "Nevada City"
+      "city": "Nevada City",
+      "address": "705 Zion St, Nevada City, CA 95959",
+      "lat": 39.2627,
+      "lon": -121.0163
     },
     {
       "id": "grocery-outlet-grass-valley",
       "name": "Grocery Outlet",
-      "city": "Grass Valley"
+      "city": "Grass Valley",
+      "address": "110 Springhill Dr, Grass Valley, CA 95945",
+      "lat": 39.2178,
+      "lon": -121.057
     }
   ],
   "counts": {
     "raleys": 60,
-    "bevmo": 28,
+    "bevmo": 27,
     "holiday": 50,
-    "savemart": 62,
+    "savemart": 80,
     "groceryOutlet": 0,
-    "total": 200
+    "total": 217
   },
   "deals": [
-    {
-      "id": "savemart-19724833",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Firestone",
-      "name": "Firestone Beer24 fl oz",
-      "upc": null,
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 999,
-      "regularPriceCents": 1349,
-      "discounted": true,
-      "discountPct": 26,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-25564927",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Tioga-Sequoia",
-      "name": "Tioga-Sequoia Brewing Company Gen. Sherman Ipa16 fl oz",
-      "upc": null,
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 1999,
-      "regularPriceCents": 2699,
-      "discounted": true,
-      "discountPct": 26,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
     {
       "id": "savemart-193352",
       "storeId": "savemart-nevada-city",
@@ -82,7 +65,7 @@
       "regularPriceCents": 999,
       "discounted": true,
       "discountPct": 25,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3282773",
@@ -98,7 +81,23 @@
       "regularPriceCents": 999,
       "discounted": true,
       "discountPct": 25,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-45120",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Light American Light Lager Beer, 4.2% ABV 24-oz. beer can3 x 24 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 3,
+      "packUnitMl": 710,
+      "priceCents": 749,
+      "regularPriceCents": 999,
+      "discounted": true,
+      "discountPct": 25,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-36436101",
@@ -114,7 +113,7 @@
       "regularPriceCents": 2399,
       "discounted": true,
       "discountPct": 25,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23221450",
@@ -130,7 +129,23 @@
       "regularPriceCents": 2399,
       "discounted": true,
       "discountPct": 25,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-44994",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Light Beer, American Light Lager Beer, 36-pack, 12-oz beer cans, 4.2% ABV36 x 12 fl oz • 3 sizes",
+      "upc": null,
+      "packCount": 36,
+      "packUnitMl": 355,
+      "priceCents": 2499,
+      "regularPriceCents": 3299,
+      "discounted": true,
+      "discountPct": 24,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-19503662",
@@ -146,7 +161,23 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 23,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-150753",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Budweiser",
+      "name": "Budweiser American Lager Beer 36 Pack, 12 Fl Oz Cans36 x 12 fl oz",
+      "upc": null,
+      "packCount": 36,
+      "packUnitMl": 355,
+      "priceCents": 2499,
+      "regularPriceCents": 3199,
+      "discounted": true,
+      "discountPct": 22,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-b36d37d7",
@@ -162,55 +193,39 @@
       "regularPriceCents": 2399,
       "discounted": true,
       "discountPct": 21,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30300468",
+      "id": "raleys-30791652",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Excelsior",
-      "name": "Excelsior Beer, Imperial Apple",
-      "upc": "00856793004684",
+      "brand": "Smirnoff",
+      "name": "Smirnoff Ice Smash Malt Beverage, Blue Raspberry + Blackberry",
+      "upc": "00082000791652",
       "packCount": 1,
       "packUnitMl": null,
       "priceCents": 400,
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-2410418",
+      "id": "raleys-33600005",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Jack",
-      "name": "Jack Rabbit Whats The Vibe",
-      "upc": "00748252681652",
+      "brand": "Speakeasy",
+      "name": "Speakeasy Beer, IPA, Big Daddy",
+      "upc": "00690926000057",
       "packCount": 1,
       "packUnitMl": null,
       "priceCents": 400,
       "regularPriceCents": 499,
       "discounted": false,
       "discountPct": 20,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30025891",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Mike's Harder",
-      "name": "Mike's Harder Beer, Mango",
-      "upc": "00635985258919",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 400,
-      "regularPriceCents": 499,
-      "discounted": false,
-      "discountPct": 20,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-17090322",
@@ -226,7 +241,7 @@
       "regularPriceCents": 2499,
       "discounted": true,
       "discountPct": 20,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23802405",
@@ -242,7 +257,7 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 19,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3351697",
@@ -258,7 +273,7 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 19,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-25556723",
@@ -274,7 +289,7 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 19,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-20224491",
@@ -290,55 +305,7 @@
       "regularPriceCents": 2599,
       "discounted": true,
       "discountPct": 19,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-16716494",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Michelob",
-      "name": "Michelob ULTRA Superior Light Beer Cans3 x 25 fl oz • 4 sizes",
-      "upc": null,
-      "packCount": 3,
-      "packUnitMl": 739,
-      "priceCents": 899,
-      "regularPriceCents": 1099,
-      "discounted": true,
-      "discountPct": 18,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30188327",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Hop Wtr",
-      "name": "Hop Wtr Sparkling Hop Water, Peach, Non-Alcoholic",
-      "upc": "00850020883271",
-      "packCount": 6,
-      "packUnitMl": null,
-      "priceCents": 1149,
-      "regularPriceCents": 1399,
-      "discounted": false,
-      "discountPct": 18,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-44994",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Coors",
-      "name": "Coors Light Beer, American Light Lager Beer, 36-pack, 12-oz beer cans, 4.2% ABV36 x 12 fl oz • 3 sizes",
-      "upc": null,
-      "packCount": 36,
-      "packUnitMl": 355,
-      "priceCents": 2699,
-      "regularPriceCents": 3299,
-      "discounted": true,
-      "discountPct": 18,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-a7793a09",
@@ -354,23 +321,7 @@
       "regularPriceCents": 599,
       "discounted": true,
       "discountPct": 17,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-150753",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Budweiser",
-      "name": "Budweiser American Lager Beer 36 Pack, 12 Fl Oz Cans36 x 12 fl oz",
-      "upc": null,
-      "packCount": 36,
-      "packUnitMl": 355,
-      "priceCents": 2699,
-      "regularPriceCents": 3199,
-      "discounted": true,
-      "discountPct": 16,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-61eb50d2",
@@ -386,7 +337,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 15,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-e858f6b4",
@@ -402,7 +353,39 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 15,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-14061",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Angry",
+      "name": "Angry Orchard Crisp Apple 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1899,
+      "regularPriceCents": 2199,
+      "discounted": true,
+      "discountPct": 14,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-26787",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Heineken",
+      "name": "Heineken 0.0 Non-Alcoholic 12pk 11.2oz Can",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 331,
+      "priceCents": 1899,
+      "regularPriceCents": 2199,
+      "discounted": true,
+      "discountPct": 14,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-324961a8",
@@ -418,7 +401,23 @@
       "regularPriceCents": 399,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30900279",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "DUST",
+      "name": "DUST BOWL THERAPIST IMPERIAL IPA",
+      "upc": "00856619002795",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 699,
+      "regularPriceCents": 799,
+      "discounted": false,
+      "discountPct": 13,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-21570203",
@@ -434,7 +433,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-44981",
@@ -450,7 +449,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3102688",
@@ -466,7 +465,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-13731",
@@ -482,7 +481,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-13321",
@@ -498,7 +497,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-45c16572",
@@ -514,7 +513,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-459d34f0",
@@ -530,23 +529,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-41701",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "White",
-      "name": "White Claw Seltzer Flavor No. 3 Variety 12pk 12oz Can 5.0% ABV",
-      "upc": null,
-      "packCount": 12,
-      "packUnitMl": 355,
-      "priceCents": 1999,
-      "regularPriceCents": 2299,
-      "discounted": true,
-      "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-7680",
@@ -562,39 +545,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-44362",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "White",
-      "name": "White Claw Surge #1 Variety 12pk 12oz Can 8% ABV",
-      "upc": null,
-      "packCount": 12,
-      "packUnitMl": 355,
-      "priceCents": 1999,
-      "regularPriceCents": 2299,
-      "discounted": true,
-      "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-198224",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "White",
-      "name": "White Claw Zero Proof Variety 12pk 12oz Can",
-      "upc": null,
-      "packCount": 12,
-      "packUnitMl": 355,
-      "priceCents": 1999,
-      "regularPriceCents": 2299,
-      "discounted": true,
-      "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-11057",
@@ -610,7 +561,7 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-31891",
@@ -626,7 +577,7 @@
       "regularPriceCents": 3199,
       "discounted": true,
       "discountPct": 13,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-78260",
@@ -642,7 +593,71 @@
       "regularPriceCents": 399,
       "discounted": true,
       "discountPct": 12,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30588560",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Hop",
+      "name": "Hop Valley Hazy Ipa Can",
+      "upc": "00850015885600",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 350,
+      "regularPriceCents": 399,
+      "discounted": false,
+      "discountPct": 12,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-2403015",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Hazicus Maximus",
+      "upc": "00723830200067",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 350,
+      "regularPriceCents": 399,
+      "discounted": false,
+      "discountPct": 12,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-17541827",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Premier Mexican Lager Import Lower Calorie* Light Beer Bottles6 x 12 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1149,
+      "regularPriceCents": 1299,
+      "discounted": true,
+      "discountPct": 12,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-19497852",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Familiar Mexican Lager Import Beer Bottles24 x 12 fl oz • 2 sizes",
+      "upc": null,
+      "packCount": 24,
+      "packUnitMl": 355,
+      "priceCents": 2999,
+      "regularPriceCents": 3399,
+      "discounted": true,
+      "discountPct": 12,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-39816320",
@@ -658,23 +673,7 @@
       "regularPriceCents": 3399,
       "discounted": true,
       "discountPct": 12,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30200322",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "2 Towns Ciderhouse",
-      "name": "2 Towns Ciderhouse Beer, Tropical Mayhem",
-      "upc": "00852892003221",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 799,
-      "regularPriceCents": 899,
-      "discounted": false,
-      "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-02e5bb00",
@@ -690,7 +689,7 @@
       "regularPriceCents": 1799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3185883",
@@ -706,7 +705,23 @@
       "regularPriceCents": 1899,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-62254274",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Michelob",
+      "name": "Michelob ULTRA Zero Non-Alcoholic American Lager Beer, 12 Pack, 12 Fl Oz Cans12 x 12 fl oz",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1699,
+      "regularPriceCents": 1899,
+      "discounted": true,
+      "discountPct": 11,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-673aa97f",
@@ -722,7 +737,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-3ec35a49",
@@ -738,7 +753,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-afd6e5ac",
@@ -754,7 +769,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-f67c00d4",
@@ -770,23 +785,7 @@
       "regularPriceCents": 2799,
       "discounted": true,
       "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-25659",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "White",
-      "name": "White Claw Hard Seltzer Variety 24pk 12oz Can",
-      "upc": null,
-      "packCount": 24,
-      "packUnitMl": 355,
-      "priceCents": 3199,
-      "regularPriceCents": 3599,
-      "discounted": true,
-      "discountPct": 11,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-18203372",
@@ -802,7 +801,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23904310",
@@ -818,7 +817,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-39522968",
@@ -834,7 +833,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-20989050",
@@ -850,7 +849,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-29233313",
@@ -866,7 +865,39 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-280913",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Especial Mexican Lager Import Beer Bottle24 fl oz • 7 sizes",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-18384858",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Modelo",
+      "name": "Modelo Negra Amber Lager Mexican Import Beer Can24 fl oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 450,
+      "regularPriceCents": 499,
+      "discounted": true,
+      "discountPct": 10,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-26850944",
@@ -882,23 +913,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-82969",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Sapporo",
-      "name": "Sapporo Premium Beer22 fl oz • 2 sizes",
-      "upc": null,
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 450,
-      "regularPriceCents": 499,
-      "discounted": true,
-      "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23768563",
@@ -914,7 +929,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23768660",
@@ -930,7 +945,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-19618626",
@@ -946,7 +961,7 @@
       "regularPriceCents": 499,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-ab393a1b",
@@ -962,7 +977,23 @@
       "regularPriceCents": 999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30002108",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Dust Bowl Brewing Company",
+      "name": "Dust Bowl Brewing Company Beer, Imperial IPA, Therapist",
+      "upc": "00856619002108",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": 999,
+      "discounted": false,
+      "discountPct": 10,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-20587465",
@@ -978,7 +1009,7 @@
       "regularPriceCents": 1549,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-f4d413e9",
@@ -994,7 +1025,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-125c5ea4",
@@ -1010,7 +1041,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-50d1b49d",
@@ -1026,7 +1057,7 @@
       "regularPriceCents": 1999,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-95168",
@@ -1042,7 +1073,7 @@
       "regularPriceCents": 2099,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3247141",
@@ -1058,7 +1089,7 @@
       "regularPriceCents": 2899,
       "discounted": true,
       "discountPct": 10,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-297540",
@@ -1074,7 +1105,7 @@
       "regularPriceCents": 329,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-871892b6",
@@ -1090,7 +1121,7 @@
       "regularPriceCents": 1099,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-2400",
@@ -1106,7 +1137,7 @@
       "regularPriceCents": 2199,
       "discounted": true,
       "discountPct": 9,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-8b647c28",
@@ -1122,7 +1153,7 @@
       "regularPriceCents": 1199,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-97fde8f0",
@@ -1138,7 +1169,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-bfd9f984",
@@ -1154,7 +1185,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-1dcece48",
@@ -1170,7 +1201,7 @@
       "regularPriceCents": 1299,
       "discounted": true,
       "discountPct": 8,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-46113c56",
@@ -1186,7 +1217,23 @@
       "regularPriceCents": 299,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-2400658",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Calicraft",
+      "name": "Calicraft Rad! West Coast Ipa",
+      "upc": "00851154004815",
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": 1399,
+      "discounted": false,
+      "discountPct": 7,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-2e436772",
@@ -1202,7 +1249,7 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-bbdc4643",
@@ -1218,7 +1265,7 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-f3264e43",
@@ -1234,7 +1281,39 @@
       "regularPriceCents": 1399,
       "discounted": true,
       "discountPct": 7,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30005216",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "3",
+      "name": "3 Disciples Brewing Co. Rotational Hazy Ipa",
+      "upc": "00860004005216",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 1399,
+      "regularPriceCents": 1499,
+      "discounted": false,
+      "discountPct": 7,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30088315",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Hop Wtr",
+      "name": "Hop Wtr Sparkling Hop Water, Assorted, Non-Alcoholic, Mixed Pack",
+      "upc": "00850020883158",
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 2149,
+      "regularPriceCents": 2299,
+      "discounted": false,
+      "discountPct": 7,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-24203a82",
@@ -1250,7 +1329,7 @@
       "regularPriceCents": 399,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-4828b88a",
@@ -1266,7 +1345,7 @@
       "regularPriceCents": 1049,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-d2e68ef6",
@@ -1282,7 +1361,7 @@
       "regularPriceCents": 1899,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-4278a1c9",
@@ -1298,7 +1377,7 @@
       "regularPriceCents": 2099,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-579b2981",
@@ -1314,7 +1393,7 @@
       "regularPriceCents": 2099,
       "discounted": true,
       "discountPct": 5,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-444fe49f",
@@ -1330,23 +1409,7 @@
       "regularPriceCents": 2299,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2409589",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "PartyBomb",
-      "name": "PartyBomb Assorted Malt Beverage Blast Pack",
-      "upc": "00850077820007",
-      "packCount": 12,
-      "packUnitMl": null,
-      "priceCents": 2199,
-      "regularPriceCents": 2299,
-      "discounted": false,
-      "discountPct": 4,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-10583",
@@ -1362,7 +1425,7 @@
       "regularPriceCents": 2499,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-c7f2904e",
@@ -1378,7 +1441,23 @@
       "regularPriceCents": 2699,
       "discounted": true,
       "discountPct": 4,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-10200449",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Coors Light",
+      "name": "Coors Light 4.2% ABV, 30 Pack",
+      "upc": "00071990300302",
+      "packCount": 30,
+      "packUnitMl": null,
+      "priceCents": 2999,
+      "regularPriceCents": 3099,
+      "discounted": false,
+      "discountPct": 3,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-273565",
@@ -1394,7 +1473,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30000618",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Steel Reserve",
+      "name": "Steel Reserve Alloy Series Malt Beverage, Spiked, Watermelon",
+      "upc": "00078250006189",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 279,
+      "regularPriceCents": 279,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-4751a7d6",
@@ -1410,7 +1505,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-0ab2aea2",
@@ -1426,7 +1521,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30011262",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Paulaner",
+      "name": "Paulaner Ale, Natural Wheat",
+      "upc": "00080157111262",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 300,
+      "regularPriceCents": 300,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-03d784ee",
@@ -1442,7 +1553,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-43e0474a",
@@ -1458,7 +1569,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-0a440eda",
@@ -1474,7 +1585,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-97771fe4",
@@ -1490,7 +1601,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-09a8124a",
@@ -1506,7 +1617,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-198057b2",
@@ -1522,7 +1633,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-3ff45b1a",
@@ -1538,7 +1649,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-3690c555",
@@ -1554,23 +1665,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30600919",
+      "id": "raleys-30303019",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Speakeasy",
-      "name": "Speakeasy Beer, IPA, Mystic Haze",
-      "upc": "00690926000088",
+      "brand": "Modern Times",
+      "name": "Modern Times Beer, Orderville",
+      "upc": "00810273030198",
       "packCount": 1,
       "packUnitMl": null,
       "priceCents": 350,
       "regularPriceCents": 350,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3053503",
@@ -1586,55 +1697,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-31026409",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Cantaritos",
-      "name": "Cantaritos Hard Soda, Pineapple",
-      "upc": "00018200264092",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 399,
-      "regularPriceCents": 399,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-31200192",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Full",
-      "name": "Full Circle Captain Save A Hop West Coast Ipa",
-      "upc": "00850382001924",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 399,
-      "regularPriceCents": 399,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2409471",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Michelob",
-      "name": "Michelob Ultra",
-      "upc": "00018200002724",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 399,
-      "regularPriceCents": 399,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-76b91558",
@@ -1650,7 +1713,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-10200252",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Miller",
+      "name": "Miller Lite Beer",
+      "upc": "00034100003555",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 399,
+      "regularPriceCents": 399,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-8c19459e",
@@ -1666,7 +1745,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-10603",
@@ -1682,7 +1761,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-b584f84e",
@@ -1698,7 +1777,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-eecf6b94",
@@ -1714,23 +1793,39 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30580021",
+      "id": "raleys-10200215",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Mike's Harder",
-      "name": "Mike's Harder Beer, Pineapple Mandarin",
-      "upc": "00635985800217",
+      "brand": "Guinness",
+      "name": "Guinness Beer, Extra Stout",
+      "upc": "00083820234800",
       "packCount": 1,
       "packUnitMl": null,
       "priceCents": 400,
       "regularPriceCents": 400,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-31400233",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Modelo",
+      "name": "Modelo Negra Con Chile Beer",
+      "upc": "00033544002339",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 400,
+      "regularPriceCents": 399,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-21202390",
@@ -1746,7 +1841,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-23525473",
@@ -1762,39 +1857,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30005679",
+      "id": "raleys-30900016",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "STRIKE",
-      "name": "STRIKE HAZE OF FAME HAZY IPA",
-      "upc": "00610696756794",
+      "brand": "Banana",
+      "name": "Banana Bread Beer",
+      "upc": "05000264012776",
       "packCount": 1,
       "packUnitMl": null,
       "priceCents": 429,
       "regularPriceCents": 429,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30309001",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Bear Republic",
-      "name": "Bear Republic Beer, Indian Pale Ale, Racer 5",
-      "upc": "00722130090019",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 449,
-      "regularPriceCents": 449,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-95304",
@@ -1810,39 +1889,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30001458",
+      "id": "raleys-30180639",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Moonlight",
-      "name": "Moonlight Mojito Hard Kombucha",
-      "upc": "00860001214581",
+      "brand": "Smirnoff",
+      "name": "Smirnoff Ice Original Can",
+      "upc": "00082000806394",
       "packCount": 1,
       "packUnitMl": null,
-      "priceCents": 450,
-      "regularPriceCents": 449,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-302781",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "2",
-      "name": "2 Towns The Bad Apple Cider 19.2oz Can",
-      "upc": null,
-      "packCount": 1,
-      "packUnitMl": 568,
       "priceCents": 499,
-      "regularPriceCents": null,
+      "regularPriceCents": 499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-24817118",
@@ -1858,7 +1921,55 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30200454",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Saint",
+      "name": "Saint Archer Mosaic Ipa",
+      "upc": "00856503004546",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 699,
+      "regularPriceCents": 699,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-1371828",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Edge Non Alcoholic Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-16120",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Coors",
+      "name": "Coors Edge Non-alcoholic 6pk 12oz Btl",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-2579716",
@@ -1874,7 +1985,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-26797",
@@ -1890,7 +2001,55 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-24573958",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Guinness",
+      "name": "Guinness Zero Non Alcoholic Draught Cans 14 9 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30019926",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Smithwicks",
+      "name": "Smithwicks",
+      "upc": "00083820199260",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 899,
+      "regularPriceCents": 899,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-3094419",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Coors",
+      "name": "Coors Pale Lager Beer Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 949,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-a2355e33",
@@ -1906,7 +2065,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-26784",
@@ -1922,7 +2081,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-108190",
@@ -1938,71 +2097,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30400853",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Garage Beer",
-      "name": "Garage Beer Beer, Lime, Classic, 6 Pack",
-      "upc": "00851834008539",
-      "packCount": 6,
-      "packUnitMl": null,
-      "priceCents": 999,
-      "regularPriceCents": 999,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-13155",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "Heineken",
-      "name": "Heineken 0.0 6pk 12oz Btl 0.0% ABV",
-      "upc": null,
-      "packCount": 6,
-      "packUnitMl": 355,
-      "priceCents": 999,
-      "regularPriceCents": null,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2399824",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Juneshine",
-      "name": "Juneshine Midnight Painkiller",
-      "upc": "00850062156258",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 999,
-      "regularPriceCents": 999,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2399826",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Juneshine",
-      "name": "Juneshine Strawberry Kiwi Crush",
-      "upc": "00850062156241",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 999,
-      "regularPriceCents": 999,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-4911",
@@ -2018,7 +2113,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-ba148ded",
@@ -2034,7 +2129,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-6291",
@@ -2050,23 +2145,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30170264",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Coors",
-      "name": "Coors Banquet Beer",
-      "upc": "00071990170264",
-      "packCount": 3,
-      "packUnitMl": null,
-      "priceCents": 1099,
-      "regularPriceCents": 1099,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-45093",
@@ -2082,7 +2161,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-16204631",
@@ -2098,7 +2177,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-278255",
@@ -2114,23 +2193,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30013798",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Lagunitas",
-      "name": "Lagunitas Ipna Cans",
-      "upc": "00723830137981",
+      "id": "savemart-69419071",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Michelob",
+      "name": "Michelob Ultra Zero Non Alcoholic Lager Beer 6 Pack 12 Fl Oz Bottles",
+      "upc": null,
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1099,
-      "regularPriceCents": 1099,
+      "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "raleys-30095765",
@@ -2146,47 +2225,47 @@
       "regularPriceCents": 1099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30099919",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Slooow",
-      "name": "Slooow Mo Ipa",
-      "upc": "00850004572023",
-      "packCount": 6,
-      "packUnitMl": null,
-      "priceCents": 1099,
-      "regularPriceCents": 1099,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "bevmo-196115",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "Blue",
-      "name": "Blue Moon Non-Alcoholic Belgian Style 6pk 12oz Can",
-      "upc": null,
-      "packCount": 6,
-      "packUnitMl": 355,
-      "priceCents": 1199,
-      "regularPriceCents": null,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "savemart-16896354",
+      "id": "savemart-251065",
       "storeId": "savemart-nevada-city",
       "storeName": "Save Mart",
       "storeCity": "Nevada City",
-      "brand": "Sapporo",
-      "name": "Sapporo 6 Pack 12 oz Bottles 12 Fl Oz",
+      "brand": "Rainier",
+      "name": "Rainier Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1099,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30501402",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Anderson",
+      "name": "Anderson Valley Black Light Ale",
+      "upc": "00009125014022",
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1199,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-14530",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Athletic",
+      "name": "Athletic Brewing Co. Upside Dawn Non-Alcoholic Golden Ale 6pk 12oz",
       "upc": null,
       "packCount": 6,
       "packUnitMl": 355,
@@ -2194,7 +2273,87 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-19758918",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co Hops Of Wrath Ipa 12 0 Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": 0,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30020739",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Lead",
+      "name": "Lead Dog Biggest Little Blonde Ale",
+      "upc": "00860002073910",
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1199,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-3005",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Not",
+      "name": "Not Your Father's Root Beer 6pk 12oz Btl 5.9% ABV",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": 355,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-28557139",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Peroni",
+      "name": "Peroni Nastro Azzurro 0 Pale Lager Beer 11 2 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30100518",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Seasonal",
+      "name": "Seasonal",
+      "upc": "00852275005187",
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1199,
+      "regularPriceCents": 1199,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-7701f9f4",
@@ -2210,7 +2369,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "holiday-c75a9fde",
@@ -2226,7 +2385,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-2401039",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Sierra Nevada",
+      "name": "Sierra Nevada PILS Premium Lager Craft Beer 8 Pack (8.4oz Cans)",
+      "upc": "00083783676129",
+      "packCount": 8,
+      "packUnitMl": null,
+      "priceCents": 1249,
+      "regularPriceCents": 1249,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-23333",
@@ -2242,55 +2417,119 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30211392",
+      "id": "raleys-10210200",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Alibi",
-      "name": "Alibi Lager",
-      "upc": "00860012113927",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 1299,
-      "regularPriceCents": 1299,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30071105",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Farmers Brewing Co.",
-      "name": "Farmers Brewing Co. 6 Pack Sun Up 'Til Sun Down Session IPA Beer",
-      "upc": "00850017670105",
+      "brand": "Ale",
+      "name": "Ale",
+      "upc": "00675747014278",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1299,
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-10300011",
+      "id": "savemart-19052357",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Athletic",
+      "name": "Athletic Brewing Beer Run Wild 6 Pack 12 Fl Oz",
+      "upc": null,
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30015622",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
+      "brand": "BarrelHouse",
+      "name": "BarrelHouse Beer, Strawberry Daze",
+      "upc": "00850804005622",
+      "packCount": 6,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": 1299,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-33223315",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Blue",
+      "name": "Blue Moon Beer Non Alcoholic Belgium White 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-20700889",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
       "brand": "Lagunitas",
-      "name": "Lagunitas Czech Style Pilsner",
-      "upc": "00723830000117",
+      "name": "Lagunitas A Little Sumpin Sumpin 6 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-24040164",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Ipna Non Alcoholic Ipa 6 Bottles",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1299,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30058805",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Leinenkugel's",
+      "name": "Leinenkugel's Seasonal",
+      "upc": "00034100588052",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1299,
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "raleys-10200360",
@@ -2306,103 +2545,71 @@
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30743788",
+      "id": "raleys-31000023",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Stone",
-      "name": "Stone Beer, Hazy IPA",
-      "upc": "00636251743788",
+      "brand": "Oskar Blues",
+      "name": "Oskar Blues Beer, IPA, One-Y",
+      "upc": "00819942000234",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1299,
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30009658",
+      "id": "raleys-30977432",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Truly",
-      "name": "Truly Pineapple Hard Seltzer",
-      "upc": "00087692009658",
+      "brand": "Victory Brewing Co",
+      "name": "Victory Brewing Co Belgian-Style Tripel Golden Monkey Beer",
+      "upc": "00630279465325",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1299,
       "regularPriceCents": 1299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30000994",
+      "id": "raleys-30623007",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Voodoo Ranger Rotating IPA",
-      "name": "Voodoo Ranger Rotating IPA Beer, IPA, Danger Beach",
-      "upc": "00754527009946",
+      "brand": "Deschutes",
+      "name": "Deschutes Beer, Imperial Hazy IPA, Haze Tron",
+      "upc": "00763176230076",
       "packCount": 6,
       "packUnitMl": null,
-      "priceCents": 1299,
-      "regularPriceCents": 1299,
+      "priceCents": 1399,
+      "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-32500021",
+      "id": "raleys-30065279",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "White",
-      "name": "White Claw 70 Pineapple",
-      "upc": "00635985000211",
-      "packCount": 6,
-      "packUnitMl": null,
-      "priceCents": 1299,
-      "regularPriceCents": 1299,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30299059",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Woody's",
-      "name": "Woody's Quickie Ipa",
-      "upc": "00602822990592",
+      "brand": "Fieldwork",
+      "name": "Fieldwork Non-Alcoholic Encore",
+      "upc": "00850050652793",
       "packCount": 4,
       "packUnitMl": null,
-      "priceCents": 1299,
-      "regularPriceCents": 1299,
+      "priceCents": 1399,
+      "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2400224",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Tivoli",
-      "name": "Tivoli Beer, Light, Outlaw",
-      "upc": "00854076006776",
-      "packCount": 12,
-      "packUnitMl": null,
-      "priceCents": 1349,
-      "regularPriceCents": 1349,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-24244",
@@ -2418,7 +2625,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-24272",
@@ -2434,55 +2641,39 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30276506",
+      "id": "raleys-30018900",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Incline Cider House",
-      "name": "Incline Cider House Imperial Honeycrisp Haze Cider",
-      "upc": "00860002765068",
+      "brand": "Hacker Pschorr",
+      "name": "Hacker Pschorr Beer, Oktoberfest Marzen, 6 Pack",
+      "upc": "00049483189000",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1399,
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30203005",
+      "id": "raleys-30012535",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Modern Times",
-      "name": "Modern Times Beer, Orderville",
-      "upc": "00810273030051",
+      "brand": "Pigeon",
+      "name": "Pigeon Head Black Lager",
+      "upc": "00864925000350",
       "packCount": 4,
       "packUnitMl": null,
       "priceCents": 1399,
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30023098",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "OFFSHOOT",
-      "name": "OFFSHOOT BEER CO UNWIND",
-      "upc": "00810139030980",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 1399,
-      "regularPriceCents": 1399,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-16449",
@@ -2498,7 +2689,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "raleys-10200522",
@@ -2514,263 +2705,183 @@
       "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "bevmo-113656",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "2",
-      "name": "2 Towns Ciderhouse Cosmic Crisp 6pk 12oz Can 8.0% ABV",
-      "upc": null,
-      "packCount": 6,
-      "packUnitMl": 355,
-      "priceCents": 1499,
-      "regularPriceCents": null,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30023681",
+      "id": "raleys-30087648",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Allagash",
-      "name": "Allagash Beer, IPA, Hop Reach",
-      "upc": "00603675253681",
+      "brand": "Sudwerk",
+      "name": "Sudwerk Hefeweizen, Bavarian Wheat",
+      "upc": "00743834000524",
       "packCount": 6,
       "packUnitMl": null,
-      "priceCents": 1499,
-      "regularPriceCents": 1499,
+      "priceCents": 1399,
+      "regularPriceCents": 1399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30010177",
+      "id": "raleys-30070230",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Allagash",
-      "name": "Allagash Beer, Wheat, Belgian-Style, White",
-      "upc": "00603675101777",
+      "brand": "Almanac Beer Co.",
+      "name": "Almanac Beer Co. Beer, True Kolsch",
+      "upc": "00653341702302",
       "packCount": 4,
       "packUnitMl": null,
       "priceCents": 1499,
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-2407715",
+      "id": "raleys-30900341",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Butter",
-      "name": "Butter Zero",
-      "upc": "00853706002911",
-      "packCount": 1,
+      "brand": "Heretic",
+      "name": "Heretic Beer, Double India Pale Ale, Evil Cousin",
+      "upc": "00857129003418",
+      "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1499,
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-31200013",
+      "id": "raleys-30208755",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Chimay",
-      "name": "Chimay Ale, Peres Trappistes, Cinq Cents",
-      "upc": "00081706000136",
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 1499,
-      "regularPriceCents": 1499,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-32200109",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Full",
-      "name": "Full Circle Captian Save A Hop Imperial Punch",
-      "upc": "00850382001092",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 1499,
-      "regularPriceCents": 1499,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30977433",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Victory",
-      "name": "Victory Beer, Pilsner, Prima Pils, 12 Pack",
-      "upc": "00630279774335",
+      "brand": "Redd's",
+      "name": "Redd's Wicked Beer, Refreshingly Hard Ale, Black Cherry",
+      "upc": "00034100087555",
       "packCount": 12,
       "packUnitMl": null,
       "priceCents": 1499,
       "regularPriceCents": 1499,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "savemart-19285717",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Coronados",
-      "name": "Coronados Beer Ipa Weekend Vibes 6 Ea",
-      "upc": null,
-      "packCount": 1,
-      "packUnitMl": null,
-      "priceCents": 1599,
-      "regularPriceCents": null,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30532082",
+      "id": "raleys-30101097",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "KARL",
-      "name": "KARL STRAUSS AURORA HOPPYALIS",
-      "upc": "00796535320828",
+      "brand": "House",
+      "name": "House Beer Lager Cans",
+      "upc": "00818490010979",
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1599,
+      "regularPriceCents": 1599,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30110002",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Pizza Port Brewing Co.",
+      "name": "Pizza Port Brewing Co. India Pale Ale Swami's Beer",
+      "upc": "00689926100027",
       "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1599,
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30016928",
+      "id": "raleys-30100641",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "MAMMOTH",
-      "name": "MAMMOTH BREWING EPIC IPA",
-      "upc": "00180716000928",
+      "brand": "SONOMA",
+      "name": "SONOMA SPRINGS SEASONAL",
+      "upc": "00858457006416",
       "packCount": 4,
       "packUnitMl": null,
       "priceCents": 1599,
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "bevmo-243311",
-      "storeId": "bevmo-auburn",
-      "storeName": "BevMo",
-      "storeCity": "Auburn",
-      "brand": "Michelob",
-      "name": "Michelob Ultra Zero 12pk 12oz Can",
-      "upc": null,
-      "packCount": 12,
-      "packUnitMl": 355,
-      "priceCents": 1599,
-      "regularPriceCents": null,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30098622",
+      "id": "raleys-30400249",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "SLO Brew",
-      "name": "SLO Brew Double Hazy A-Slo-Ha Double IPA Beer",
-      "upc": "00850035986226",
-      "packCount": 4,
+      "brand": "Tieton Cider Works",
+      "name": "Tieton Cider Works Beer, Bourbon Barrel Peach Cider",
+      "upc": "00851582002490",
+      "packCount": 6,
       "packUnitMl": null,
       "priceCents": 1599,
       "regularPriceCents": 1599,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30005382",
+      "id": "raleys-2402985",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "DEVICE",
-      "name": "DEVICE BREWING BIGTRUCK IPA",
-      "upc": "00850571005382",
+      "brand": "Movement",
+      "name": "Movement Rotating Pilsner/Lager",
+      "upc": "00732388162307",
       "packCount": 4,
       "packUnitMl": null,
       "priceCents": 1699,
       "regularPriceCents": 1699,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30600437",
+      "id": "raleys-30674283",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Do",
-      "name": "Do You Even Mosaic Broh",
-      "upc": "00855816004373",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 1699,
-      "regularPriceCents": 1699,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-2400332",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Dying",
-      "name": "Dying Breed American Light Lager",
-      "upc": "00756014787207",
+      "brand": "Brewbilt",
+      "name": "Brewbilt Wizard Boots Hazy Pale Ale",
+      "upc": "00791126742836",
       "packCount": 4,
       "packUnitMl": null,
       "priceCents": 1799,
       "regularPriceCents": 1799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "savemart-243958",
-      "storeId": "savemart-nevada-city",
-      "storeName": "Save Mart",
-      "storeCity": "Nevada City",
-      "brand": "Sapporo",
-      "name": "Sapporo 12 Pack 12 oz Cans 12 Fl Oz",
-      "upc": null,
-      "packCount": 12,
-      "packUnitMl": 355,
-      "priceCents": 1849,
-      "regularPriceCents": null,
+      "id": "raleys-30400057",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "SUDWERK",
+      "name": "SUDWERK REGROWTH IPA",
+      "upc": "00743834000579",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 1799,
+      "regularPriceCents": 1799,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-244285",
@@ -2786,7 +2897,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30027002",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Farmers Brewing Co.",
+      "name": "Farmers Brewing Co. Premium Light Lager 12-12 OZ",
+      "upc": "00850017670020",
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": 1899,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-95127",
@@ -2802,15 +2929,15 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "savemart-18259707",
+      "id": "savemart-45049",
       "storeId": "savemart-nevada-city",
       "storeName": "Save Mart",
       "storeCity": "Nevada City",
-      "brand": "Michelob",
-      "name": "Michelob Ultra Pure Gold Organic Light Lager Beer Bottles 12 Fl Oz",
+      "brand": "Guinness",
+      "name": "Guinness Draught Bottles 11 2 Fl Oz",
       "upc": null,
       "packCount": 1,
       "packUnitMl": null,
@@ -2818,7 +2945,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30012945",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Mare",
+      "name": "Mare Island Brewing Nuclear Sandwich Double Ipa",
+      "upc": "00755874112945",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 1899,
+      "regularPriceCents": 1899,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-26326328",
@@ -2834,23 +2977,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30103697",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Toppling Goliath Brewing Co.",
-      "name": "Toppling Goliath Brewing Co. Beer, Double India Pale Ale, King Sue",
-      "upc": "00852211003697",
-      "packCount": 4,
-      "packUnitMl": null,
-      "priceCents": 1899,
-      "regularPriceCents": 1899,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-280914",
@@ -2866,7 +2993,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30647635",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Knee",
+      "name": "Knee Deep Hola Senor Mexican Style Lager",
+      "upc": "00850066476352",
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 1949,
+      "regularPriceCents": 1949,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-57261",
@@ -2882,7 +3025,103 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-56708",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Athletic",
+      "name": "Athletic Brewing Co. Upside Dawn Non-Alcoholic (12Pkc 12 Oz)",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-19686703",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Corona",
+      "name": "Corona Premier Mexican Lager Light Beer Bottles 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-19646973",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Dust",
+      "name": "Dust Bowl Brewing Co Dump Truck Of The Gods 16 0 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-2400336",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Dying",
+      "name": "Dying Breed Red Ale",
+      "upc": "00756014786835",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": 1999,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30096128",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Fort",
+      "name": "Fort Rock Ltd Release Ipa Iv",
+      "upc": "00717932961285",
+      "packCount": 4,
+      "packUnitMl": null,
+      "priceCents": 1999,
+      "regularPriceCents": 1999,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-42111",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Happy",
+      "name": "Happy Dad Hard Seltzer Variety 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 1999,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "bevmo-26373",
@@ -2898,7 +3137,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-19326017",
@@ -2914,7 +3153,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "raleys-10200059",
@@ -2930,23 +3169,71 @@
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30015739",
+      "id": "raleys-2401040",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Ponderosa Cider Co.",
-      "name": "Ponderosa Cider Co. Cider, Pineapple Crush",
-      "upc": "00860010215739",
-      "packCount": 4,
+      "brand": "Sierra Nevada",
+      "name": "Sierra Nevada Pale Ale Craft Beer 8 Pack 16oz Cans",
+      "upc": "00083783676013",
+      "packCount": 8,
       "packUnitMl": null,
       "priceCents": 2099,
       "regularPriceCents": 2099,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "bevmo-51379",
+      "storeId": "bevmo-auburn",
+      "storeName": "BevMo",
+      "storeCity": "Auburn",
+      "brand": "Ace",
+      "name": "Ace Cider Tropical Variety 12pk 12oz Can 5.0% ABV",
+      "upc": null,
+      "packCount": 12,
+      "packUnitMl": 355,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-2410172",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Bittercube",
+      "name": "Bittercube Cherry Bark Vanilla Bitters",
+      "upc": "00737212282862",
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": 2199,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-100421",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Busch",
+      "name": "Busch Beer Cans 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-17508211",
@@ -2962,39 +3249,71 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30006547",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Heineken",
-      "name": "Heineken Alcohol Free Beer",
-      "upc": "00072890006547",
-      "packCount": 12,
+      "id": "savemart-16306390",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Keystone",
+      "name": "Keystone Light Beer Lager Beer 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
       "packUnitMl": null,
       "priceCents": 2199,
-      "regularPriceCents": 2199,
+      "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-2403299",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Hop",
-      "name": "Hop Valley Bubble Stash Dank Ipa",
-      "upc": "00850015885877",
-      "packCount": 15,
+      "id": "savemart-23213499",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas A Little Sumpin Sumpin 12 Cans",
+      "upc": null,
+      "packCount": 1,
       "packUnitMl": null,
       "priceCents": 2199,
-      "regularPriceCents": 2199,
+      "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-21177478",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas Daytime 12 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "savemart-20220250",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
+      "brand": "Lagunitas",
+      "name": "Lagunitas India Pale Ale 12 Cans",
+      "upc": null,
+      "packCount": 1,
+      "packUnitMl": null,
+      "priceCents": 2199,
+      "regularPriceCents": null,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-26163396",
@@ -3010,7 +3329,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-45984",
@@ -3026,39 +3345,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30703044",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Paulaner",
-      "name": "Paulaner Beer, Marzen, Oktoberfest",
-      "upc": "00080157030440",
-      "packCount": 12,
-      "packUnitMl": null,
-      "priceCents": 2199,
-      "regularPriceCents": 2199,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30001244",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Seagram's Escapes",
-      "name": "Seagram's Escapes Premium Jamaican Me Happy/Blueberry Acai Lemonade/Peach Bellini/Black Cherry Fizz Malt Beverage",
-      "upc": "00070310012444",
-      "packCount": 12,
-      "packUnitMl": null,
-      "priceCents": 2199,
-      "regularPriceCents": 2199,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3101063",
@@ -3074,7 +3361,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-19655980",
@@ -3090,7 +3377,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-25413641",
@@ -3106,39 +3393,23 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30009762",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
-      "brand": "Smirnoff",
-      "name": "Smirnoff Seltzer, Pink Lemonade",
-      "upc": "00082000797623",
-      "packCount": 12,
-      "packUnitMl": null,
-      "priceCents": 2199,
-      "regularPriceCents": 2199,
-      "discounted": false,
-      "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
-    },
-    {
-      "id": "raleys-30174668",
-      "storeId": "raleys-grass-valley",
-      "storeName": "Raley's",
-      "storeCity": "Grass Valley",
+      "id": "savemart-26064735",
+      "storeId": "savemart-nevada-city",
+      "storeName": "Save Mart",
+      "storeCity": "Nevada City",
       "brand": "Stone",
-      "name": "Stone Beer, Delicious, Assorted, Mixed Pack",
-      "upc": "00636251746680",
-      "packCount": 12,
+      "name": "Stone Brewing Ipa Cans 12 Fl Oz",
+      "upc": null,
+      "packCount": 1,
       "packUnitMl": null,
       "priceCents": 2199,
-      "regularPriceCents": 2199,
+      "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-21124308",
@@ -3154,71 +3425,87 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30000470",
+      "id": "raleys-30190025",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "New Belgium Brewing",
-      "name": "New Belgium Brewing Variety Pack",
-      "upc": "00754527004705",
-      "packCount": 12,
+      "brand": "Founders",
+      "name": "Founders Beer, Session Hazy IPA, All Day Haze",
+      "upc": "00642860900252",
+      "packCount": 15,
       "packUnitMl": null,
       "priceCents": 2299,
       "regularPriceCents": 2299,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-30400017",
+      "id": "raleys-30344894",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Angry Orchard",
-      "name": "Angry Orchard Hard Cider, Summer Party Pack",
-      "upc": "00087692000174",
+      "brand": "Brewery X",
+      "name": "Brewery X Hard Seltzer, Succulent Sipper",
+      "upc": "00850034488943",
       "packCount": 12,
       "packUnitMl": null,
       "priceCents": 2399,
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-10200374",
+      "id": "raleys-30878115",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Mike's",
-      "name": "Mike's Malt Beverage, Premium, Black Cherry/Strawberry/Pineapple Hard Lemonade, Variety Pack",
-      "upc": "00635985129981",
+      "brand": "Simply Spiked",
+      "name": "Simply Spiked Beer, Limeade, Variety Pack",
+      "upc": "00810078781158",
       "packCount": 12,
       "packUnitMl": null,
       "priceCents": 2399,
       "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
-      "id": "raleys-10200449",
+      "id": "raleys-30078970",
       "storeId": "raleys-grass-valley",
       "storeName": "Raley's",
       "storeCity": "Grass Valley",
-      "brand": "Coors Light",
-      "name": "Coors Light 4.2% ABV, 30 Pack",
-      "upc": "00071990300302",
-      "packCount": 30,
+      "brand": "Smirnoff Ice",
+      "name": "Smirnoff Ice Malt Beverage, Premium, Slim Can Variety Pack, Fun Pack",
+      "upc": "00082000789703",
+      "packCount": 12,
       "packUnitMl": null,
-      "priceCents": 2799,
-      "regularPriceCents": 2799,
+      "priceCents": 2399,
+      "regularPriceCents": 2399,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
+    },
+    {
+      "id": "raleys-30988901",
+      "storeId": "raleys-grass-valley",
+      "storeName": "Raley's",
+      "storeCity": "Grass Valley",
+      "brand": "Stone",
+      "name": "Stone Beer, IPA Mixed Pack",
+      "upc": "00636251889011",
+      "packCount": 12,
+      "packUnitMl": null,
+      "priceCents": 2499,
+      "regularPriceCents": 2499,
+      "discounted": false,
+      "discountPct": null,
+      "observedAt": "2026-05-07T05:01:40.082Z"
     },
     {
       "id": "savemart-3342189",
@@ -3234,7 +3521,7 @@
       "regularPriceCents": null,
       "discounted": false,
       "discountPct": null,
-      "observedAt": "2026-05-06T04:51:46.295Z"
+      "observedAt": "2026-05-07T05:01:40.082Z"
     }
   ]
 }
