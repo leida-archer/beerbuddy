@@ -29,7 +29,7 @@ import {
   getDeals,
   type Deal,
 } from "@/lib/deals";
-import { isValidZip } from "@/lib/geo/zip";
+import { cityForZip, isValidZip } from "@/lib/geo/zip";
 import { asString, buildHref, parsePageState, type PageState, type SortKey } from "./url";
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default async function DealsPage(props: {
     <main className="mx-auto max-w-[480px] min-h-screen px-4 py-6">
       <header className="flex items-baseline justify-between border-b border-rule pb-3 mb-4 gap-3">
         <h1 className="font-display font-medium text-2xl tracking-tight">
-          95945 · Grass Valley
+          {state.zip} · {cityForZip(state.zip) ?? "Nevada County"}
         </h1>
         <Link
           href="/"

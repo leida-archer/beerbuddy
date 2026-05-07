@@ -1,6 +1,6 @@
 // src/lib/geo/__tests__/zip.test.ts
 import { describe, expect, it } from "vitest";
-import { isValidZip, SUPPORTED_ZIPS } from "../zip";
+import { cityForZip, isValidZip, SUPPORTED_ZIPS } from "../zip";
 
 describe("isValidZip", () => {
   it("accepts each supported Nevada County ZIP", () => {
@@ -31,5 +31,18 @@ describe("SUPPORTED_ZIPS", () => {
   it("contains exactly the 4 v0 ZIPs", () => {
     expect(SUPPORTED_ZIPS.size).toBe(4);
     expect([...SUPPORTED_ZIPS].sort()).toEqual(["95945", "95946", "95949", "95959"]);
+  });
+});
+
+describe("cityForZip", () => {
+  it("returns the city for each supported ZIP", () => {
+    expect(cityForZip("95945")).toBe("Grass Valley");
+    expect(cityForZip("95946")).toBe("Penn Valley");
+    expect(cityForZip("95949")).toBe("Lake of the Pines");
+    expect(cityForZip("95959")).toBe("Nevada City");
+  });
+
+  it("returns null for an unsupported ZIP", () => {
+    expect(cityForZip("90210")).toBeNull();
   });
 });
