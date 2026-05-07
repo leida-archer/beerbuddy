@@ -55,3 +55,4 @@ ingest/.fixtures-tmp/
 
 # Visual companion mockups (brainstorm skill)
 .brainstorm/
+.vercel
