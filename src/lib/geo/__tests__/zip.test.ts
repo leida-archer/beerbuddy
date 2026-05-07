@@ -1,6 +1,6 @@
 // src/lib/geo/__tests__/zip.test.ts
 import { describe, expect, it } from "vitest";
-import { cityForZip, isValidZip, SUPPORTED_ZIPS } from "../zip";
+import { cityForZip, coordsForZip, isValidZip, SUPPORTED_ZIPS } from "../zip";
 
 describe("isValidZip", () => {
   it("accepts each supported Nevada County ZIP", () => {
@@ -44,5 +44,19 @@ describe("cityForZip", () => {
 
   it("returns null for an unsupported ZIP", () => {
     expect(cityForZip("90210")).toBeNull();
+  });
+});
+
+describe("coordsForZip", () => {
+  it("returns coords for each supported ZIP", () => {
+    expect(coordsForZip("95945")).toEqual({ lat: 39.219, lon: -121.061 });
+    expect(coordsForZip("95946")).toEqual({ lat: 39.196, lon: -121.184 });
+    expect(coordsForZip("95949")).toEqual({ lat: 39.030, lon: -121.061 });
+    expect(coordsForZip("95959")).toEqual({ lat: 39.262, lon: -121.016 });
+  });
+
+  it("returns null for an unsupported ZIP", () => {
+    expect(coordsForZip("90210")).toBeNull();
+    expect(coordsForZip("")).toBeNull();
   });
 });
