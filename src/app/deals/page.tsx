@@ -20,6 +20,7 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 import {
   formatPack,
@@ -28,7 +29,8 @@ import {
   getDeals,
   type Deal,
 } from "@/lib/deals";
-import { buildHref, parsePageState, type PageState, type SortKey } from "./url";
+import { isValidZip } from "@/lib/geo/zip";
+import { asString, buildHref, parsePageState, type PageState, type SortKey } from "./url";
 
 export const metadata: Metadata = {
   title: "Deals · BeerBuddy",
@@ -52,6 +54,13 @@ export default async function DealsPage(props: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await props.searchParams;
+  const rawZip = asString(sp.zip);
+
+  if (!rawZip) redirect("/");
+  if (!isValidZip(rawZip)) {
+    redirect(`/?error=region&zip=${encodeURIComponent(rawZip)}`);
+  }
+
   const state = parsePageState(sp);
 
   const { generatedAt, stores, deals: allDeals } = await getDeals();
