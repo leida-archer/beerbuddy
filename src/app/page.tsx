@@ -35,12 +35,13 @@ export default async function Home(props: {
             required
             defaultValue={rejectedZip ?? ""}
             autoComplete="postal-code"
-            className={`flex-1 min-w-0 bg-surface rounded-sm px-3 py-2.5 font-mono text-base text-ink tracking-[0.06em] border ${
+            className={`flex-1 min-w-0 bg-surface rounded-sm px-3 py-2.5 font-mono text-base text-ink tracking-[0.06em] border min-h-11 ${
               hasError ? "border-error" : "border-ink"
             }`}
           />
           <button
             type="submit"
+            aria-label="Submit ZIP"
             className="bg-ink text-bg border border-ink rounded-sm px-4 py-2.5 font-body text-[13px] font-medium leading-none min-h-11"
           >
             →
