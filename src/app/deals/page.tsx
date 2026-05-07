@@ -63,10 +63,9 @@ export default async function DealsPage(props: {
 
   const state = parsePageState(sp);
 
-  const { generatedAt, stores, deals: allDeals } = await getDeals();
+  const { generatedAt, deals: allDeals } = await getDeals();
   const deals = applyFilters(allDeals, state);
   const now = new Date();
-  const storeNames = stores.map((s) => s.name).join(" · ");
 
   return (
     <main className="mx-auto max-w-[480px] min-h-screen px-4 py-6">
@@ -74,11 +73,13 @@ export default async function DealsPage(props: {
         <h1 className="font-display font-medium text-2xl tracking-tight">
           95945 · Grass Valley
         </h1>
-        <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted text-right">
-          {storeNames}
-          <br />
-          {deals.length} of {allDeals.length} deals
-        </div>
+        <Link
+          href="/"
+          prefetch={false}
+          className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted text-right underline decoration-rule decoration-1 underline-offset-[3px] hover:text-ink hover:decoration-ink"
+        >
+          Location: {state.zip}
+        </Link>
       </header>
 
       <Banner />
