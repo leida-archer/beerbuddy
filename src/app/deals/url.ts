@@ -47,6 +47,21 @@ export function buildHref(state: PageState, changes: Partial<PageState>): string
   return `/deals?${sp.toString()}`;
 }
 
+/**
+ * Build a /deals/<id> href that round-trips the current PageState.
+ * Used by the list view; the detail page round-trips back via
+ * buildHref(state, {}) on its "← Back to deals" link.
+ */
+export function buildDetailHref(state: PageState, dealId: string): string {
+  const sp = new URLSearchParams();
+  sp.set("zip", state.zip);
+  if (state.sort !== DEFAULT_SORT) sp.set("sort", state.sort);
+  if (state.pack) sp.set("pack", state.pack);
+  if (state.style) sp.set("style", state.style);
+  if (state.pickerOpen) sp.set("fp", "open");
+  return `/deals/${encodeURIComponent(dealId)}?${sp.toString()}`;
+}
+
 export function asString(v: string | string[] | undefined): string | null {
   if (typeof v === "string" && v.length > 0) return v;
   if (Array.isArray(v) && v[0]) return v[0];

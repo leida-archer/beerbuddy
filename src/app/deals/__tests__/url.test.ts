@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildHref, parsePageState, type PageState } from "../url";
+import { buildDetailHref, buildHref, parsePageState, type PageState } from "../url";
 
 const empty: PageState = {
   zip: "95945",
@@ -165,5 +165,47 @@ describe("buildHref — URL state model", () => {
       pickerOpen: false,
     };
     expect(buildHref(state, { sort: "oz" })).toBe("/deals?zip=95946&sort=oz");
+  });
+});
+
+describe("buildDetailHref", () => {
+  it("minimal state → /deals/<id>?zip=<zip>", () => {
+    expect(buildDetailHref(empty, "savemart-19724833")).toBe(
+      "/deals/savemart-19724833?zip=95945",
+    );
+  });
+
+  it("preserves all filter params on the detail URL", () => {
+    const state: PageState = {
+      zip: "95945",
+      sort: "cheap",
+      pack: "12",
+      style: "ipa",
+      pickerOpen: true,
+    };
+    expect(buildDetailHref(state, "savemart-19724833")).toBe(
+      "/deals/savemart-19724833?zip=95945&sort=cheap&pack=12&style=ipa&fp=open",
+    );
+  });
+
+  it("preserves picker-open even when no filters are set", () => {
+    const state: PageState = {
+      zip: "95945",
+      sort: "best",
+      pack: null,
+      style: null,
+      pickerOpen: true,
+    };
+    expect(buildDetailHref(state, "savemart-19724833")).toBe(
+      "/deals/savemart-19724833?zip=95945&fp=open",
+    );
+  });
+
+  it("encodes deal IDs with reserved characters", () => {
+    // Defensive: existing fixture IDs are URL-safe, but encoding
+    // protects future adapters that might emit slashes or spaces.
+    expect(buildDetailHref(empty, "weird id/with chars")).toBe(
+      "/deals/weird%20id%2Fwith%20chars?zip=95945",
+    );
   });
 });

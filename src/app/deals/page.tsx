@@ -31,7 +31,7 @@ import {
   type Deal,
 } from "@/lib/deals";
 import { cityForZip, isValidZip } from "@/lib/geo/zip";
-import { asString, buildHref, parsePageState, type PageState, type SortKey } from "./url";
+import { asString, buildDetailHref, buildHref, parsePageState, type PageState, type SortKey } from "./url";
 
 export const metadata: Metadata = {
   title: "Deals · BeerBuddy",
@@ -100,16 +100,22 @@ export default async function DealsPage(props: {
         <ol className="m-0 p-0 list-none">
           {deals.map((deal, i) => (
             <li key={deal.id}>
-              <DealCard
-                deal={deal}
-                now={now}
-                isBest={
-                  i === 0 &&
-                  state.sort === "best" &&
-                  deal.discountPct != null &&
-                  deal.discountPct >= 10
-                }
-              />
+              <Link
+                href={buildDetailHref(state, deal.id)}
+                prefetch={false}
+                className="block hover:bg-bg-soft transition-colors duration-micro ease-settle"
+              >
+                <DealCard
+                  deal={deal}
+                  now={now}
+                  isBest={
+                    i === 0 &&
+                    state.sort === "best" &&
+                    deal.discountPct != null &&
+                    deal.discountPct >= 10
+                  }
+                />
+              </Link>
             </li>
           ))}
         </ol>
