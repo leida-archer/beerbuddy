@@ -112,3 +112,54 @@ export function formatRelative(iso: string, now: Date = new Date()): string {
   if (diffDay < 30) return `${Math.round(diffDay / 7)}w ago`;
   return `${Math.round(diffDay / 30)}mo ago`;
 }
+
+/**
+ * Deal joined with its full Store record. Drops the legacy
+ * denormalized fields (storeId/storeName/storeCity) so the detail
+ * page has exactly one canonical access path: deal.store.<field>.
+ */
+export interface DealWithStore
+  extends Omit<Deal, "storeId" | "storeName" | "storeCity"> {
+  store: Store;
+}
+
+/**
+ * Look up a single deal by id, joined with its full Store record.
+ * Returns null when the deal isn't found OR when its storeId
+ * doesn't resolve to a known store (defensive — shouldn't happen
+ * given the fixture invariant).
+ */
+export async function getDealById(id: string): Promise<DealWithStore | null> {
+  const { stores, deals } = await getDeals();
+  const deal = deals.find((d) => d.id === id);
+  if (!deal) return null;
+  const store = stores.find((s) => s.id === deal.storeId);
+  if (!store) return null;
+  const { storeId: _id, storeName: _name, storeCity: _city, ...rest } = deal;
+  return { ...rest, store };
+}
+
+/**
+ * Price per fluid ounce, in dollars. Returns null when the deal
+ * lacks the pack info needed to compute it (single-bottle deals,
+ * unknown pack size, etc.). The /deals oz-sort consumes this
+ * monotonically, so sort order is identical whether the unit is
+ * cents/oz or dollars/oz; we use dollars/oz so the detail page
+ * can render `${ppoz.toFixed(2)}/oz` directly.
+ */
+export function pricePerOz(deal: {
+  priceCents: number;
+  packCount: number | null;
+  packUnitMl: number | null;
+}): number | null {
+  if (
+    !deal.packCount ||
+    !deal.packUnitMl ||
+    deal.packCount <= 0 ||
+    deal.packUnitMl <= 0
+  ) {
+    return null;
+  }
+  const totalOz = (deal.packCount * deal.packUnitMl) / 29.5735;
+  return deal.priceCents / 100 / totalOz;
+}

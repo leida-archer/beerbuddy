@@ -27,6 +27,7 @@ import {
   formatPrice,
   formatRelative,
   getDeals,
+  pricePerOz,
   type Deal,
 } from "@/lib/deals";
 import { cityForZip, isValidZip } from "@/lib/geo/zip";
@@ -450,12 +451,3 @@ function applyFilters(deals: Deal[], filters: PageState): Deal[] {
   return out;
 }
 
-function pricePerOz(d: Deal): number | null {
-  if (d.packCount == null || d.packUnitMl == null || d.packCount <= 0 || d.packUnitMl <= 0) {
-    return null;
-  }
-  const totalMl = d.packCount * d.packUnitMl;
-  const totalOz = totalMl / 29.5735;
-  if (totalOz <= 0) return null;
-  return d.priceCents / totalOz;
-}
