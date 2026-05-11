@@ -15,7 +15,7 @@ import { and, desc, eq } from "drizzle-orm";
 
 import { db } from "@/lib/db";
 import {
-  llmParseFailures,
+  manualParseQueue,
   priceEvents,
   productAliases,
   products,
@@ -205,18 +205,58 @@ export async function writeQuarantine(input: QuarantineInput): Promise<void> {
   });
 }
 
-export interface LlmParseFailureInput {
+export interface QueueManualParseInput {
+  /** Stable chain identifier — same string the adapter uses ("spd", "save-a-lot"). */
   sourceId: string;
-  rawResponse: unknown;
-  zodErrors: unknown;
+  /** "manual-parse" by default; other kinds: "captcha", "config-needed", "site-error". */
+  kind?: string;
+  /** URL that contains the data the admin needs to look at, when one exists. */
+  sourceUrl?: string;
+  /** "application/pdf", "image/png", "text/html", etc. — display-only hint. */
+  mediaType?: string;
+  /** Free-form note: what the admin should look for / why auto-parse failed. */
+  hint: string;
 }
 
-export async function writeLlmParseFailure(input: LlmParseFailureInput): Promise<void> {
-  await db.insert(llmParseFailures).values({
+/**
+ * Queue a row for admin attention and emit a console-level notification.
+ *
+ * Replaces the original `writeLlmParseFailure` path. Adapters call this
+ * whenever they hit a source they can't auto-parse — instead of trying
+ * to fix it inline (LLM, brittle heuristics), they enqueue it for the
+ * admin to handle out-of-band.
+ *
+ * Notification today is console-only; a Resend / Slack / Pushover side
+ * channel can be plugged in via `notifyAdmin` (lib/admin/notify.ts)
+ * without changing this call site.
+ */
+export async function queueManualParse(
+  input: QueueManualParseInput,
+): Promise<{ id: number }> {
+  const [row] = await db
+    .insert(manualParseQueue)
+    .values({
+      sourceId: input.sourceId,
+      kind: input.kind ?? "manual-parse",
+      sourceUrl: input.sourceUrl,
+      mediaType: input.mediaType,
+      hint: input.hint,
+    })
+    .returning({ id: manualParseQueue.id });
+
+  // Lazy import so persist.ts stays db-only; notify can pull in
+  // delivery dependencies (email, webhooks) without coupling them
+  // to the ingestion path.
+  const { notifyAdmin } = await import("@/lib/admin/notify");
+  await notifyAdmin({
+    subject: `[BeerBuddy] manual parse needed: ${input.sourceId}`,
+    body: input.hint,
     sourceId: input.sourceId,
-    rawResponse: input.rawResponse as object,
-    zodErrors: input.zodErrors as object,
+    sourceUrl: input.sourceUrl,
+    queueId: row.id,
   });
+
+  return { id: row.id };
 }
 
 /**

@@ -14,6 +14,8 @@
 
 import { redirect } from "next/navigation";
 
+import { AdminNav } from "../_components/AdminNav";
+
 export const dynamic = "force-dynamic";
 
 export default async function AdminIndiePage(props: {
@@ -125,7 +127,7 @@ export default async function AdminIndiePage(props: {
 
   return (
     <main className="mx-auto max-w-[640px] min-h-screen px-4 py-6">
-      <header className="border-b border-rule pb-3 mb-4">
+      <header className="mb-4">
         <h1 className="font-display font-medium text-2xl tracking-tight">
           Indie price entry
         </h1>
@@ -133,6 +135,8 @@ export default async function AdminIndiePage(props: {
           Admin only · manual observation only
         </p>
       </header>
+
+      <AdminNav adminKey={providedKey} active="indie" />
 
       {submittedParam && (
         <Notice tone="success">{submittedParam}.</Notice>

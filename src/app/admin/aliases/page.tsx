@@ -12,6 +12,7 @@
 
 import { redirect } from "next/navigation";
 
+import { AdminNav } from "../_components/AdminNav";
 import type { CandidatePair } from "@/lib/admin/aliases";
 
 export const dynamic = "force-dynamic";
@@ -47,7 +48,7 @@ export default async function AdminAliasesPage(props: {
 
   return (
     <main className="mx-auto max-w-[720px] min-h-screen px-4 py-6">
-      <header className="border-b border-rule pb-3 mb-4">
+      <header className="mb-4">
         <h1 className="font-display font-medium text-2xl tracking-tight">
           Alias candidates
         </h1>
@@ -55,6 +56,8 @@ export default async function AdminAliasesPage(props: {
           {candidates.length} pair{candidates.length === 1 ? "" : "s"} to review · admin only
         </p>
       </header>
+
+      <AdminNav adminKey={providedKey} active="aliases" />
 
       {mergedParam && (
         <Notice tone="success">

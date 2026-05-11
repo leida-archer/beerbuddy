@@ -8,8 +8,9 @@
  * LLM path" chain because its weekly ad publishes as a PDF circular.
  * In practice the Instacart shop endpoint exposes the same prices
  * structurally, so this adapter takes the Playwright path. The LLM
- * helper in `../../llm-circular.ts` is reserved for future chains
- * (or this one as a fallback) where the structured surface goes away.
+ * capability was omitted entirely on 2026-05-10; if/when this site's
+ * surface disappears, call `queueManualParse` from persist.ts so the
+ * admin handles the PDF out-of-band via /admin/parse-queue.
  */
 
 import type { Adapter, AdapterDeps, AdapterRun } from "../../contract";

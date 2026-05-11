@@ -8,6 +8,20 @@
       "when": 1778020046663,
       "tag": "0000_foamy_moira_mactaggert",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778020046664,
+      "tag": "0001_product_deal_scores_view",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778020046665,
+      "tag": "0002_drop_llm_add_parse_queue",
+      "breakpoints": true
     }
   ]
 }

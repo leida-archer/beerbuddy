@@ -28,8 +28,7 @@ The "live" copies of the design doc, test plan, and DESIGN.md are also at `~/.co
 
 - **Frontend:** Next.js (App Router) PWA · Tailwind · deployed on Vercel free tier
 - **Backend:** Next.js API routes · Postgres on Neon · Drizzle ORM + drizzle-kit migrations
-- **Ingestion:** GitHub Actions cron orchestrator running TypeScript adapters. **Default engine: Playwright (headless Chromium)** — most chain sites are SPAs. Plain `fetch` reserved for PDF circulars and SSR pages.
-- **LLM:** Anthropic Haiku for structured-output parsing of weekly ad PDFs and screenshots, gated by Zod schema validation.
+- **Ingestion:** GitHub Actions cron orchestrator running TypeScript adapters. **Default engine: Playwright (headless Chromium)** — most chain sites are SPAs. Plain `fetch` reserved for PDF circulars and SSR pages. Sources that can't be auto-parsed (PDF-only circulars, captchas, layout regressions) are written to a `manual_parse_queue` table that surfaces in `/admin/parse-queue`; the admin handles those out-of-band.
 - **a11y baseline:** WCAG 2.1 AA from day 1.
 
 ## Build plan
@@ -38,7 +37,7 @@ Six weeks part-time (one focused weekend per week with Claude Code + tool-stack)
 
 1. **Week 1** — API-discovery sweep + Next.js scaffold + Drizzle schema + Raley's adapter end-to-end
 2. **Week 2** — Save Mart adapter + deal-list UI shipped to private Vercel URL
-3. **Week 3** — LLM-based PDF/screenshot ingestion proven on Grocery Outlet
+3. **Week 3** — Sources without structured surfaces flagged via `manual_parse_queue` (admin handles externally)
 4. **Week 4** — Holiday Market, SPD, Walmart, BevMo adapters
 5. **Week 5** — Product alias workflow (the risky week)
 6. **Week 6** — Detail page + 90-day baseline + indie admin form + soft launch to 3 friends

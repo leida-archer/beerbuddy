@@ -182,19 +182,38 @@ export const quarantineEvents = pgTable("quarantine_events", {
 });
 
 /**
- * LLM parse failures — Zod schema rejections (Issue 7A).
+ * Manual parse queue — adapter-flagged "needs human attention" entries.
  *
- * Used for postmortem when Haiku circular parsing produces output
- * that doesn't match the expected shape. Helps tune the prompt
- * and catch regressions in upstream chain ad layouts.
+ * Replaces the original LLM circular-parsing path (omitted 2026-05-10).
+ * Whenever an adapter detects a source it can't auto-parse — a chain
+ * whose weekly ad ships only as a PDF or screenshot, a site that
+ * sprouted a captcha, a layout it doesn't recognize — it writes a row
+ * here instead of attempting a heuristic. The admin handles each entry
+ * out-of-band (their own Anthropic SDK / OCR / eyeballs), enters the
+ * resulting prices via /admin/indie, and marks the row resolved.
+ *
+ * `kind` keeps the schema generic for future intervention types beyond
+ * "parse this PDF" — captcha solves, store-ID lookups, etc.
  */
-export const llmParseFailures = pgTable("llm_parse_failures", {
-  id: serial("id").primaryKey(),
-  sourceId: text("source_id").notNull(),
-  rawResponse: jsonb("raw_response").notNull(),
-  zodErrors: jsonb("zod_errors").notNull(),
-  observedAt: timestamp("observed_at", { withTimezone: true }).notNull().defaultNow(),
-});
+export const manualParseQueue = pgTable(
+  "manual_parse_queue",
+  {
+    id: serial("id").primaryKey(),
+    sourceId: text("source_id").notNull(),
+    kind: text("kind").notNull().default("manual-parse"),
+    sourceUrl: text("source_url"),
+    mediaType: text("media_type"),
+    hint: text("hint").notNull(),
+    queuedAt: timestamp("queued_at", { withTimezone: true }).notNull().defaultNow(),
+    resolvedAt: timestamp("resolved_at", { withTimezone: true }),
+    resolvedBy: text("resolved_by"),
+    resolutionNotes: text("resolution_notes"),
+  },
+  (t) => [
+    index("manual_parse_queue_pending_idx").on(t.resolvedAt),
+    index("manual_parse_queue_source_idx").on(t.sourceId),
+  ],
+);
 
 /**
  * Daily-refreshed materialized view of (product, current_price,

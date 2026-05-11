@@ -19,7 +19,6 @@
     "fixtures": "bun run scripts/build-fixtures.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
     "@neondatabase/serverless": "^0.10.4",
     "drizzle-orm": "^0.36.4",
     "next": "^15.1.3",
