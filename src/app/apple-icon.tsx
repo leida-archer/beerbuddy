@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { loadDisplayFont } from "./_lib/ogFonts";
+
 // 180×180 apple-touch-icon — used by iOS home-screen, iMessage link
 // preview avatar, and other Apple surfaces. Wheat-oak background +
 // ink "B" with warm-amber period — iconic compression of the wordmark.
@@ -7,13 +9,8 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-const PLAYFAIR_700_URL =
-  "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.ttf";
-
 export default async function Icon() {
-  const playfairBold = await fetch(PLAYFAIR_700_URL).then((r) =>
-    r.arrayBuffer(),
-  );
+  const display = await loadDisplayFont(700);
 
   return new ImageResponse(
     (
@@ -25,7 +22,7 @@ export default async function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "Playfair",
+          fontFamily: display.fontFamily,
           fontSize: 132,
           lineHeight: 1,
           letterSpacing: "-0.04em",
@@ -38,7 +35,12 @@ export default async function Icon() {
     {
       ...size,
       fonts: [
-        { name: "Playfair", data: playfairBold, style: "normal", weight: 700 },
+        {
+          name: display.fontFamily,
+          data: display.data,
+          style: "normal",
+          weight: 700,
+        },
       ],
     },
   );

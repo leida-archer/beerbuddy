@@ -159,7 +159,7 @@ function rowFromBevmoScraped(
       : null;
   const store = STORES[1];
   return {
-    id: `bevmo-${p.bevmoId}`,
+    id: `${store.id}-${p.bevmoId}`,
     storeId: store.id,
     storeName: store.name,
     storeCity: store.city,
@@ -184,7 +184,7 @@ function rowFromRaleys(p: { raleysId: string; brand: string | null; name: string
       : null;
   const store = STORES[0];
   return {
-    id: `raleys-${p.raleysId}`,
+    id: `${store.id}-${p.raleysId}`,
     storeId: store.id,
     storeName: store.name,
     storeCity: store.city,
@@ -209,7 +209,7 @@ function rowFromBevmo(p: { bevmoId: string; brand: string | null; title: string;
       : null;
   const store = STORES[1];
   return {
-    id: `bevmo-${p.bevmoId}`,
+    id: `${store.id}-${p.bevmoId}`,
     storeId: store.id,
     storeName: store.name,
     storeCity: store.city,
@@ -240,7 +240,7 @@ async function buildHoliday(observedAt: string, max = 80): Promise<DealRow[]> {
         : null;
     const store = STORES[2];
     return {
-      id: `holiday-${p.id}`,
+      id: `${store.id}-${p.id}`,
       storeId: store.id,
       storeName: store.name,
       storeCity: store.city,
@@ -272,7 +272,7 @@ async function buildGroceryOutlet(observedAt: string, max = 80): Promise<DealRow
         : null;
     const store = STORES[4];
     return {
-      id: `grocery-outlet-${p.groceryOutletId}`,
+      id: `${store.id}-${p.groceryOutletId}`,
       storeId: store.id,
       storeName: store.name,
       storeCity: store.city,
@@ -304,7 +304,7 @@ async function buildSavemart(observedAt: string, max = 80): Promise<DealRow[]> {
         : null;
     const store = STORES[3];
     return {
-      id: `savemart-${p.savemartId}`,
+      id: `${store.id}-${p.savemartId}`,
       storeId: store.id,
       storeName: store.name,
       storeCity: store.city,

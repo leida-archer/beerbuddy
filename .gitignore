@@ -56,3 +56,6 @@ ingest/.fixtures-tmp/
 # Visual companion mockups (brainstorm skill)
 .brainstorm/
 .vercel
+
+# Local scratch (screenshots, traces, throwaway outputs)
+.tmp/

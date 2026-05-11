@@ -98,23 +98,14 @@ export default async function DealsPage(props: {
         <EmptyResults state={state} />
       ) : (
         <ol className="m-0 p-0 list-none">
-          {deals.map((deal, i) => (
+          {deals.map((deal) => (
             <li key={deal.id}>
               <Link
                 href={buildDetailHref(state, deal.id)}
                 prefetch={false}
                 className="block hover:bg-bg-soft transition-colors duration-micro ease-settle"
               >
-                <DealCard
-                  deal={deal}
-                  now={now}
-                  isBest={
-                    i === 0 &&
-                    state.sort === "best" &&
-                    deal.discountPct != null &&
-                    deal.discountPct >= 10
-                  }
-                />
+                <DealCard deal={deal} now={now} />
               </Link>
             </li>
           ))}
@@ -350,15 +341,19 @@ function EmptyResults({ state }: { state: PageState }) {
   );
 }
 
-function DealCard({
-  deal,
-  now,
-  isBest,
-}: {
-  deal: Deal;
-  now: Date;
-  isBest: boolean;
-}) {
+/**
+ * Show "Best deal" eyebrow on any card whose 90-day-baseline-relative
+ * discount score is ≥30% — surfacing real deals regardless of sort
+ * position. Stores with no history yet (discountPct == null) show a
+ * neutral "Limited history" line so the user knows the deal is real
+ * but the score isn't established.
+ */
+const BEST_DEAL_THRESHOLD_PCT = 30;
+
+function DealCard({ deal, now }: { deal: Deal; now: Date }) {
+  const isBest =
+    deal.discountPct != null && deal.discountPct >= BEST_DEAL_THRESHOLD_PCT;
+  const hasLimitedHistory = deal.discountPct == null;
   const wasPriceDifferent =
     deal.regularPriceCents != null && deal.regularPriceCents !== deal.priceCents;
 
@@ -375,6 +370,11 @@ function DealCard({
             <span className="mx-1.5">·</span>
             {deal.discountPct}% off
           </span>
+        </div>
+      )}
+      {hasLimitedHistory && (
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted mb-1.5">
+          Limited history
         </div>
       )}
 

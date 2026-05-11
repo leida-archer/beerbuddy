@@ -20,6 +20,7 @@ import type { Adapter, AdapterDeps, AdapterRun } from "../../contract";
 import { isPriceSane } from "../../sanity";
 import {
   getMostRecentPrice,
+  upsertAliasAndCanonicalProduct,
   writePriceEvent,
   writeQuarantine,
 } from "../../persist";
@@ -89,16 +90,21 @@ async function processProduct(
   deps: AdapterDeps,
   run: AdapterRun,
 ): Promise<void> {
-  // Until the alias workflow lands, BevMo's product ID becomes the
-  // canonical product ID. Shopify product IDs can be 13-digit numbers
-  // (overflow Number.parseInt safely — JavaScript numbers handle up to
-  // 2^53-1). Use a stable string-to-int hash if needed; for now
-  // parseInt suffices because BevMo IDs we've seen are <2^53.
-  const canonicalProductId = Number.parseInt(product.bevmoId, 10);
-  if (!Number.isFinite(canonicalProductId)) {
-    run.parseFailures.push({
-      rawSnippet: `bevmoId=${product.bevmoId}`,
-      reason: "Product ID is not numeric",
+  let canonicalProductId: number;
+  try {
+    const resolved = await upsertAliasAndCanonicalProduct({
+      chainSku: `bevmo/${product.bevmoId}`,
+      brand: product.brand,
+      rawName: product.title,
+      packCount: product.packCount,
+      packUnitMl: product.packUnitMl,
+    });
+    canonicalProductId = resolved.canonicalProductId;
+  } catch (err) {
+    run.fetchErrors.push({
+      url: `db:alias upsert bevmo/${product.bevmoId}`,
+      status: err instanceof Error ? err.name : "unknown",
+      message: err instanceof Error ? err.message : String(err),
     });
     return;
   }

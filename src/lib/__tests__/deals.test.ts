@@ -1,17 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { getDealById, pricePerOz } from "../deals";
+import { getDealById, getDeals, pricePerOz } from "../deals";
 
 describe("getDealById", () => {
-  it("returns the deal joined with its full Store record for a known id", async () => {
-    // Use a known id from the current fixture. If the fixture is
-    // ever rebuilt with different ids, update this test to match.
-    const result = await getDealById("savemart-193352");
+  it("returns the first fixture deal joined with its full Store record", async () => {
+    // Pick the first deal dynamically — keeps the test stable across
+    // fixture rebuilds (the canonical ID format may change when the
+    // builder is re-run; see scripts/build-fixtures.ts).
+    const { deals } = await getDeals();
+    expect(deals.length).toBeGreaterThan(0);
+    const probe = deals[0];
+
+    const result = await getDealById(probe.id);
     expect(result).not.toBeNull();
-    expect(result?.id).toBe("savemart-193352");
+    expect(result?.id).toBe(probe.id);
+    expect(result?.store.id).toBe(probe.storeId);
     expect(result?.store).toMatchObject({
-      id: "savemart-nevada-city",
-      name: "Save Mart",
-      city: "Nevada City",
+      name: probe.storeName,
+      city: probe.storeCity,
     });
     // The legacy denormalized fields are stripped:
     expect(
@@ -32,7 +37,9 @@ describe("getDealById", () => {
 
   it("does not match a substring of another id", async () => {
     // Defensive: the find uses === not includes/startsWith.
-    expect(await getDealById("savemart-193")).toBeNull();
+    const { deals } = await getDeals();
+    const truncated = deals[0].id.slice(0, deals[0].id.length - 1);
+    expect(await getDealById(truncated)).toBeNull();
   });
 });
 

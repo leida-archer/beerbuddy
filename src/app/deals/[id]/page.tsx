@@ -14,6 +14,7 @@ import { haversineMiles } from "@/lib/geo/haversine";
 import { mapsHref, targetForUserAgent } from "@/lib/geo/maps";
 
 import { asString, buildHref, parsePageState } from "../url";
+import { PriceTrendStub } from "./PriceTrendStub";
 
 export default async function DealDetailPage(props: {
   params: Promise<{ id: string }>;
@@ -47,10 +48,16 @@ export default async function DealDetailPage(props: {
     });
 
   const ppoz = pricePerOz(deal);
-  const isBest = deal.discountPct != null && deal.discountPct >= 10;
+  const isBest = deal.discountPct != null && deal.discountPct >= 30;
+  const hasLimitedHistory = deal.discountPct == null;
   const wasPriceDifferent =
     deal.regularPriceCents != null &&
     deal.regularPriceCents !== deal.priceCents;
+  // Stores beyond ~15 mi from Grass Valley earn a "further drive"
+  // hint. BevMo Auburn (~21 mi south, in Placer County) is the
+  // primary case — without the hint the distance line just looks
+  // surprising. Threshold is per /plan-design-review feedback.
+  const isFurtherDrive = distance != null && distance > 15;
 
   return (
     <main className="mx-auto max-w-[480px] min-h-screen px-4 py-6">
@@ -66,6 +73,11 @@ export default async function DealDetailPage(props: {
         {isBest && (
           <div className="font-mono text-[10px] uppercase tracking-[0.18em] font-semibold text-warm mb-2">
             Best deal · {deal.discountPct}% off
+          </div>
+        )}
+        {hasLimitedHistory && (
+          <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted mb-2">
+            Limited price history
           </div>
         )}
 
@@ -96,6 +108,11 @@ export default async function DealDetailPage(props: {
           </p>
         )}
 
+        <PriceTrendStub
+          currentPriceCents={deal.priceCents}
+          regularPriceCents={deal.regularPriceCents}
+        />
+
         <hr className="border-rule my-6" />
 
         <div>
@@ -106,10 +123,13 @@ export default async function DealDetailPage(props: {
             {deal.store.name}
           </p>
           <p className="text-[12px] text-ink mt-0.5">{deal.store.address}</p>
-          <p className="text-[12px] text-ink">{deal.store.city}, CA</p>
+          <p className="text-[12px] text-ink">{deal.store.city}</p>
           {distance != null && (
             <p className="font-mono text-[11px] text-muted mt-1">
               {distance.toFixed(1)} mi from {state.zip}
+              {isFurtherDrive && (
+                <span className="ml-1.5 text-cool">· further drive</span>
+              )}
             </p>
           )}
           <a

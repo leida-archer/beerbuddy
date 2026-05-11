@@ -33,6 +33,7 @@ import type { Adapter, AdapterDeps, AdapterRun } from "../../contract";
 import { isPriceSane } from "../../sanity";
 import {
   getMostRecentPrice,
+  upsertAliasAndCanonicalProduct,
   writePriceEvent,
   writeQuarantine,
 } from "../../persist";
@@ -174,14 +175,21 @@ async function processProduct(
     return;
   }
 
-  // Until product alias mapping lands (Week 5), use the numeric Raley's
-  // ID as the canonical product ID. The alias workflow will replace
-  // this with a UPC-based lookup so cross-chain prices roll up correctly.
-  const canonicalProductId = Number.parseInt(product.raleysId, 10);
-  if (!Number.isFinite(canonicalProductId)) {
-    run.parseFailures.push({
-      rawSnippet: `id=${product.raleysId}`,
-      reason: "raleysId is not numeric — cannot derive canonical_product_id",
+  let canonicalProductId: number;
+  try {
+    const resolved = await upsertAliasAndCanonicalProduct({
+      chainSku: `raleys/${product.raleysId}`,
+      brand: product.brand,
+      rawName: product.name,
+      packCount: product.packCount,
+      packUnitMl: product.packUnitMl,
+    });
+    canonicalProductId = resolved.canonicalProductId;
+  } catch (err) {
+    run.fetchErrors.push({
+      url: `db:alias upsert raleys/${product.raleysId}`,
+      status: err instanceof Error ? err.name : "unknown",
+      message: err instanceof Error ? err.message : String(err),
     });
     return;
   }

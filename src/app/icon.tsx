@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { loadDisplayFont } from "./_lib/ogFonts";
+
 // 32×32 favicon — browser tabs, bookmarks. Same composition as the
 // 180×180 apple-icon, just sized down. Bold serif "B." reads at
 // favicon scale because the period (warm-amber) breaks up the form
@@ -8,13 +10,8 @@ import { ImageResponse } from "next/og";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-const PLAYFAIR_700_URL =
-  "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.ttf";
-
 export default async function Icon() {
-  const playfairBold = await fetch(PLAYFAIR_700_URL).then((r) =>
-    r.arrayBuffer(),
-  );
+  const display = await loadDisplayFont(700);
 
   return new ImageResponse(
     (
@@ -26,7 +23,7 @@ export default async function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "Playfair",
+          fontFamily: display.fontFamily,
           fontSize: 24,
           lineHeight: 1,
           letterSpacing: "-0.04em",
@@ -39,7 +36,12 @@ export default async function Icon() {
     {
       ...size,
       fonts: [
-        { name: "Playfair", data: playfairBold, style: "normal", weight: 700 },
+        {
+          name: display.fontFamily,
+          data: display.data,
+          style: "normal",
+          weight: 700,
+        },
       ],
     },
   );

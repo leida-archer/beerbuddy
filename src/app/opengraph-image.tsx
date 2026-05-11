@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { loadDisplayFont } from "./_lib/ogFonts";
+
 // Filename convention: src/app/opengraph-image.tsx → /opengraph-image
 // Next.js auto-wires <meta property="og:image" /> when this file exists.
 // Re-rendered at request time and cached by Vercel.
@@ -9,8 +11,6 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const PLAYFAIR_500_URL =
-  "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKd3vUDQ.ttf";
 // Inter and JetBrains Mono are battle-tested with Satori (next/og's
 // rendering engine). Bricolage Grotesque + Geist Mono use GSUB
 // features Satori doesn't yet support — Inter / JetBrains Mono have
@@ -27,8 +27,8 @@ async function loadFont(url: string): Promise<ArrayBuffer> {
 }
 
 export default async function Image() {
-  const [playfair, jetbrainsMono, inter] = await Promise.all([
-    loadFont(PLAYFAIR_500_URL),
+  const [display, jetbrainsMono, inter] = await Promise.all([
+    loadDisplayFont(500),
     loadFont(JETBRAINS_MONO_500_URL),
     loadFont(INTER_500_URL),
   ]);
@@ -63,7 +63,7 @@ export default async function Image() {
 
         <div
           style={{
-            fontFamily: "Playfair",
+            fontFamily: display.fontFamily,
             fontSize: 192,
             lineHeight: 1,
             letterSpacing: "-0.02em",
@@ -113,7 +113,12 @@ export default async function Image() {
     {
       ...size,
       fonts: [
-        { name: "Playfair", data: playfair, style: "normal", weight: 500 },
+        {
+          name: display.fontFamily,
+          data: display.data,
+          style: "normal",
+          weight: 500,
+        },
         { name: "Mono", data: jetbrainsMono, style: "normal", weight: 500 },
         { name: "Body", data: inter, style: "normal", weight: 500 },
       ],

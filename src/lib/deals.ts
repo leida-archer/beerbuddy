@@ -1,14 +1,11 @@
 /**
  * Server-side data layer for the deal-list view.
  *
- * Currently reads from the Raley's fixture file produced by
- * `bun run fixture:raleys`. When the matview lands (Week 5), this
- * function swaps to a DB query against `product_deal_scores`.
- *
- * Caller surface (Deal[] shape) is stable across that swap.
+ * Reads through `dealsRepo` (lib/deals/repo.ts), which picks between
+ * the JSON fixture (default) and a DB-backed repo via the
+ * `BEERBUDDY_DEALS_SOURCE` env var. The Deal/Store/DealsResult shapes
+ * defined below are the stable contract both repos return.
  */
-
-import fixture from "@/data/fixtures/deals.json";
 
 export interface Deal {
   id: string;
@@ -42,17 +39,13 @@ export interface DealsResult {
 }
 
 /**
- * Get the deal list. Source: combined-fixture file today, DB matview
- * tomorrow. Already sorted "best deals first" by the fixture builder
- * (largest discount %, then cheapest, then by name).
+ * Get the deal list. Already sorted "best deals first" by the fixture
+ * builder (largest discount %, then cheapest, then by name) — DB repo
+ * applies the same sort by discountPct desc.
  */
 export async function getDeals(): Promise<DealsResult> {
-  return {
-    generatedAt: fixture.generatedAt,
-    stores: fixture.stores,
-    counts: fixture.counts,
-    deals: fixture.deals,
-  };
+  const { dealsRepo } = await import("./deals/repo");
+  return dealsRepo.getDeals();
 }
 
 /**
@@ -125,18 +118,12 @@ export interface DealWithStore
 
 /**
  * Look up a single deal by id, joined with its full Store record.
- * Returns null when the deal isn't found OR when its storeId
- * doesn't resolve to a known store (defensive — shouldn't happen
- * given the fixture invariant).
+ * Delegates to the active repo so the DB-backed implementation can
+ * issue a targeted query instead of materializing the full list.
  */
 export async function getDealById(id: string): Promise<DealWithStore | null> {
-  const { stores, deals } = await getDeals();
-  const deal = deals.find((d) => d.id === id);
-  if (!deal) return null;
-  const store = stores.find((s) => s.id === deal.storeId);
-  if (!store) return null;
-  const { storeId: _id, storeName: _name, storeCity: _city, ...rest } = deal;
-  return { ...rest, store };
+  const { dealsRepo } = await import("./deals/repo");
+  return dealsRepo.getDealById(id);
 }
 
 /**

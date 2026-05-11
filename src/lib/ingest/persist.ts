@@ -17,6 +17,8 @@ import { db } from "@/lib/db";
 import {
   llmParseFailures,
   priceEvents,
+  productAliases,
+  products,
   quarantineEvents,
   runs,
 } from "@/lib/db/schema";
@@ -75,6 +77,112 @@ export async function writePriceEvent(input: PriceEventInput): Promise<boolean> 
     observedAt: input.observedAt ?? new Date(),
   });
   return true;
+}
+
+/**
+ * Sentinel pack values used when the source doesn't tell us how a SKU
+ * is packaged (e.g. single 22oz bombers from Raley's omit packageCount).
+ * Stored canonically as (1, 0) so the unique index on products has a
+ * deterministic key. The detail-page UI treats packUnitMl=0 as
+ * "unknown" and hides the formatted pack line.
+ */
+const UNKNOWN_PACK_SIZE = 1;
+const UNKNOWN_PACK_UNIT_ML = 0;
+
+export interface AliasResolveInput {
+  /** Chain-prefixed SKU, e.g. "raleys/123456". MUST be unique across chains. */
+  chainSku: string;
+  /** Display brand from the source. Empty string → "Unknown". */
+  brand: string | null;
+  /** Display name from the source — used as the canonical name when this
+   * chain SKU is the first to surface this product. */
+  rawName: string;
+  /** Pack count (12 for a 12-pack); null if unknown. */
+  packCount: number | null;
+  /** Per-container volume in ml; null if unknown. */
+  packUnitMl: number | null;
+  abv?: number | null;
+  style?: string | null;
+}
+
+export interface AliasResolveResult {
+  canonicalProductId: number;
+  /** True when this call created a new alias row (or a new products row). */
+  isNew: boolean;
+}
+
+/**
+ * Bridge between a chain-specific SKU and the canonical `products` table.
+ *
+ * Idempotent. Two-phase, to preserve admin overrides:
+ *   1. Look up the alias by chainSku. If found, return its current
+ *      canonical_product_id — this respects manual re-mappings done
+ *      via the /admin/aliases candidate-match UI.
+ *   2. Otherwise, upsert a `products` row keyed on
+ *      (brand, name, packSize, packUnitMl) — the unique index — and
+ *      then insert a `product_aliases` row pointing chainSku at it,
+ *      tagged `confirmedBySession = "auto"` so the admin UI can
+ *      surface auto-stubs for review.
+ *
+ * Returns `{ canonicalProductId, isNew }`. Callers feed
+ * `canonicalProductId` into `writePriceEvent`.
+ *
+ * NOTE: The Neon HTTP driver does not support real multi-statement
+ * transactions, so the two inserts are sequential HTTP calls. Both
+ * use `ON CONFLICT` to stay idempotent under retry — an orphan
+ * products row created by a partial failure is harmless and will be
+ * reused by the next call.
+ */
+export async function upsertAliasAndCanonicalProduct(
+  input: AliasResolveInput,
+): Promise<AliasResolveResult> {
+  const existing = await db
+    .select({ canonicalProductId: productAliases.canonicalProductId })
+    .from(productAliases)
+    .where(eq(productAliases.chainSku, input.chainSku))
+    .limit(1);
+  if (existing.length > 0) {
+    return { canonicalProductId: existing[0].canonicalProductId, isNew: false };
+  }
+
+  const brand = (input.brand ?? "").trim() || "Unknown";
+  const name = input.rawName.trim();
+  const packSize = input.packCount ?? UNKNOWN_PACK_SIZE;
+  const packUnitMl = input.packUnitMl ?? UNKNOWN_PACK_UNIT_ML;
+
+  const upserted = await db
+    .insert(products)
+    .values({
+      brand,
+      name,
+      packSize,
+      packUnitMl,
+      abv: input.abv ?? null,
+      style: input.style ?? null,
+    })
+    .onConflictDoUpdate({
+      target: [products.brand, products.name, products.packSize, products.packUnitMl],
+      set: { brand },
+    })
+    .returning({ id: products.id });
+  const canonicalProductId = upserted[0]?.id;
+  if (canonicalProductId == null) {
+    throw new Error(
+      `upsertAliasAndCanonicalProduct: products upsert returned no id for ${input.chainSku}`,
+    );
+  }
+
+  await db
+    .insert(productAliases)
+    .values({
+      chainSku: input.chainSku,
+      canonicalProductId,
+      rawName: name,
+      confirmedBySession: "auto",
+    })
+    .onConflictDoNothing({ target: productAliases.chainSku });
+
+  return { canonicalProductId, isNew: true };
 }
 
 export interface QuarantineInput {

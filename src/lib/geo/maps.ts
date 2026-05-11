@@ -5,21 +5,33 @@ import type { Store } from "@/lib/deals";
 export type MapsTarget = "apple" | "google";
 
 /**
- * Pick the maps platform from a User-Agent string. Apple devices
- * (iOS, iPadOS, macOS) get Apple Maps; everything else gets Google
- * Maps. The /deals/[id] page reads `headers().get("user-agent")`
- * server-side and passes it here — no client JS, no UA detection
- * round-trip.
+ * Pick the maps platform from a User-Agent string. The /deals/[id]
+ * page reads `headers().get("user-agent")` server-side and passes it
+ * here — no client JS, no UA detection round-trip.
  *
- * Note: `Macintosh` matches every browser on macOS (Chrome, Firefox,
- * Safari), so macOS Chrome/Firefox users also land on Apple Maps.
- * Apple Maps' web fallback works fine in non-Safari browsers.
+ * Rule:
+ *   - iOS / iPadOS (iPhone / iPad / iPod) → always Apple Maps.
+ *   - macOS Safari → Apple Maps (native experience).
+ *   - macOS Chrome / Firefox / other → Google Maps (their ecosystem).
+ *   - Everything else → Google Maps.
+ *
+ * macOS browser detection: Safari's UA contains "Macintosh" and "Safari"
+ * but neither "Chrome", "Chromium", nor "Firefox"; Chrome and Edge UAs
+ * also include "Safari" (legacy WebKit lineage) so we filter those out
+ * explicitly.
  */
 export function targetForUserAgent(
   ua: string | null | undefined,
 ): MapsTarget {
   if (!ua) return "google";
-  return /iPhone|iPad|iPod|Macintosh/.test(ua) ? "apple" : "google";
+  if (/iPhone|iPad|iPod/.test(ua)) return "apple";
+  if (/Macintosh/.test(ua)) {
+    const isWebkitSafari =
+      /Safari\//.test(ua) &&
+      !/Chrome\/|Chromium\/|Firefox\/|Edg\//.test(ua);
+    return isWebkitSafari ? "apple" : "google";
+  }
+  return "google";
 }
 
 /**
