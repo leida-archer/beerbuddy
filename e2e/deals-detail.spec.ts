@@ -26,8 +26,10 @@ test.describe("/deals/[id] integration", () => {
     // Title rendered
     await expect(page.locator("h1")).toContainText(probe.name);
 
-    // Price rendered in dollars format
-    await expect(page.getByText(/\$\d+\.\d{2}/)).toBeVisible();
+    // Price rendered in dollars format. Multiple dollar amounts are
+    // possible on the page (current + strike-through regular + $/oz);
+    // assert at least one is visible rather than expecting a unique match.
+    await expect(page.getByText(/\$\d+\.\d{2}/).first()).toBeVisible();
 
     // Get directions button present
     await expect(page.getByRole("link", { name: /Get directions/i })).toBeVisible();

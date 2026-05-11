@@ -1,0 +1,75 @@
+# Playwright e2e — runs the full /deals/[id] flow against a real
+# Chromium across desktop + mobile viewports. Companion to ci.yml
+# (which handles typecheck / unit tests / build).
+#
+# Boots `bun run dev` via Playwright's `webServer` config, so
+# DATABASE_URL is only needed by routes that touch @/lib/db (which
+# the current specs don't). The placeholder is set anyway to match
+# ci.yml's discipline.
+
+name: e2e
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  playwright:
+    name: Playwright (desktop + mobile chromium)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # Browser binaries are cached separately from node_modules so a
+      # @playwright/test bump doesn't re-download the whole bundle.
+      # The cache key uses a hash of bun.lock (which Bun writes in a
+      # JSONC dialect that jq can't parse cleanly) — invalidates on
+      # every lockfile change, which is conservative but reliable.
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-browsers-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+
+      - name: Install Chromium (+ system deps)
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: bunx playwright install --with-deps chromium
+
+      - name: Ensure system deps even on cache hit
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: bunx playwright install-deps chromium
+
+      - name: Run e2e
+        env:
+          # Placeholder — Next.js dev still asserts DATABASE_URL on
+          # routes that import @/lib/db. Current specs don't hit those
+          # routes, but the placeholder keeps things robust if a spec
+          # is added later that does. Matches ci.yml.
+          DATABASE_URL: postgres://placeholder:placeholder@localhost/placeholder
+        run: bun run test:e2e
+
+      - name: Upload HTML report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
