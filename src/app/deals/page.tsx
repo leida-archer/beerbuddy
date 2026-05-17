@@ -6,13 +6,12 @@
  *
  * Sort + Filter are URL-param-driven (no client JS):
  *
- *   /deals                                 default: best-deal sort, all packs, all styles
- *   /deals?sort=cheap                      sort by absolute price asc
- *   /deals?sort=oz                         sort by price-per-oz asc
- *   /deals?pack=12                         only 12-packs
- *   /deals?style=ipa                       only items whose name matches "IPA"
- *   /deals?sort=cheap&pack=24&style=lager  combined
- *   /deals?fp=open                          open the inline filter picker
+ *   /deals                          default: best-deal sort, all packs
+ *   /deals?sort=cheap               sort by absolute price asc
+ *   /deals?sort=oz                  sort by price-per-oz asc
+ *   /deals?pack=12                  only 12-packs
+ *   /deals?sort=cheap&pack=24       combined
+ *   /deals?fp=open                  open the inline filter picker
  *
  * Each chip / sort button is a <Link> that toggles its param. Server
  * filters + sorts on each request. URLs are shareable.
@@ -45,11 +44,6 @@ const SORT_OPTIONS: Array<{ key: SortKey; label: string }> = [
 ];
 
 const PACK_CHIPS = ["6", "12", "18", "24", "30"];
-const STYLE_CHIPS: Array<{ key: string; label: string }> = [
-  { key: "ipa", label: "IPA" },
-  { key: "lager", label: "Lager" },
-  { key: "stout", label: "Stout" },
-];
 
 export default async function DealsPage(props: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -86,7 +80,7 @@ export default async function DealsPage(props: {
       <Banner />
 
       <ActiveChipRow state={state} />
-      <FilterPicker state={state} />
+      <FilterPickerRow state={state} />
 
       <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted text-center my-4 flex items-center gap-2 justify-center">
         <span className="h-px bg-rule w-10 inline-block" />
@@ -165,15 +159,6 @@ function ActiveChipRow({ state }: { state: PageState }) {
         />
       )}
 
-      {/* Style filter chip (with ×) when set */}
-      {state.style && (
-        <ActiveFilterChip
-          label={STYLE_CHIPS.find((s) => s.key === state.style)?.label ?? state.style}
-          state={state}
-          clearChange={{ style: null }}
-        />
-      )}
-
       {/* Spacer pushes the +Filter/Done button to the right */}
       <div className="ml-auto" />
 
@@ -222,78 +207,60 @@ function ActiveFilterChip({
   );
 }
 
-function FilterPicker({ state }: { state: PageState }) {
+function FilterPickerRow({ state }: { state: PageState }) {
   if (!state.pickerOpen) return null;
   return (
-    <section className="border-y border-rule py-4 mb-4 space-y-4">
-      <PickerSection heading="Sort">
-        {SORT_OPTIONS.map((opt) => (
-          <PickerChip
-            key={opt.key}
-            label={opt.label}
-            active={state.sort === opt.key}
-            href={buildHref(state, { sort: opt.key })}
-          />
-        ))}
-      </PickerSection>
+    <div className="relative border-y border-rule mb-4 before:content-[''] before:absolute before:inset-y-px before:right-0 before:w-8 before:bg-gradient-to-r before:from-transparent before:to-bg before:pointer-events-none">
+      <div
+        className="overflow-x-auto whitespace-nowrap py-3.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        <span className="inline-block pr-3.5" style={{ scrollSnapAlign: "start" }}>
+          <AxisLabel>Sort</AxisLabel>
+          {SORT_OPTIONS.map((opt) => (
+            <PickerOption
+              key={opt.key}
+              label={opt.label}
+              active={state.sort === opt.key}
+              href={buildHref(state, { sort: opt.key })}
+            />
+          ))}
+        </span>
 
-      <PickerSection heading="Pack">
-        <PickerChip
-          label="All"
-          active={!state.pack}
-          href={buildHref(state, { pack: null })}
-        />
-        {PACK_CHIPS.map((pack) => (
-          <PickerChip
-            key={pack}
-            label={`${pack}-pack`}
-            active={state.pack === pack}
-            href={buildHref(state, {
-              pack: state.pack === pack ? null : pack,
-            })}
-          />
-        ))}
-      </PickerSection>
+        <span className="text-rule mr-2.5 py-2 inline-block">·</span>
 
-      <PickerSection heading="Style">
-        <PickerChip
-          label="All"
-          active={!state.style}
-          href={buildHref(state, { style: null })}
-        />
-        {STYLE_CHIPS.map((style) => (
-          <PickerChip
-            key={style.key}
-            label={style.label}
-            active={state.style === style.key}
-            href={buildHref(state, {
-              style: state.style === style.key ? null : style.key,
-            })}
+        <span className="inline-block" style={{ scrollSnapAlign: "start" }}>
+          <AxisLabel>Pack</AxisLabel>
+          <PickerOption
+            label="Any"
+            active={!state.pack}
+            href={buildHref(state, { pack: null })}
           />
-        ))}
-      </PickerSection>
-    </section>
-  );
-}
-
-function PickerSection({
-  heading,
-  children,
-}: {
-  heading: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted mb-2">
-        {heading}
-      </h3>
-      <div className="flex flex-wrap gap-1.5">{children}</div>
+          {PACK_CHIPS.map((pack) => (
+            <PickerOption
+              key={pack}
+              label={pack}
+              active={state.pack === pack}
+              href={buildHref(state, {
+                pack: state.pack === pack ? null : pack,
+              })}
+            />
+          ))}
+        </span>
+      </div>
     </div>
   );
 }
 
-function PickerChip({
+function AxisLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted mr-2">
+      {children}
+    </span>
+  );
+}
+
+function PickerOption({
   label,
   active,
   href,
@@ -307,10 +274,10 @@ function PickerChip({
       href={href}
       prefetch={false}
       aria-current={active ? "true" : undefined}
-      className={`font-body text-[13px] font-medium rounded-sm px-3 py-1.5 min-h-8 whitespace-nowrap border transition-colors duration-micro ease-settle ${
+      className={`inline-block font-body text-[14px] py-2 mr-2.5 transition-colors duration-micro ease-settle ${
         active
-          ? "bg-ink text-bg border-ink"
-          : "bg-transparent text-ink border-rule hover:bg-bg-soft hover:border-ink"
+          ? "font-semibold text-ink underline decoration-warm decoration-2 underline-offset-4"
+          : "text-ink hover:text-warm"
       }`}
     >
       {label}
@@ -322,17 +289,10 @@ function EmptyResults({ state }: { state: PageState }) {
   return (
     <div className="text-center py-12">
       <p className="text-muted text-[14px] mb-4">
-        No deals match{" "}
-        {[
-          state.pack ? `${state.pack}-pack` : null,
-          state.style ? STYLE_CHIPS.find((s) => s.key === state.style)?.label : null,
-        ]
-          .filter(Boolean)
-          .join(" + ")}
-        .
+        No deals match {state.pack ? `${state.pack}-pack` : "your filters"}.
       </p>
       <Link
-        href={buildHref(state, { pack: null, style: null, sort: "best", pickerOpen: true })}
+        href={buildHref(state, { pack: null, sort: "best", pickerOpen: true })}
         className="inline-block font-body text-[14px] font-medium text-ink border border-ink rounded-sm px-4 py-2 hover:bg-bg-soft transition-colors"
       >
         Clear filters
@@ -426,11 +386,6 @@ function applyFilters(deals: Deal[], filters: PageState): Deal[] {
     if (Number.isFinite(n)) {
       out = out.filter((d) => d.packCount === n);
     }
-  }
-
-  if (filters.style) {
-    const needle = filters.style.toLowerCase();
-    out = out.filter((d) => (d.name ?? "").toLowerCase().includes(needle));
   }
 
   out = [...out].sort((a, b) => {

@@ -257,6 +257,7 @@ If a future feature appears to require user labor to function, that feature is e
 | 2026-05-04 | All buttons drop the hover transform `translateY(-1px)` | Read as "playful SaaS." Mature aesthetic uses background change only. |
 | 2026-05-04 | Filter chips switched from pill (full radius) to small radius (4px) | Pill chips read as casual; small-radius chips read as considered. |
 | 2026-05-04 | Added Product Principle: Zero User Labor | Web audit confirmed delivery aggregators (DoorDash, Caviar, Instacart, Toast) cover indie stores live. Manual user contribution becomes unnecessary. The app is a service that works *for* the user, not a community tool the user maintains. Locks UI/microcopy to never request labor. |
+| 2026-05-12 | Filter picker compressed to single-line scroll row; Style dimension removed | The 2026-05-06 picker (three sections of bordered chips) still felt heavy in the open state. v0.5 replaces the picker block with one horizontal scroll row carrying Sort + Pack only — text-link options with amber-underline active state, no chip borders. Style was a name-substring match against product titles; cut entirely (URL contract included) since it didn't earn its visual weight. Closed-row active-chip behavior from 2026-05-06 spec is unchanged. See `docs/specs/2026-05-12-filter-picker-compact-design.md`. |
 
 ## Reference
 

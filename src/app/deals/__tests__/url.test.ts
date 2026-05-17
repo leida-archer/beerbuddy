@@ -5,7 +5,6 @@ const empty: PageState = {
   zip: "95945",
   sort: "best",
   pack: null,
-  style: null,
   pickerOpen: false,
 };
 
@@ -15,7 +14,6 @@ describe("parsePageState", () => {
       zip: "",
       sort: "best",
       pack: null,
-      style: null,
       pickerOpen: false,
     });
   });
@@ -29,11 +27,20 @@ describe("parsePageState", () => {
     expect(parsePageState({ sort: "totally-bogus" }).sort).toBe("best");
   });
 
-  it("reads pack and style strings", () => {
-    expect(parsePageState({ pack: "12", style: "ipa" })).toMatchObject({
+  it("reads pack string", () => {
+    expect(parsePageState({ pack: "12" })).toMatchObject({ pack: "12" });
+  });
+
+  // Backward-compat: stale `?style=` URLs are silently dropped post-2026-05-12.
+  it("silently ignores legacy style param", () => {
+    const state = parsePageState({ style: "ipa", zip: "95945", pack: "12" });
+    expect(state).toEqual({
+      zip: "95945",
+      sort: "best",
       pack: "12",
-      style: "ipa",
+      pickerOpen: false,
     });
+    expect("style" in state).toBe(false);
   });
 
   it("reads fp=open as pickerOpen=true", () => {
@@ -67,10 +74,10 @@ describe("buildHref — URL state model", () => {
     expect(buildHref(empty, { sort: "cheap" })).toBe("/deals?zip=95945&sort=cheap");
   });
 
-  it("multiple filters → /deals?zip=95945&sort=cheap&pack=12&style=ipa", () => {
-    expect(
-      buildHref(empty, { sort: "cheap", pack: "12", style: "ipa" }),
-    ).toBe("/deals?zip=95945&sort=cheap&pack=12&style=ipa");
+  it("sort + pack → /deals?zip=95945&sort=cheap&pack=12", () => {
+    expect(buildHref(empty, { sort: "cheap", pack: "12" })).toBe(
+      "/deals?zip=95945&sort=cheap&pack=12",
+    );
   });
 
   it("fp=open is added when pickerOpen=true", () => {
@@ -88,11 +95,10 @@ describe("buildHref — URL state model", () => {
       zip: "95945",
       sort: "best",
       pack: "12",
-      style: "ipa",
       pickerOpen: true,
     };
     expect(buildHref(state, { sort: "cheap" })).toBe(
-      "/deals?zip=95945&sort=cheap&pack=12&style=ipa&fp=open",
+      "/deals?zip=95945&sort=cheap&pack=12&fp=open",
     );
   });
 
@@ -101,11 +107,10 @@ describe("buildHref — URL state model", () => {
       zip: "95945",
       sort: "cheap",
       pack: "12",
-      style: "ipa",
       pickerOpen: true,
     };
     expect(buildHref(state, { pack: null })).toBe(
-      "/deals?zip=95945&sort=cheap&style=ipa&fp=open",
+      "/deals?zip=95945&sort=cheap&fp=open",
     );
   });
 
@@ -114,7 +119,6 @@ describe("buildHref — URL state model", () => {
       zip: "95945",
       sort: "cheap",
       pack: null,
-      style: null,
       pickerOpen: false,
     };
     expect(buildHref(state, { sort: "best" })).toBe("/deals?zip=95945");
@@ -125,23 +129,19 @@ describe("buildHref — URL state model", () => {
       zip: "95945",
       sort: "best",
       pack: null,
-      style: null,
       pickerOpen: true,
     };
     expect(buildHref(state, { pickerOpen: false })).toBe("/deals?zip=95945");
   });
 
-  it("removing × on a filter chip preserves picker open + zip", () => {
+  it("removing × on a pack chip preserves picker open + zip", () => {
     const state: PageState = {
       zip: "95945",
       sort: "best",
       pack: "12",
-      style: "ipa",
       pickerOpen: true,
     };
-    expect(buildHref(state, { pack: null })).toBe(
-      "/deals?zip=95945&style=ipa&fp=open",
-    );
+    expect(buildHref(state, { pack: null })).toBe("/deals?zip=95945&fp=open");
   });
 
   it("zip is always the first param in the query string", () => {
@@ -150,7 +150,6 @@ describe("buildHref — URL state model", () => {
       zip: "95959",
       sort: "cheap",
       pack: "24",
-      style: null,
       pickerOpen: false,
     };
     expect(buildHref(state, {})).toBe("/deals?zip=95959&sort=cheap&pack=24");
@@ -161,7 +160,6 @@ describe("buildHref — URL state model", () => {
       zip: "95946",
       sort: "best",
       pack: null,
-      style: null,
       pickerOpen: false,
     };
     expect(buildHref(state, { sort: "oz" })).toBe("/deals?zip=95946&sort=oz");
@@ -180,11 +178,10 @@ describe("buildDetailHref", () => {
       zip: "95945",
       sort: "cheap",
       pack: "12",
-      style: "ipa",
       pickerOpen: true,
     };
     expect(buildDetailHref(state, "savemart-19724833")).toBe(
-      "/deals/savemart-19724833?zip=95945&sort=cheap&pack=12&style=ipa&fp=open",
+      "/deals/savemart-19724833?zip=95945&sort=cheap&pack=12&fp=open",
     );
   });
 
@@ -193,12 +190,23 @@ describe("buildDetailHref", () => {
       zip: "95945",
       sort: "best",
       pack: null,
-      style: null,
       pickerOpen: true,
     };
     expect(buildDetailHref(state, "savemart-19724833")).toBe(
       "/deals/savemart-19724833?zip=95945&fp=open",
     );
+  });
+
+  // Regression guard: the legacy style param must never reappear in detail hrefs.
+  it("never emits a style param", () => {
+    const variations: PageState[] = [
+      { zip: "95945", sort: "best", pack: null, pickerOpen: false },
+      { zip: "95945", sort: "cheap", pack: "12", pickerOpen: true },
+      { zip: "95959", sort: "oz", pack: "24", pickerOpen: false },
+    ];
+    for (const state of variations) {
+      expect(buildDetailHref(state, "x")).not.toContain("style=");
+    }
   });
 
   it("encodes deal IDs with reserved characters", () => {
