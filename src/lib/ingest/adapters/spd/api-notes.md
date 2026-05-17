@@ -1,47 +1,62 @@
 # SPD Markets — API discovery notes
 
-**Status:** TODO (Day 1 of Week 1)
-**Addresses:** Two stores — 129 W McKnight Way (Grass Valley) + Nevada City + Penn Valley
+**Status:** Discovery complete 2026-05-17. **Adapter routed to Tier 6 (admin manual_parse_queue) per product decision 2026-05-17. No automated adapter to build.**
+**Stores:**
+- SPD IGA Grass Valley — `ideal.sale/30638`
+- SPD IGA Nevada City — `ideal.sale/30637`
+- (Earlier api-notes mentioned a Penn Valley store; only Grass Valley + Nevada City surfaced on `spd.iga.com`. Penn Valley appears not to exist as an SPD/IGA location.)
 **Affiliated with:** IGA (Independent Grocers Alliance)
+**Weekly-ad platform:** Ideal™ at `spdiga.ideal.sale/<storeId>/browse`
 
-## Web-audit pre-findings (from /design-consultation, 2026-05-04)
+## Discovery findings (2026-05-17)
 
-- Direct site: `spdmarket.com` (specials page at `/specials.html`)
-- IGA-hosted weekly ad: `spd.iga.com/WeeklyAd/Index/`
-- IGA pages tend to be traditional server-rendered (PHP/IGA platform), so likely the **easiest scrape target** of the seven chains
-- No anti-bot expected — small-chain IGA site
+### Surface accessibility
 
-## Day-1 web discovery (2026-05-05) — partial findings
+| URL | Result |
+|-----|--------|
+| `spd.iga.com/WeeklyAd/Index/` | ✅ Loads in real browser (Chrome DevTools MCP). 403 via WebFetch (Cloudflare) — gated to real browsers. Lists "Nevada City SPD IGA Ad" + "Grass Valley SPD IGA Ad" with redirects to `ideal.sale`. |
+| `spdiga.ideal.sale/30638` (Grass Valley) | ✅ Loads. Hydrates fine. Renders weekly deals via Ideal™ platform. |
+| `spdiga.ideal.sale/30637` (Nevada City) | ✅ Same platform. |
+| `spdmarket.com/specials.html` (direct) | ❌ TLS cert error — `net::ERR_CERT_AUTHORITY_INVALID`. Site abandoned or misconfigured. |
 
-Both endpoints failed via WebFetch (server-side fetch with strict TLS):
+### Critical product-level finding: no alcohol category
 
-- `spd.iga.com/WeeklyAd/Index/` returned **403 Forbidden**. Likely IGA platform / Cloudflare bot detection.
-- `spdmarket.com/specials.html` returned **certificate has expired**. SPD's HTTPS cert is broken at the time of this audit. This is a real operational issue on their side, but it also signals a less actively maintained tech stack — typically correlates with simpler scrape feasibility once accessed normally via a real browser (which may bypass the cert error or simply ignore it).
+The Ideal™ weekly-ad surface for SPD Grass Valley exposes **only the "Grocery" category**. Visible deals on 2026-05-17:
 
-Implication: web-based discovery from outside a browser is inconclusive for SPD. The path forward needs in-browser verification.
+- $.50 Off IGA Brand Frozen Garlic Bread
+- $1.00 Off (2) Coca-Cola Brand 20 fl oz bottles
+- $.50 Off Dove Chocolate Promises
+- $1.50 Off Jolly Rancher Ropes/Gummies
 
-### In-browser tasks (developer at laptop)
+Programmatic check: body text returns **zero matches** for `beer|wine|ipa|lager|ale|liquor|spirits|alcohol`.
 
-### 1. spd.iga.com/WeeklyAd
-- [ ] Open in Chrome — does it load when accessed normally? (Browsers send different headers than server-side fetchers.) ___
-- [ ] Fetch returns server-rendered HTML with product data when scraped via Playwright with realistic User-Agent? ___
-- [ ] Per-store filter (Grass Valley vs Penn Valley vs Nevada City)? ___
-- [ ] Beer category present? ___
+Categories navigation has a single button: "Grocery". No "Beer & Wine", "Adult Beverages", or "Liquor" entry.
 
-### 2. spdmarket.com/specials.html
-- [ ] Does Chrome show a security warning for the expired cert, or has it been renewed since the audit? ___
-- [ ] Same content as IGA page or different? ___
-- [ ] PDF link? ___
+### Why no alcohol?
 
-### 3. Cross-verification
-Compare a known sale (e.g., a featured beer this week) on both URLs to make sure they match.
+Most likely a California state regulation around online liquor advertising for small IGA platform participants, or a platform-level policy on `ideal.sale`. SPD almost certainly sells beer in-store — they're a full-service grocer — but does not publish those prices to any public web surface accessible to a scraper.
+
+### Format issue (secondary)
+
+Even setting aside the missing alcohol category, the Ideal™ surface format is **discount coupons** ("$1.00 off 2 bottles"), not absolute retail prices. BeerBuddy's data model wants `priceCents` + `regularPriceCents` per SKU — discount-only data is incompatible.
 
 ## Decision
 
-- [ ] **Path forward:** Plain `fetch` + cheerio (most likely) / Playwright (unlikely)
-- [ ] **Notes:** ___
+**Routed to Tier 6: admin manual_parse_queue.** Per product decision 2026-05-17, SPD beer prices will be entered by the admin via the existing parse-queue workflow. Cadence: weekly (matches the SPD weekly ad refresh).
 
-## Adapter status
+**What's NOT built today:**
+- No `index.ts` adapter (nothing to automate)
+- No `extract.ts` (no machine source)
+- No entry in `scripts/build-fixtures.ts` (don't add SPD stores to STORES until admin data exists; an empty SPD chain would pollute the deal list with a phantom store and no deals)
 
-Adapter file: `index.ts` (Week 4)
-Test fixtures: `__fixtures__/` (Week 4)
+**What's expected of the admin going forward:**
+1. Walk SPD Grass Valley (or Nevada City) weekly, photograph beer end-cap signs
+2. Enter prices via `/admin/parse-queue` (current pattern from 2026-05-10 cutover from LLM parsing)
+3. Or, if a dedicated SPD-input form is built later, use that
+
+**When to revisit:**
+- If California regulations change and SPD publishes alcohol prices online
+- If SPD migrates off the Ideal™ platform to a competitor that does include alcohol (Instacart, Mercato, etc.)
+- If admin labor proves not sustainable — at that point, drop SPD from the chain list and update README/DESIGN.md
+
+See `docs/ingestion-methods.md` Workflow step 3 — "Verify alcohol is actually published" — which was added 2026-05-17 specifically to prevent future regions repeating this discovery overhead on the same class of chain.
