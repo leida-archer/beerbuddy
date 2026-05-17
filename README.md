@@ -4,7 +4,7 @@ A mobile-first PWA that surfaces the **best beer deals at stores in Nevada Count
 
 ## What this is
 
-You open the app on a Friday afternoon. Enter your ZIP. See one ranked list of this week's genuinely-best beer deals at the seven chains within ~25 miles of Grass Valley / Nevada City — Raley's, Save Mart, Grocery Outlet, Holiday Market, SPD, Walmart Grass Valley, BevMo Auburn — plus indie liquor stores covered via DoorDash / Caviar / Toast. Tap the deal you want, get directions, drive there.
+You open the app on a Friday afternoon. Enter your ZIP. See one ranked list of this week's genuinely-best beer deals at the six chains within ~25 miles of Grass Valley / Nevada City — Raley's, Save Mart, Grocery Outlet, Holiday Market, SPD, BevMo Auburn — plus indie liquor stores covered via DoorDash / Caviar / Toast. Tap the deal you want, get directions, drive there.
 
 Differentiator: every price is judged against its 90-day median for that product. A beer that's chronically cheap doesn't crowd out a real deal on a beer that's normally pricier. Cheapest filters; deal-vs-baseline persuades.
 
@@ -38,7 +38,7 @@ Six weeks part-time (one focused weekend per week with Claude Code + tool-stack)
 1. **Week 1** — API-discovery sweep + Next.js scaffold + Drizzle schema + Raley's adapter end-to-end
 2. **Week 2** — Save Mart adapter + deal-list UI shipped to private Vercel URL
 3. **Week 3** — Sources without structured surfaces flagged via `manual_parse_queue` (admin handles externally)
-4. **Week 4** — Holiday Market, SPD, Walmart, BevMo adapters
+4. **Week 4** — Holiday Market, SPD, BevMo adapters *(Walmart dropped 2026-05-17 — see [docs/dropped-chains.md](./docs/dropped-chains.md))*
 5. **Week 5** — Product alias workflow (the risky week)
 6. **Week 6** — Detail page + 90-day baseline + indie admin form + soft launch to 3 friends
 

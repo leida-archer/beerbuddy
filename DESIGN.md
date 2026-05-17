@@ -5,7 +5,7 @@
 ## Product Context
 
 - **What this is:** BeerBuddy is a mobile-primary responsive web app (PWA) that surfaces the best beer deals at chain and indie stores in Nevada County, CA. The differentiator is "deal vs. 90-day baseline" framing rather than just sticker-cheapest.
-- **Who it's for:** Nevada County residents (~100K) shopping for beer at Raley's, Save Mart, Grocery Outlet, Holiday Market, SPD, Walmart Grass Valley, BevMo Auburn, and a handful of indie liquor stores.
+- **Who it's for:** Nevada County residents (~100K) shopping for beer at Raley's, Save Mart, Grocery Outlet, Holiday Market, SPD, BevMo Auburn, and a handful of indie liquor stores.
 - **Space/industry:** Local consumer utility — adjacent to (but distinct from) brewery brand sites, generic price-comparison apps (Drizly, BoozApp), and civic-data tools.
 - **Project type:** Mobile-primary PWA with admin pages for indie price entry and product alias management.
 

@@ -111,9 +111,7 @@ export default async function DealsPage(props: {
           More chains coming
         </p>
         <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[12px] text-muted">
-          <li>· Grocery Outlet GV</li>
           <li>· SPD Grass Valley</li>
-          <li>· Walmart Grass Valley</li>
         </ul>
       </section>
 

@@ -23,7 +23,7 @@ Document findings in each chain's `api-notes.md` using the template that's alrea
 | 1 | Raley's | First adapter end-to-end. Use whichever path Day 1 reveals. |
 | 2 | Save Mart | Second adapter. Builds confidence in the contract. |
 | 3 | Grocery Outlet | First LLM-parsed circular (proves the Haiku + Zod path). |
-| 4 | Holiday Market, SPD, Walmart Grass Valley, BevMo Auburn | Remaining four — coverage threshold met. |
+| 4 | Holiday Market, SPD, BevMo Auburn | Remaining three — coverage threshold met. Walmart dropped 2026-05-17; see [/docs/dropped-chains.md](../../../../docs/dropped-chains.md). |
 | 5 | (cross-chain) | Product alias normalization workflow. |
 | 6 | (post) | Detail page + 90-day baseline + indie admin form + soft launch. |
 
